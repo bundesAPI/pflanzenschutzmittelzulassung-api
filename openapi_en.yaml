@@ -389,14 +389,16 @@ paths:
   /awg_kultur/:
     get:
       description: |-
-        Liefert eine Zuordnung von Anwendungen zu Kulturen. Wenn das Feld &quot;ausgenommen&quot; &quot;J&quot; beinhaltet, bildet die in &quot;kultur&quot; angegebene Kultur eine Ausnahme und ist nicht in der Anwendung enthalten.
-                                    Optional kann nach einzelnen Anwendungen ({awg_id}) gefiltert werden.
-                                    Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+        Supplies a mapping from applications to crops. If the field &quot;ausgenommen&quot; (excluded) contains &quot;J&quot; the crop supplied in field &quot;kultur&quot; is treated as an exclusion and will not be contained in the result.
+        
+        Optionally, you can filter for single applications via {awg_id}.
+        
+        The parameter is optional; if no parameter is supplied, the response contains all entries.
 
-            Der eindeutige Identifizierer bestimmt sich aus der awg_id und der kultur.
-            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 042688-00/00-001.
+        The unique identifier is compiled from awd_id and the crop.
+        {awg_id} is the application ID, referencing from the /awsg endpoint. String with 16 letters/numbers, e.g. 042688-00/00-001.
 
-        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+        If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
         - application/json
       responses:
