@@ -5,7 +5,7 @@ ORDS generated API for api-v1
 
 ## adresse
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/adresse
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/adresse
 
  Liefert eine Liste aller Adressen und Namen von Vertriebsfirmen/Antragstellern/Importeuren von Pflanzenschutzmitteln.
  Optional kann nur nach einer Adresse gesucht werden, wenn die entsprechende {adresse_nr} gegeben wird.
@@ -19,7 +19,7 @@ ORDS generated API for api-v1
 
 ## antrag
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/antrag
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/antrag
 
  Liefert die Zulassungsanträge und Antragsteller zu aktuell gültigen Pflanzenschutzmitteln (im Endpunkt /mittel).
  Optional kann nach der Antragnummer {antragnr}, dem Antragsteller {antragsteller_nr} und/oder der Kennnummer des Mittels gefiltert werden.
@@ -36,7 +36,7 @@ ORDS generated API for api-v1
 
 ## auflage_redu
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/auflage_redu
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/auflage_redu
 
  Liefert eine Liste der Auflagen mit reduzierten Abständen bei verwendeten Geräten verschiedener Abdriftminderungsklassen.
  Optional kann nach einer Auflagennummer {auflagenr} gefiltert werden.
@@ -51,7 +51,7 @@ ORDS generated API for api-v1
 
 ## auflagen
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/auflagen
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/auflagen
 
  Liefert die Liste aller gesetzlichen Auflagen zu Mitteln und Anwendungen.
  Optional kann nach Auflagennummer {auflagenr}, der Ebene {ebene} und/oder eines Auflagenkodes {auflage} gefiltert werden.
@@ -67,7 +67,7 @@ ORDS generated API for api-v1
 
 ## awg
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/awg
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/awg
 
  Liefert eine Liste aller zugelassenen Anwendungen. Eine Anwendung beinhaltet ein angewendetes Mittel, eine Kultur, dessen Wachstumsstadium und einen Schadorganismus. Kultur und Schadorganismus können über die Endpunkte /awg_kultur und /awg_schadorg abgerufen werden.
  Optional kann die ID der Anwendung {awg_id} und/oder die Kennnummer eines Mittels {kennr} übergeben werden, um die Ergebnisse zu filtern.
@@ -82,7 +82,7 @@ ORDS generated API for api-v1
 
 ## awg_aufwand
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/awg_aufwand
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/awg_aufwand
 
  Liefert eine Zuordnung von Anwendungen ({awg_id}) auf vorgeschriebene Aufwände/Mengen von Pflanzenschutzmittel und Wasser bei dieser Anwendung.
  Optional kann auf einzelnde Anwendungen per {awg_id} gefiltert werden.
@@ -97,7 +97,7 @@ ORDS generated API for api-v1
 
 ## awg_bem
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/awg_bem
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/awg_bem
 
  Liefert eine Liste von Bemerkungen/Erläuterungen zu Anwendungen. ("Auflage" hat in diesem Endpunkt KEINE Verbindung zum Endpunkt /auflage!)
  Optional kann nach einzelnen Anwendungen ({awg_id}) gefiltert werden.
@@ -112,7 +112,7 @@ ORDS generated API for api-v1
 
 ## awg_kultur
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/awg_kultur
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/awg_kultur
 
  Liefert eine Zuordnung von Anwendungen zu Kulturen. Wenn das Feld "ausgenommen" "J" beinhaltet, bildet die in "kultur" angegebene Kultur eine Ausnahme und ist nicht in der Anwendung enthalten.
  Optional kann nach einzelnen Anwendungen ({awg_id}) gefiltert werden.
@@ -127,7 +127,7 @@ ORDS generated API for api-v1
 
 ## awg_partner
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/awg_partner
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/awg_partner
 
  Liefert die Zuordnung von Anwendungen zu Partnermitteln, die gemeinsam verwendet werden dürfen, zum Beipiel als Tankmischungen.
  Optional kann auf eine Anwendung {awg_id} gefiltert werden.
@@ -142,7 +142,7 @@ ORDS generated API for api-v1
 
 ## awg_partner_aufwand
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/awg_partner_aufwand
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/awg_partner_aufwand
 
  Liefert die Zuordnung von Anwendungen zu einem Partnermittel inklusive dem maximalen Aufwand.
  Optional kann nach einer Anwendung {awg_id} gefiltert werden.
@@ -158,7 +158,7 @@ ORDS generated API for api-v1
 
 ## awg_schadorg
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/awg_schadorg
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/awg_schadorg
 
  Liefert eine Zuordnung von Anwendungen zu Schadorganismen. Wenn das Feld "ausgenommen" "J" beinhaltet, bildet der in "schadorg" angegebene Schadorganismus eine Ausnahme und ist nicht in der Anwendung enthalten.
  Optional kann nach einzelnen Anwendungen ({awg_id}) gefiltert werden.
@@ -173,7 +173,7 @@ ORDS generated API for api-v1
 
 ## awg_verwendungszweck
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/awg_verwendungszweck
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/awg_verwendungszweck
 
  Liefert die Zuordnung der Anwendungen zu Verwendungszwecken des assoziierten Mittels. Welcher Verwendng die behandelte Kultur also zugeführt werden darf. Kodiert über Kodeliste 31, einzusehen über den Endpunkt /kode.
  Optional kann auf eine Anwendung {awg_id} gefiltert werden.
@@ -188,7 +188,7 @@ ORDS generated API for api-v1
 
 ## awg_wartezeit
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/awg_wartezeit
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/awg_wartezeit
 
  Liefert die Zuordnung von Anwendungen zu Wartezeiten in Tagen für eine bestimmte Kultur, bis die Anwendung erneut durchgeführt werden kann. Ausgenommene Kulturen sind über den Endpunkt /awg_wartezeit_ausg_kultur abzurufen. Genutzt wird für die Bemerkungen Kodeliste 89, dekodierbar über den Endpunkt /kode.
  Optional kann nach der Wartezeit ID {awg_wartezeit_nr}, der Anwendungs ID {awg_id} oder der Kultur {kultur} gefiltert werden.
@@ -204,7 +204,7 @@ ORDS generated API for api-v1
 
 ## awg_wartezeit_ausg_kultur
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/awg_wartezeit_ausg_kultur
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/awg_wartezeit_ausg_kultur
 
  Liefert die Zuordnung von Anwendungswartezeiten auf Kulturen, die für diese Wartezeit ausgenommen sind. Die Wartezeit für die übrigen Kulturen kann im Endpunkt /awg_wartezeit abgerufen werden.
  Optional kann nach der Wartezeit ID {awg_wartezeit_nr} oder der Kultur {kultur} gefiltert werden.
@@ -220,7 +220,7 @@ ORDS generated API for api-v1
 
 ## awg_zeitpunkt
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/awg_zeitpunkt
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/awg_zeitpunkt
 
  Liefert die Zuordnung von Anwendungen zu Zeitpunkten. Es kann mehrere Zeitpunkte pro Anwendung geben, die über das Feld "operand_zu_vorher" aneinandergefügt werden in der Reihenfolge nach "sortier_nr". Die Zeitpunkte sind über Kodeliste 30 kodiert, die über den Endpunkt /kode dekodiert werden können.
  Optional kann auf eine Anwendung {awg_id} gefiltert werden.
@@ -235,7 +235,7 @@ ORDS generated API for api-v1
 
 ## awg_zulassung
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/awg_zulassung
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/awg_zulassung
 
  Liefert die Zuordnung von Anwendungen zu ihrem Zulassungsende.
  Optional kann nach deiner Anwendung {awg_id} gefiltert werden.
@@ -249,7 +249,7 @@ ORDS generated API for api-v1
 
 ## ghs_gefahrenhinweise
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/ghs_gefahrenhinweise
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/ghs_gefahrenhinweise
 
  Liefert eine Zuordnung von Mitteln zu ihren Gefahrenhinweisen. Die Gefahrenhinweise verwenden die Kodeliste 70 und können dekodiert werden über den Endpunkt /kode.
  Optional kann auf ein Mittel {kennr} gefiltert werden.
@@ -265,7 +265,7 @@ ORDS generated API for api-v1
 
 ## ghs_gefahrensymbole
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/ghs_gefahrensymbole
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/ghs_gefahrensymbole
 
  Liefert eine Zuordnung von Mitteln zu ihren Gefahrensymbolen. Die Gefahrensymbole verwenden die Kodeliste 40 und können dekodiert werden über den Endpunkt /kode.
  Optional kann auf ein Mittel {kennr} gefiltert werden.
@@ -281,7 +281,7 @@ ORDS generated API for api-v1
 
 ## ghs_sicherheitshinweise
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/ghs_sicherheitshinweise
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/ghs_sicherheitshinweise
 
  Liefert eine Zuordnung von Mitteln zu ihren Sicherheitshinweisen. Die Sicherheitshinweise verwenden die Kodeliste 71 und können dekodiert werden über den Endpunkt /kode.
  Optional kann auf ein Mittel {kennr} gefiltert werden.
@@ -297,7 +297,7 @@ ORDS generated API for api-v1
 
 ## ghs_signalwoerter
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/ghs_signalwoerter
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/ghs_signalwoerter
 
  Liefert eine Zuordnung von Mitteln zu ihren Signalwörtern. Die Signalwörter verwenden die Kodeliste 76 und können dekodiert werden über den Endpunkt /kode.
  Optional kann auf ein Mittel {kennr} gefiltert werden.
@@ -313,7 +313,7 @@ ORDS generated API for api-v1
 
 ## hinweis
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/hinweis
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/hinweis
 
  Liefert eine Zuordnung von Ebenen (Mitteln und Anwendungen) zu Hinweisen. Die Hinweise verwenden die Kodeliste 74 und können dekodiert werden über den Endpunkt /kode.
  Optional kann nach einer Ebene {ebene} (einem Mittel/einer Anwendung) gefiltert werden.
@@ -328,7 +328,7 @@ ORDS generated API for api-v1
 
 ## kode
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/kode
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/kode
 
  Liefert die Zuordnung von Kodes, Kodelisten und Sprache auf den Kodetext. Verwendet zur Dekodierung verschiedener Kodes aus anderen Tabellen.
  Optional kann auf einen Kode, die dazugehörige Kodeliste und/oder eine Sprache gefiltert werden.
@@ -345,7 +345,7 @@ ORDS generated API for api-v1
 
 ## kodeliste
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/kodeliste
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/kodeliste
 
  Liefert eine Auflistung der Kodelisten inklusive dem Listennamen, also der testlichen Beschreibung wofür die Liste steht.
  Optional kann nut auf eine Kodeliste {kodeliste} gefiltert werden.
@@ -359,7 +359,7 @@ ORDS generated API for api-v1
 
 ## kodeliste_feldname
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/kodeliste_feldname
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/kodeliste_feldname
 
  Liefert eine Zuordnung von Kodelistennummer auf die Tabelle und das Feld in dem diese Kodeliste verwendet wird.
  Optional kann nach Kodelistennummer {kodeliste} und/oder Tabellennamen {tabelle} und/oder Spaltennamen {feldname} gefiltert werden.
@@ -376,7 +376,7 @@ ORDS generated API for api-v1
 
 ## kultur_gruppe
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/kultur_gruppe
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/kultur_gruppe
 
  Liefert eine Liste der Kulturen und der korrespondierenden Kulturgruppe. Der Enpunkt ist eine Repräsentation einer Baumstruktur. kultur_gruppe ist dabei ein Parent, dem das Child kultur zugeordnet ist. Eine Kulturgruppe kann mehrere Kulturen als Children besitzen, eine Kultur kann mehrere Parents haben. Da der Baum mehrere Stufen hat, stehen einige Kulturen als Child (kultur) UND als Parent (kultur_gruppe) in unterschiedlichen Zeilen.
  Optional kann auf eine Kultur {kultur} oder eine Kulturgruppe {kultur_gruppe} gefiltert werden.
@@ -394,7 +394,7 @@ ORDS generated API for api-v1
 
 ## mittel
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/mittel
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/mittel
 
  Liefert eine Liste aller zugelassenen Pflanzeschutzmittel.
  Optional kann auf eine Zulassungsnummer/Kennummer {kennr} gefiltert werden.
@@ -408,7 +408,7 @@ ORDS generated API for api-v1
 
 ## mittel_abgelaufen
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/mittel_abgelaufen
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/mittel_abgelaufen
 
  Liefert eine Liste der abgelaufenen Pflanzenschutzmittel, inklusive Aufbrauchfrist. Weitere Informationen sind nur unter den Endpunkten /wirkstoff und /wirkstoff_gehalt enthalten. Andere Referenzen wurden entfernt.
  Optional kann auf eine Kennummer {kennr} gefiltert werden.
@@ -422,7 +422,7 @@ ORDS generated API for api-v1
 
 ## mittel_abpackung
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/mittel_abpackung
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/mittel_abpackung
 
  Liefert eine Liste der Packungsinformationen für Mittel.
  Optional kann auf die Kennummer eines Mittels {kennr} gefiltert werden.
@@ -437,7 +437,7 @@ ORDS generated API for api-v1
 
 ## mittel_gefahren_symbol
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/mittel_gefahren_symbol
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/mittel_gefahren_symbol
 
  Liefert eine Zuordnung von Mitteln zu Gefahrensymbolen.
  Optional kann auf eine Mittel Kennummer {kennr} gefiltert werden.
@@ -452,7 +452,7 @@ ORDS generated API for api-v1
 
 ## mittel_vertrieb
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/mittel_vertrieb
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/mittel_vertrieb
 
  Liefert die Zuordnung von Mitteln zu Vetriebsfirmen dieser Mittel.
  Optional kann auf ein Mittel {kennr} oder eine Vertriebsfirma {vertriebsfirma_nr} gefiltert werden.
@@ -467,7 +467,7 @@ ORDS generated API for api-v1
 
 ## mittel_wirkbereich
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/mittel_wirkbereich
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/mittel_wirkbereich
 
  Liefert eine Liste von Zuordnungen von Mitteln zu Wirkbereichen. Die konkreten Anwendungen sind abgebildet in Endpunkt /awg. Das Feld "wirkungsbereich" nutzt die Kodeliste 21, die über den Endpunkt /kode dekodiert werden kann.
  Optional kann auf ein Mittel {kennr} oder einen Wirkungsbereich {wirkungsbereich} gefiltert werden.
@@ -483,7 +483,7 @@ ORDS generated API for api-v1
 
 ## parallelimport_abgelaufen
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/parallelimport_abgelaufen
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/parallelimport_abgelaufen
 
  Liefert eine Liste der abgelaufenen Parallelimporte (Mittel aus anderen Ländern die identisch sind zu in Deutschland zugelassenen Mitteln) zu ihren Referenzmitteln.
  Optional kann auf ein Referenzmittel {pi_referenz_kennr} oder einen Importeur {importeur_nr) gefiltert werden.
@@ -499,7 +499,7 @@ ORDS generated API for api-v1
 
 ## parallelimport_gueltig
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/parallelimport_gueltig
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/parallelimport_gueltig
 
  Liefert eine Liste der gültigen Parallelimporte (Mittel aus anderen Ländern die identisch sind zu in Deutschland zugelassenen Mitteln) zu ihren Referenzmitteln.
  Optional kann auf ein Referenzmittel {pi_referenz_kennr} oder einen Importeur {importeur_nr) gefiltert werden.
@@ -515,7 +515,7 @@ ORDS generated API for api-v1
 
 ## schadorg_gruppe
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/schadorg_gruppe
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/schadorg_gruppe
 
  Liefert eine Liste der Schadorganismen und der korrespondierenden Schadorganismengruppe. Der Enpunkt ist eine Repräsentation einer Baumstruktur. schadorg_gruppe ist dabei ein Parent, dem das Child schadorg zugeordnet ist. Eine Schagorganismusgruppe kann mehrere Schadorganismen als Children besitzen, ein Schadorganismus kann mehrere Parents haben. Da der Baum mehrere Stufen hat, stehen einige Schadorganismen als Child (schadorg) UND als Parent (schadorg_gruppe) in unterschiedlichen Zeilen.
  Optional kann auf einen Schadorganismus {schadorg} oder eine Schadorganismusgruppe {schadorg_gruppe} gefiltert werden.
@@ -533,7 +533,7 @@ ORDS generated API for api-v1
 
 ## staerkung
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/staerkung
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/staerkung
 
  Liefert eine Liste von zugelassenen Stärkungsmitteln.
  Optional kann auf die Kennummer des Stärkungsmittels {kennr} und/oder den Anstragsteller {antragsteller_nr} gefiltert werden.
@@ -548,7 +548,7 @@ ORDS generated API for api-v1
 
 ## staerkung_vertrieb
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/staerkung_vertrieb
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/staerkung_vertrieb
 
  Liefert eine Zuordnung von Stärungsmitteln auf die Vertriebsfirmen der Stärkungsmittel.
  Optional kann auf die Kennummer des Stärkungsmittels {kennr} und/oder die Vertriebsfirma {vertriebsfirma_nr} gefiltert werden.
@@ -563,7 +563,7 @@ ORDS generated API for api-v1
 
 ## stand
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/stand
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/stand
 
  Liefert das Release-Datum für den aktuellen Datenbestand. Das heiÃŸt, das Datum an dem die Daten das letzte Mal aktualisiert wurden.
 
@@ -573,7 +573,7 @@ ORDS generated API for api-v1
 
 ## wirkstoff
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/wirkstoff
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/wirkstoff
 
  Liefert eine Liste von zugelassenen Wirkstoffen.
  Optional kann auf einen Wirkstoff anhand der korrespondierenden Wirknummer {wirknr} gefiltert werden.
@@ -587,7 +587,7 @@ ORDS generated API for api-v1
 
 ## wirkstoff_gehalt
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/wirkstoff_gehalt
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/wirkstoff_gehalt
 
  Liefert eine Zuordnung der Mittel und des korrespondierenden Wirkstoffgehalts.
  Optional kann auf die Nummer eines Wirkstoffes {wirknr} und/oder eines Mittels {kennr} gefiltert werden.
@@ -603,7 +603,7 @@ ORDS generated API for api-v1
 
 ## zusatzstoff
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/zusatzstoff
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/zusatzstoff
 
  Liefert eine Liste der Zusatzstoffe zu Mitteln.
  Optional kann auf die Nummer des Zusatzstoffes {:kennr} oder die Nummer eines Antragstellers {antragsteller_nr} gefiltert werden.
@@ -618,7 +618,7 @@ ORDS generated API for api-v1
 
 ## zusatzstoff_vertrieb
 
-** URL: ** psm-api.bvl.bund.de/ords/psm/api-v1/zusatzstoff_vertrieb
+**URL:** psm-api.bvl.bund.de/ords/psm/api-v1/zusatzstoff_vertrieb
 
  Liefert eine Zuordnung von Zusatzstoffen auf die Vertriebsfirmen der Zusatzstoffe.
  Optional kann auf die Kennummer des Zusatzstoffes {kennr} und/oder die Vertriebsfirma {vertriebsfirma_nr} gefiltert werden.
