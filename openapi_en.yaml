@@ -75,7 +75,7 @@ paths:
         
         The unique identifier is compiled from request ID {antragnr} and product ID {kennnr}.
         
-            {antragnr} is the request ID. String of two letters/numbers, e.g. 00.
+            {antragnr} is the request ID. String of two characters, e.g. 00.
             {antragsteller_nr} is the requestor ID, referencing from the /addresse endpoint. Integer with up to 22 numbers, e.g. 10091.
             {kennr} is the product ID, referencing from the /mittel endpoint. String of exact 9 letters, e.g. 005632-60.
 
@@ -163,7 +163,7 @@ paths:
             {auflagenr} is the constraint ID. Integer, e.g. 49747804.
             {auflage} is the constraint code. The associated code can queried from the /kode endpoint. String with up to 20 letters, e.g. WMA.
             
-            {ebene} is either the product code (kennr in the /mittel endpoint, 9 letters) or the application ID (awg_id in the /awg endpoint, 16 letters). String with up to 16 letters/numbers, e.g.: 024366-00 oder 005190-00/00-004.
+            {ebene} is either the product code (kennr in the /mittel endpoint, 9 letters) or the application ID (awg_id in the /awg endpoint, 16 letters). String with up to 16 characters, e.g.: 024366-00 oder 005190-00/00-004.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -219,8 +219,8 @@ paths:
         Optionally you can filter for an application ID {awg_id} and/or a product ID {kennr}.
         The parameters are optional; if no parameters are supplied, the response contains all entries.
 
-            {awg_id} is the unique application ID. String with up to 16 letters/numbers, e.g. 007472-60/01-012.
-            {kennr} is the product ID which the application contains, referenced from the /mittel endpoint. String with 9 letters/numbers, e.g. 007472-60.
+            {awg_id} is the unique application ID. String with up to 16 characters, e.g. 007472-60/01-012.
+            {kennr} is the product ID which the application contains, referenced from the /mittel endpoint. String with 9 characters, e.g. 007472-60.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -357,7 +357,7 @@ paths:
     
         The uniqute identifier is compiled from the application ID awg_id and the constraint comment auflage_bem.
         
-        {awg_id} is the application ID, referencing the /awg endpoint. String of 16 letters/numbers, e.g. 034210-64/00-007.
+        {awg_id} is the application ID, referencing the /awg endpoint. String of 16 characters, e.g. 034210-64/00-007.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -396,7 +396,7 @@ paths:
         The parameter is optional; if no parameter is supplied, the response contains all entries.
 
         The unique identifier is compiled from awd_id and the crop.
-        {awg_id} is the application ID, referencing from the /awsg endpoint. String with 16 letters/numbers, e.g. 042688-00/00-001.
+        {awg_id} is the application ID, referencing from the /awsg endpoint. String with 16 characters, e.g. 042688-00/00-001.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -430,12 +430,12 @@ paths:
   /awg_partner/:
     get:
       description: |-
-        Liefert die Zuordnung von Anwendungen zu Partnermitteln, die gemeinsam verwendet werden dÃ¼rfen, zum Beipiel als Tankmischungen.
-                                    Optional kann auf eine Anwendung {awg_id} gefiltert werden.
-                                    Der Parameter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+        Supplies the list of applications for partner products, which can be applied together, e.g. in tank mixes.
+        Optionally, you can filter for an application {awg_id}.
+        The parameter is optional; if no parameters are supplied, the response contains all entries.
 
-            Der eindeutige Identifizierer bestimmt sich aus der awg_id und der partner_kennr.
-            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 034078-00/01-003.
+        The unique identifier is compiled from the application ID {awg_id} and the partner code {partner_kennnr}.
+        {awg_id} is the application ID, referencing from the /awg endpoint. String with 16 characters, e.g. 034078-00/01-003.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
