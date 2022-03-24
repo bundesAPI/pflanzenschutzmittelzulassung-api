@@ -1,6 +1,9 @@
 # Planzenschutzmittelzulassung API
 
-ORDS generated API for api-v1
+Das Bundesamt für Verbraucherschutz und Lebensmittelsicherheit (BVL) stellt monatlich Informationen über die in Deutschland zugelassenen Pflanzenschutzmittel durch die Webanwendung Online-Datenbank Pflanzenschutzmittel bereit und erfüllt damit die Vorgaben aus Artikel 57 der "VERORDNUNG (EG) Nr. 1107/2009 DES EUROPÄISCHEN PARLAMENTS UND DES RATES vom 21. Oktober 2009 über das Inverkehrbringen von Pflanzenschutzmitteln und zur Aufhebung der Richtlinien 79/117/EWG und 91/414/EWG des Rates" sowie § 33 des "Gesetz zum Schutz der Kulturpflanzen" (PflSchG).
+Außerdem werden die Daten aktuell - zunächst testweise - im OpenAPI-Standard bereitgestellt.
+
+Weitere offizielle Informationen zur API finden sich u.a. hier: https://psm-api.bvl.bund.de/
 
 
 ## adresse
