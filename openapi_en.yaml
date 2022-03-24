@@ -12,13 +12,13 @@ paths:
   /adresse/:
     get:
       description: |-
-        Offers a list of all addresses and names from suppliers/requestors/importing companies of crop protection products.
+        Supplies a list of all addresses and names from suppliers/requestors/importing companies of crop protection products.
         You can also search for just an address by providing the corresponding {adresse_nr} (address id).
         The paramter is optional; if no parameters are supplied, the response contains all entries.
         
         {adresse_nr} is the unique identifier for an address and therefore for one supplier/requestor/importing company. Integer with up to 38 numbers, e.g.: 10784.
       
-        Wenn queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
+        If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
         - application/json
       responses:
@@ -68,16 +68,18 @@ paths:
   /antrag/:
     get:
       description: |-
-        Liefert die ZulassungsantrÃ¤ge und Antragsteller zu aktuell gÃ¼ltigen Pflanzenschutzmitteln (im Endpunkt /mittel).
-                              Optional kann nach der Antragnummer {antragnr}, dem Antragsteller {antragsteller_nr} und/oder der Kennnummer des Mittels gefiltert werden.
-                              Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+        
+        Supplies the registration submissions and requestors for currently valid (registered) crop protection products (endpoint /mittel)
+        Optionally you can filter for request ID {antragnr}, the requestor {antragsteller_nr} and/or the product ID.
+        The paramters are optional; if no parameters are supplied, the response contains all entries.
+        
+        The unique identifier is compiled from request ID {antragnr} and product ID {kennnr}.
+        
+            {antragnr} is the request ID. String of two letters/numbers, e.g. 00.
+            {antragsteller_nr} is the requestor ID, referencing from the /addresse endpoint. Integer with up to 22 numbers, e.g. 10091.
+            {kennr} is the product ID, referencing from the /mittel endpoint. String of exact 9 letters, e.g. 005632-60.
 
-            Der eindeutige Identifizierer setzt sich zusammen aus {antragnr} und {kennr}.
-            {antragnr} ist die Nummer des Antrags. Zeichenfolge aus zwei Zeichen, Bsp: 00.
-            {antragsteller_nr} ist die Nummer des Antragstellers, referenziert aus dem /adresse Endpunkt. Zahl aus maximal 22 Ziffern, Bsp: 10091.
-            {kennr} ist die Kennummer eines Pflanzenschutzmittels, referenziert aus dem /mittel Endpunkt. Zeichenkette aus neun Zeichen, Bsp: 005632-60.
-
-        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+        If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
         - application/json
       responses:
