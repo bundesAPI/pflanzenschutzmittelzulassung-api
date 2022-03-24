@@ -1,34 +1,1803 @@
-openapi: "3.0.0"
+swagger: '2.0'
 info:
-  description: "API Description"
-  version: "1.0.0"
-  title: "Amtsname: API Name"
-
-servers:
-  - url: "https://warnung.bund.de/api31"
-
+  title: ORDS generated API for api-v1
+  version: 1.0.0
+host: psm-api.bvl.bund.de
+basePath: /ords/psm/api-v1
+schemes:
+  - https
+produces:
+  - application/json
 paths:
-  /dashboard/{AGS}.json:
+  /adresse/:
     get:
-      summary: Name of endpoint
+      description: |-
+        Offers a list of all addresses and names from suppliers/requestors/importing companies of crop protection products.
+        You can also search for just an address by providing the corresponding {adresse_nr} (address id).
+        The paramter is optional; if no parameters are supplied, the response contains all entries.
+        
+        {adresse_nr} is the unique identifier for an address and therefore for one supplier/requestor/importing company. Integer with up to 38 numbers, e.g.: 10784.
+      
+        Wenn queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
+      produces:
+        - application/json
       responses:
         '200':
-            description: OK
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/Result'
-      parameters:
-        - in: path
-          required: true
-          name: AGS
+          description: The queried record.
           schema:
-            type: string
-          description: Official area key - can be retrieved from [here](https://www.xrepository.de/api/xrepository/urn:de:bund:destatis:bevoelkerungsstatistik:schluessel:rs_2021-07-31/download/Regionalschl_ssel_2021-07-31.json). The last 7 digits have to be replaced with "0000000" because data is only offered on the area level [Kreisebene](https://de.wikipedia.org/wiki/Amtlicher_Gemeindeschl%C3%BCssel). 
-          example: "example-parameter"
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    ADRESSE_NR:
+                      $ref: '#/definitions/NUMBER'
+                    ANSCHRIFT_1:
+                      $ref: '#/definitions/VARCHAR2'
+                    ANSCHRIFT_2:
+                      $ref: '#/definitions/VARCHAR2'
+                    ANSCHRIFT_3:
+                      $ref: '#/definitions/VARCHAR2'
+                    ANSCHRIFT_4:
+                      $ref: '#/definitions/VARCHAR2'
+                    ANSCHRIFT_5:
+                      $ref: '#/definitions/VARCHAR2'
+                    ANSCHRIFT_6:
+                      $ref: '#/definitions/VARCHAR2'
+                    ANSPRECHPARTNER:
+                      $ref: '#/definitions/VARCHAR2'
+                    E_MAIL:
+                      $ref: '#/definitions/VARCHAR2'
+                    FAX:
+                      $ref: '#/definitions/VARCHAR2'
+                    FIRMA:
+                      $ref: '#/definitions/VARCHAR2'
+                    FIRMENNAME:
+                      $ref: '#/definitions/VARCHAR2'
+                    LAND:
+                      $ref: '#/definitions/VARCHAR2'
+                    TELEFON:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: adresse_nr
+          in: query
+          type: string
+          description: Implicit parameter
+  /antrag/:
+    get:
+      description: |-
+        Liefert die ZulassungsantrÃ¤ge und Antragsteller zu aktuell gÃ¼ltigen Pflanzenschutzmitteln (im Endpunkt /mittel).
+                              Optional kann nach der Antragnummer {antragnr}, dem Antragsteller {antragsteller_nr} und/oder der Kennnummer des Mittels gefiltert werden.
+                              Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
 
-          
-components: 
-    schemas:
-      Result:
-        type: string
+            Der eindeutige Identifizierer setzt sich zusammen aus {antragnr} und {kennr}.
+            {antragnr} ist die Nummer des Antrags. Zeichenfolge aus zwei Zeichen, Bsp: 00.
+            {antragsteller_nr} ist die Nummer des Antragstellers, referenziert aus dem /adresse Endpunkt. Zahl aus maximal 22 Ziffern, Bsp: 10091.
+            {kennr} ist die Kennummer eines Pflanzenschutzmittels, referenziert aus dem /mittel Endpunkt. Zeichenkette aus neun Zeichen, Bsp: 005632-60.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    ANTRAGNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    ANTRAGSTELLER:
+                      $ref: '#/definitions/VARCHAR2'
+                    ANTRAGSTELLER_NR:
+                      $ref: '#/definitions/NUMBER'
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: antragnr
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: antragsteller_nr
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+  /auflage_redu/:
+    get:
+      description: |-
+        Liefert eine Liste der Auflagen mit reduzierten AbstÃ¤nden bei verwendeten GerÃ¤ten verschiedener Abdriftminderungsklassen.
+                              Optional kann nach einer Auflagennummer {auflagenr} gefiltert werden.
+                              Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer wird gebildet aus allen Attributen dieses Endpunkts.
+            {auflagenr} ist die Nummer einer Auflage, referenziert aus dem /auflagen Endpunkt. Ziffernfolge, Bsp: 49804321.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    AUFLAGENR:
+                      $ref: '#/definitions/NUMBER'
+                    KATEGORIE:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    REDU_ABSTAND:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: auflagenr
+          in: query
+          type: string
+          description: Implicit parameter
+  /auflagen/:
+    get:
+      description: |-
+        Liefert die Liste aller gesetzlichen Auflagen zu Mitteln und Anwendungen.
+                              Optional kann nach Auflagennummer {auflagenr}, der Ebene {ebene} und/oder eines Auflagenkodes {auflage} gefiltert werden.
+                              Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            {auflagenr} ist der eindeutige Identifizierer einer Auflage. Ziffernfolge, Bsp: 49747804.
+            {auflage} ist der Kode einer Auflage. Der entsprechende Kode Text kann im /kode Endpunkt angefragt werden. Zeichenkette aus maximal 20 Zeichen, Bsp: WMA.
+            {ebene} ist entweder die Kennnummer eines Mittels (kennr im /mittel Endpunkt, 9 Zeichen) oder der Identifizierer einer Anwendung (awg_id im /awg Endpunkt, 16 Zeichen). Zeichenkette aus maximal 16 Zeichen, Bsp: 024366-00 oder 005190-00/00-004.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    ABSTAND:
+                      $ref: '#/definitions/NUMBER'
+                    ANWENDBEST:
+                      $ref: '#/definitions/CHAR'
+                    ANWENDUNGSTECHNIK:
+                      $ref: '#/definitions/VARCHAR2'
+                    AUFLAGE:
+                      $ref: '#/definitions/VARCHAR2'
+                    AUFLAGENR:
+                      $ref: '#/definitions/NUMBER'
+                    EBENE:
+                      $ref: '#/definitions/VARCHAR2'
+                    KULTUR:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    REDU_ABSTAND:
+                      $ref: '#/definitions/VARCHAR2'
+                    WEITERE_BEDINGUNG:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: auflage
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: auflagenr
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: ebene
+          in: query
+          type: string
+          description: Implicit parameter
+  /awg/:
+    get:
+      description: |-
+        Liefert eine Liste aller zugelassenen Anwendungen. Eine Anwendung beinhaltet ein angewendetes Mittel, eine Kultur, dessen Wachstumsstadium und einen Schadorganismus. Kultur und Schadorganismus kÃ¶nnen Ã¼ber die Endpunkte /awg_kultur und /awg_schadorg abgerufen werden.
+                              Optional kann die ID der Anwendung {awg_id} und/oder die Kennnummer eines Mittels {kennr} Ã¼bergeben werden, um die Ergebnisse zu filtern.
+                              Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            {awg_id} ist der eindeutige Identifizierer einer Anwendung. Zeichenfolge aus 16 Zeichen, Bsp: 007472-60/01-012.
+            {kennr} ist die Kennummer des Mittels auf das sich die Anwendung bezieht, referenziert aus dem /mittel Endpunkt. Zeichenfolge aus 9 Zeichen, Bsp: 007472-60.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    ANTRAGNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    ANWENDUNGEN_ANZ_JE_BEFALL:
+                      $ref: '#/definitions/NUMBER'
+                    ANWENDUNGEN_MAX_JE_KULTUR:
+                      $ref: '#/definitions/NUMBER'
+                    ANWENDUNGEN_MAX_JE_VEGETATION:
+                      $ref: '#/definitions/NUMBER'
+                    ANWENDUNGSBEREICH:
+                      $ref: '#/definitions/VARCHAR2'
+                    ANWENDUNGSTECHNIK:
+                      $ref: '#/definitions/VARCHAR2'
+                    AWGNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    AWG_ID:
+                      $ref: '#/definitions/VARCHAR2'
+                    AW_ABSTAND_BIS:
+                      $ref: '#/definitions/NUMBER'
+                    AW_ABSTAND_EINHEIT:
+                      $ref: '#/definitions/VARCHAR2'
+                    AW_ABSTAND_VON:
+                      $ref: '#/definitions/NUMBER'
+                    EINSATZGEBIET:
+                      $ref: '#/definitions/VARCHAR2'
+                    GENEHMIGUNG:
+                      $ref: '#/definitions/CHAR'
+                    HUK:
+                      $ref: '#/definitions/CHAR'
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    KULTUR_ERL:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    SCHADORG_ERL:
+                      $ref: '#/definitions/VARCHAR2'
+                    STADIUM_KULTUR_BEM:
+                      $ref: '#/definitions/VARCHAR2'
+                    STADIUM_KULTUR_BIS:
+                      $ref: '#/definitions/VARCHAR2'
+                    STADIUM_KULTUR_KODELISTE:
+                      $ref: '#/definitions/NUMBER'
+                    STADIUM_KULTUR_VON:
+                      $ref: '#/definitions/VARCHAR2'
+                    STADIUM_SCHADORG_BEM:
+                      $ref: '#/definitions/VARCHAR2'
+                    STADIUM_SCHADORG_BIS:
+                      $ref: '#/definitions/VARCHAR2'
+                    STADIUM_SCHADORG_KODELISTE:
+                      $ref: '#/definitions/NUMBER'
+                    STADIUM_SCHADORG_VON:
+                      $ref: '#/definitions/VARCHAR2'
+                    WIRKUNGSBEREICH:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: awg_id
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+  /awg_aufwand/:
+    get:
+      description: |-
+        Liefert eine Zuordnung von Anwendungen ({awg_id}) auf vorgeschriebene AufwÃ¤nde/Mengen von Pflanzenschutzmittel und Wasser bei dieser Anwendung.
+                              Optional kann auf einzelnde Anwendungen per {awg_id} gefiltert werden.
+                              Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus der awg_id, der aufwandbedingung und der sortier_nr.
+            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 024785-63/00-002.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    AUFWANDBEDINGUNG:
+                      $ref: '#/definitions/VARCHAR2'
+                    AWG_ID:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_AUFWAND:
+                      $ref: '#/definitions/NUMBER'
+                    M_AUFWAND_EINHEIT:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    SORTIER_NR:
+                      $ref: '#/definitions/NUMBER'
+                    W_AUFWAND_BIS:
+                      $ref: '#/definitions/NUMBER'
+                    W_AUFWAND_EINHEIT:
+                      $ref: '#/definitions/VARCHAR2'
+                    W_AUFWAND_VON:
+                      $ref: '#/definitions/NUMBER'
+      parameters:
+        - name: awg_id
+          in: query
+          type: string
+          description: Implicit parameter
+  /awg_bem/:
+    get:
+      description: |-
+        Liefert eine Liste von Bemerkungen/ErlÃ¤uterungen zu Anwendungen. (&quot;Auflage&quot; hat in diesem Endpunkt KEINE Verbindung zum Endpunkt /auflage!)
+                              Optional kann nach einzelnen Anwendungen ({awg_id}) gefiltert werden.
+                              Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus der awg_id und der auflage_bem.
+            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 034210-64/00-007.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    AUFLAGE_BEM:
+                      $ref: '#/definitions/VARCHAR2'
+                    AUFLAGE_BEREICH:
+                      $ref: '#/definitions/CHAR'
+                    AWG_ID:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: awg_id
+          in: query
+          type: string
+          description: Implicit parameter
+  /awg_kultur/:
+    get:
+      description: |-
+        Liefert eine Zuordnung von Anwendungen zu Kulturen. Wenn das Feld &quot;ausgenommen&quot; &quot;J&quot; beinhaltet, bildet die in &quot;kultur&quot; angegebene Kultur eine Ausnahme und ist nicht in der Anwendung enthalten.
+                                    Optional kann nach einzelnen Anwendungen ({awg_id}) gefiltert werden.
+                                    Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus der awg_id und der kultur.
+            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 042688-00/00-001.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    AUSGENOMMEN:
+                      $ref: '#/definitions/CHAR'
+                    AWG_ID:
+                      $ref: '#/definitions/VARCHAR2'
+                    KULTUR:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    SORTIER_NR:
+                      $ref: '#/definitions/NUMBER'
+      parameters:
+        - name: awg_id
+          in: query
+          type: string
+          description: Implicit parameter
+  /awg_partner/:
+    get:
+      description: |-
+        Liefert die Zuordnung von Anwendungen zu Partnermitteln, die gemeinsam verwendet werden dÃ¼rfen, zum Beipiel als Tankmischungen.
+                                    Optional kann auf eine Anwendung {awg_id} gefiltert werden.
+                                    Der Parameter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus der awg_id und der partner_kennr.
+            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 034078-00/01-003.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    AWG_ID:
+                      $ref: '#/definitions/VARCHAR2'
+                    MISCHUNG_ART:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    PARTNER_KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: awg_id
+          in: query
+          type: string
+          description: Implicit parameter
+  /awg_partner_aufwand/:
+    get:
+      description: |-
+        Liefert die Zuordnung von Anwendungen zu einem Partnermittel inklusive dem maximalen Aufwand.
+                                    Optional kann nach einer Anwendung {awg_id} gefiltert werden.
+                                    Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+
+            Der eindeutige Identifizierer bestimmt sich aus der awg_id, der aufwandbedingung und der partner_kennr.
+            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 024366-00/02-005.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    AUFWANDBEDINGUNG:
+                      $ref: '#/definitions/VARCHAR2'
+                    AWG_ID:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_AUFWAND:
+                      $ref: '#/definitions/NUMBER'
+                    M_AUFWAND_EINHEIT:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    PARTNER_KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: awg_id
+          in: query
+          type: string
+          description: Implicit parameter
+  /awg_schadorg/:
+    get:
+      description: |-
+        Liefert eine Zuordnung von Anwendungen zu Schadorganismen. Wenn das Feld &quot;ausgenommen&quot; &quot;J&quot; beinhaltet, bildet der in &quot;schadorg&quot; angegebene Schadorganismus eine Ausnahme und ist nicht in der Anwendung enthalten.
+                                    Optional kann nach einzelnen Anwendungen ({awg_id}) gefiltert werden.
+                                    Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus der awg_id und dem schadorg.
+            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 043099-63/00-007.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    AUSGENOMMEN:
+                      $ref: '#/definitions/CHAR'
+                    AWG_ID:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    SCHADORG:
+                      $ref: '#/definitions/VARCHAR2'
+                    SORTIER_NR:
+                      $ref: '#/definitions/NUMBER'
+      parameters:
+        - name: awg_id
+          in: query
+          type: string
+          description: Implicit parameter
+  /awg_verwendungszweck/:
+    get:
+      description: |-
+        Liefert die Zuordnung der Anwendungen zu Verwendungszwecken des assoziierten Mittels. Welcher Verwendng die behandelte Kultur also zugefÃ¼hrt werden darf. Kodiert Ã¼ber Kodeliste 31, einzusehen Ã¼ber den Endpunkt /kode.
+                                    Optional kann auf eine Anwendung {awg_id} gefiltert werden.
+                                    Der Paramter ist optional; werden keine Parameter Ã¼bergeben enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus allen Attributen des Endpunkts.
+            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 024436-63/00-069.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    AWG_ID:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    VERWENDUNGSZWECK:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: awg_id
+          in: query
+          type: string
+          description: Implicit parameter
+  /awg_wartezeit/:
+    get:
+      description: |-
+        Liefert die Zuordnung von Anwendungen zu Wartezeiten in Tagen fÃ¼r eine bestimmte Kultur, bis die Anwendung erneut durchgefÃ¼hrt werden kann. Ausgenommene Kulturen sind Ã¼ber den Endpunkt /awg_wartezeit_ausg_kultur abzurufen. Genutzt wird fÃ¼r die Bemerkungen Kodeliste 89, dekodierbar Ã¼ber den Endpunkt /kode.
+                                    Optional kann nach der Wartezeit ID {awg_wartezeit_nr}, der Anwendungs ID {awg_id} oder der Kultur {kultur} gefiltert werden.
+                                    Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            {awg_wartezeit_nr} ist der eindeutige Identifizierer der Zuordnung einer Anwendung zu einer Wartezeit. Ziffernfolge aus maximal 38 Ziffern, Bsp: 151592.
+            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 033274-64/02-001.
+            {kultur} ist der Kode der behandelten Kultur, referenziert aus dem Endpunkt /kultur_gruppe. Zeichenfolge aus maximal 20 Zeichen, Bsp: FRAAN.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    ANWENDUNGSBEREICH:
+                      $ref: '#/definitions/VARCHAR2'
+                    AWG_ID:
+                      $ref: '#/definitions/VARCHAR2'
+                    AWG_WARTEZEIT_NR:
+                      $ref: '#/definitions/NUMBER'
+                    ERLAEUTERUNG:
+                      $ref: '#/definitions/VARCHAR2'
+                    GESETZT_WARTEZEIT:
+                      $ref: '#/definitions/NUMBER'
+                    GESETZT_WARTEZEIT_BEM:
+                      $ref: '#/definitions/VARCHAR2'
+                    KULTUR:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    SORTIER_NR:
+                      $ref: '#/definitions/NUMBER'
+      parameters:
+        - name: awg_id
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: awg_wartezeit_nr
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: kultur
+          in: query
+          type: string
+          description: Implicit parameter
+  /awg_wartezeit_ausg_kultur/:
+    get:
+      description: |-
+        Liefert die Zuordnung von Anwendungswartezeiten auf Kulturen, die fÃ¼r diese Wartezeit ausgenommen sind. Die Wartezeit fÃ¼r die Ã¼brigen Kulturen kann im Endpunkt /awg_wartezeit abgerufen werden.
+                                    Optional kann nach der Wartezeit ID {awg_wartezeit_nr} oder der Kultur {kultur} gefiltert werden.
+                                    Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus sÃ¤mtlichen Attributen des Endpunkts.
+            {awg_wartezeit_nr} ist der Identifizierer der Zuordnung einer Anwendung zu einer Wartezeit aus dem Endpunkt /awg_wartezeit. Ziffernfolge aus maximal 38 Ziffern, Bsp: 129281.
+            {kultur} ist der Kode der behandelten Kultur, referenziert aus dem Endpunkt /kultur_gruppe. Zeichenfolge aus maximal 20 Zeichen, Bsp: VIOWH.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    AWG_WARTEZEIT_NR:
+                      $ref: '#/definitions/NUMBER'
+                    KULTUR:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: awg_wartezeit_nr
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: kultur
+          in: query
+          type: string
+          description: Implicit parameter
+  /awg_zeitpunkt/:
+    get:
+      description: |-
+        Liefert die Zuordnung von Anwendungen zu Zeitpunkten. Es kann mehrere Zeitpunkte pro Anwendung geben, die Ã¼ber das Feld &quot;operand_zu_vorher&quot; aneinandergefÃ¼gt werden in der Reihenfolge nach &quot;sortier_nr&quot;. Die Zeitpunkte sind Ã¼ber Kodeliste 30 kodiert, die Ã¼ber den Endpunkt /kode dekodiert werden kÃ¶nnen.
+                                    Optional kann auf eine Anwendung {awg_id} gefiltert werden.
+                                    Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus der awg_id, und dem zeitpunkt.
+            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 024560-64/04-025.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    AWG_ID:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    OPERAND_ZU_VORHER:
+                      $ref: '#/definitions/VARCHAR2'
+                    SORTIER_NR:
+                      $ref: '#/definitions/NUMBER'
+                    ZEITPUNKT:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: awg_id
+          in: query
+          type: string
+          description: Implicit parameter
+  /awg_zulassung/:
+    get:
+      description: |-
+        Liefert die Zuordnung von Anwendungen zu ihrem Zulassungsende.
+                                    Optional kann nach deiner Anwendung {awg_id} gefiltert werden.
+                                    Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            {awg_id} ist der eindeutige Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 026865-00/00-002.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    AWG_ID:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    ZUL_ENDE:
+                      $ref: '#/definitions/DATE'
+      parameters:
+        - name: awg_id
+          in: query
+          type: string
+          description: Implicit parameter
+  /ghs_gefahrenhinweise/:
+    get:
+      description: |-
+        Liefert eine Zuordnung von Mitteln zu ihren Gefahrenhinweisen. Die Gefahrenhinweise verwenden die Kodeliste 70 und kÃ¶nnen dekodiert werden Ã¼ber den Endpunkt /kode.
+                                    Optional kann auf ein Mittel {kennr} gefiltert werden.
+                                    Die Hinweise entspringen dem &quot;Global harmonisierten System zur Einstufung und Kennzeichnung von Chemikalien&quot;, kurz GHS.
+                                    Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus allen Attributen des Endpunkts.
+            {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenfolge aus 9 Zeichen, Bsp: 024780-67.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    GEFAHRENHINWEIS:
+                      $ref: '#/definitions/VARCHAR2'
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+  /ghs_gefahrensymbole/:
+    get:
+      description: |-
+        Liefert eine Zuordnung von Mitteln zu ihren Gefahrensymbolen. Die Gefahrensymbole verwenden die Kodeliste 40 und kÃ¶nnen dekodiert werden Ã¼ber den Endpunkt /kode.
+                                    Optional kann auf ein Mittel {kennr} gefiltert werden.
+                                    Die Symbole entspringen dem &quot;Global harmonisierten System zur Einstufung und Kennzeichnung von Chemikalien&quot;, kurz GHS.
+                                    Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus allen Attributen des Endpunkts.
+            {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenfolge aus 9 Zeichen, Bsp: 026557-00.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    GEFAHRENSYMBOL:
+                      $ref: '#/definitions/VARCHAR2'
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+  /ghs_sicherheitshinweise/:
+    get:
+      description: |-
+        Liefert eine Zuordnung von Mitteln zu ihren Sicherheitshinweisen. Die Sicherheitshinweise verwenden die Kodeliste 71 und kÃ¶nnen dekodiert werden Ã¼ber den Endpunkt /kode.
+                                    Optional kann auf ein Mittel {kennr} gefiltert werden.
+                                    Die Hinweise entspringen dem &quot;Global harmonisierten System zur Einstufung und Kennzeichnung von Chemikalien&quot;, kurz GHS.
+                                    Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus allen Attributen des Endpunkts.
+            {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenfolge aus 9 Zeichen, Bsp: 024350-61.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    SICHERHEITSHINWEIS:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+  /ghs_signalwoerter/:
+    get:
+      description: |-
+        Liefert eine Zuordnung von Mitteln zu ihren SignalwÃ¶rtern. Die SignalwÃ¶rter verwenden die Kodeliste 76 und kÃ¶nnen dekodiert werden Ã¼ber den Endpunkt /kode.
+                                    Optional kann auf ein Mittel {kennr} gefiltert werden.
+                                    Die WÃ¶rter entspringen dem &quot;Global harmonisierten System zur Einstufung und Kennzeichnung von Chemikalien&quot;, kurz GHS.
+                                    Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus allen Attributen des Endpunkts.
+            {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenfolge aus 9 Zeichen, Bsp: 008263-00.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    SIGNALWORT:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+  /hinweis/:
+    get:
+      description: |-
+        Liefert eine Zuordnung von Ebenen (Mitteln und Anwendungen) zu Hinweisen. Die Hinweise verwenden die Kodeliste 74 und kÃ¶nnen dekodiert werden Ã¼ber den Endpunkt /kode.
+                                    Optional kann nach einer Ebene {ebene} (einem Mittel/einer Anwendung) gefiltert werden.
+                                    Der Paramter ist optional; werden keine Parameter Ã¼bergeben enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus der {ebene} und dem hinweis.
+            {ebene} ist entweder die Kennnummer eines Mittels (kennr im /mittel Endpunkt, 9 Zeichen) oder der Identifizierer einer Anwendung (awg_id im /awg Endpunkt, 16 Zeichen). Zeichenkette aus maximal 16 Zeichen, Bsp: 027821-61.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    EBENE:
+                      $ref: '#/definitions/VARCHAR2'
+                    HINWEIS:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: ebene
+          in: query
+          type: string
+          description: Implicit parameter
+  /kode/:
+    get:
+      description: |-
+        Liefert die Zuordnung von Kodes, Kodelisten und Sprache auf den Kodetext. Verwendet zur Dekodierung verschiedener Kodes aus anderen Tabellen.
+                                    Optional kann auf einen Kode, die dazugehÃ¶rige Kodeliste und/oder eine Sprache gefiltert werden.
+                                    Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus dem {kode}, der {kodeliste} und der {sprache}.
+            {kode} ist ein Kode, der in anderen Tabellen als Kodierung fÃ¼r Werte verwendet wird. Zeichenkette aus maximal 20 Zeichen, Bsp: ASPOF.
+            {kodeliste} ist die Nummer der Liste, der der ensprechende Kode entnommen ist. Die Bedeutung der Liste kann dem Endpoint /kodeliste entnommen werden. Ziffernfolge aus maximal 3 Ziffern, Bsp: 948.
+            {sprache} ist die Sprache in der der Kodetext geliefert werden soll. Aktuell bereitgestellt werden DE, GB und teilweise VA (Latein). Zeichenkette aus maximal 20 Zeichen, Bsp: DE.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    KODE:
+                      $ref: '#/definitions/VARCHAR2'
+                    KODELISTE:
+                      $ref: '#/definitions/NUMBER'
+                    KODETEXT:
+                      $ref: '#/definitions/VARCHAR2'
+                    SPERRE:
+                      $ref: '#/definitions/CHAR'
+                    SPRACHE:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: kode
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: kodeliste
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: sprache
+          in: query
+          type: string
+          description: Implicit parameter
+  /kodeliste/:
+    get:
+      description: |-
+        Liefert eine Auflistung der Kodelisten inklusive dem Listennamen, also der testlichen Beschreibung wofÃ¼r die Liste steht.
+                                    Optional kann nut auf eine Kodeliste {kodeliste} gefiltert werden.
+                                    Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            {kodeliste} ist der eindeutige Identifizierer der Liste. Ziffernfolge aus maximal 3 Ziffern, Bsp: 3.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    KODELISTE:
+                      $ref: '#/definitions/NUMBER'
+                    LISTENNAME:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: kodeliste
+          in: query
+          type: string
+          description: Implicit parameter
+  /kodeliste_feldname/:
+    get:
+      description: |-
+        Liefert eine Zuordnung von Kodelistennummer auf die Tabelle und das Feld in dem diese Kodeliste verwendet wird.
+                                    Optional kann nach Kodelistennummer {kodeliste} und/oder Tabellennamen {tabelle} und/oder Spaltennamen {feldname} gefiltert werden.
+                                    Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus der {tabelle}, der {kodeliste} und dem {feldname}.
+            {tabelle} ist der Name einer Tabelle, in der eine Kodeliste verwendet wird. Zeichenkette aus maximal 30 Zeichen, Bsp: ADRESSE.
+            {kodeliste} ist die Nummer der Liste, die in der Spalte verwendet wird. Ziffernfolge aus maximal 3 Ziffern, Bsp: 3.
+            {feldname} ist der Name der Spalte, in der eine Kodeliste verwendet wird. Zeichenkette aus maximal 30 Zeichen, Bsp: LAND.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    FELDNAME:
+                      $ref: '#/definitions/VARCHAR2'
+                    KODELISTE:
+                      $ref: '#/definitions/NUMBER'
+                    TABELLE:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: feldname
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: kodeliste
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: tabelle
+          in: query
+          type: string
+          description: Implicit parameter
+  /kultur_gruppe/:
+    get:
+      description: |-
+        Liefert eine Liste der Kulturen und der korrespondierenden Kulturgruppe. Der Enpunkt ist eine ReprÃ¤sentation einer Baumstruktur. kultur_gruppe ist dabei ein Parent, dem das Child kultur zugeordnet ist. Eine Kulturgruppe kann mehrere Kulturen als Children besitzen, eine Kultur kann mehrere Parents haben. Da der Baum mehrere Stufen hat, stehen einige Kulturen als Child (kultur) UND als Parent (kultur_gruppe) in unterschiedlichen Zeilen.
+                                    Optional kann auf eine Kultur {kultur} oder eine Kulturgruppe {kultur_gruppe} gefiltert werden.
+                                    Bei einer Ã¼bergebenen {kultur} enthÃ¤lt die RÃ¼ckgabe nur die direkten Parents, also Kulturgruppen zu der korrepondierenden Kultur.
+                                    Bei einer Ã¼bergebenen {kultur_gruppe} enthÃ¤lt die RÃ¼ckgabe nur die direkten Children, also Kulturen zu der korrepondierenden Kulturgruppe.
+                                    Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer bestimmt sich aus der {kultur}, und der {kultur_gruppe}.
+            {kultur} ist der Kode einer Kultur (Child). Zeichenkette aus maximal 20 Zeichen, Bsp: CAFPA.
+            {kulturgruppe} ist der Kode der Kulturgruppe der zugeordneten Kultur (Parent). Zeichenkette aus maximal 20 Zeichen, Bsp: NNNZT.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    KULTUR:
+                      $ref: '#/definitions/VARCHAR2'
+                    KULTUR_GRUPPE:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: kultur
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: kultur_gruppe
+          in: query
+          type: string
+          description: Implicit parameter
+  /mittel/:
+    get:
+      description: |-
+        Liefert eine Liste aller zugelassenen Pflanzeschutzmittel.
+                                  Optional kann auf eine Zulassungsnummer/Kennummer {kennr} gefiltert werden.
+                                  Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+                {kennr} ist der eindeutige Identifizierer, die Kennummer/Zulassungsnummer eines Mittels. Zeichenkette aus 9 Zeichen, Bsp: 024213-73.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    FORMULIERUNG_ART:
+                      $ref: '#/definitions/VARCHAR2'
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    MITTELNAME:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    ZUL_ENDE:
+                      $ref: '#/definitions/DATE'
+                    ZUL_ERSTMALIG_AM:
+                      $ref: '#/definitions/DATE'
+      parameters:
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+  /mittel_abgelaufen/:
+    get:
+      description: |-
+        Liefert eine Liste der abgelaufenen Pflanzenschutzmittel, inklusive Aufbrauchfrist. Weitere Informationen sind nur unter den Endpunkten /wirkstoff und /wirkstoff_gehalt enthalten. Andere Referenzen wurden entfernt.
+                                  Optional kann auf eine Kennummer {kennr} gefiltert werden.
+                                  Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+                {kennr} ist der eindeutige Identifizierer, die Kennummer eines abgelaufenen Mittels. Zeichenkette aus 9 Zeichen, Bsp: 050023-61.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    AUFBRAUCHFRIST:
+                      $ref: '#/definitions/DATE'
+                    FORMULIERUNG_ART:
+                      $ref: '#/definitions/VARCHAR2'
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    MITTELNAME:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    STATUS:
+                      $ref: '#/definitions/VARCHAR2'
+                    ZUL_ENDE:
+                      $ref: '#/definitions/DATE'
+                    ZUL_ERSTMALIG_AM:
+                      $ref: '#/definitions/DATE'
+      parameters:
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+  /mittel_abpackung/:
+    get:
+      description: |-
+        Liefert eine Liste der Packungsinformationen fÃ¼r Mittel.
+                                  Optional kann auf die Kennummer eines Mittels {kennr} gefiltert werden.
+                                  Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+                Der eindeutige Identifizierer setzt sich aus allen Attributen des Endpunkts zusammen.
+                {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 033274-64.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    ANZAHL:
+                      $ref: '#/definitions/VARCHAR2'
+                    INHALT_EINHEIT:
+                      $ref: '#/definitions/VARCHAR2'
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    MENGE:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    NICHTBERUFLICHE_ANWENDER:
+                      $ref: '#/definitions/CHAR'
+                    VERPACKUNGSART:
+                      $ref: '#/definitions/VARCHAR2'
+                    VERPACKUNGSMATERIAL:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+  /mittel_gefahren_symbol/:
+    get:
+      description: |-
+        Liefert eine Zuordnung von Mitteln zu Gefahrensymbolen.
+                                  Optional kann auf eine Mittel Kennummer {kennr} gefiltert werden.
+                                  Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+                Der eindeutige Identifizierer setzt sich aus der {kennr} und dem gefahren_symbol zusammen.
+                {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 006978-00.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    GEFAHREN_SYMBOL:
+                      $ref: '#/definitions/VARCHAR2'
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+  /mittel_vertrieb/:
+    get:
+      description: |-
+        Liefert die Zuordnung von Mitteln zu Vetriebsfirmen dieser Mittel.
+                                  Optional kann auf ein Mittel {kennr} oder eine Vertriebsfirma {vertriebsfirma_nr} gefiltert werden.
+
+                Der eindeutige Identifizierer setzt sich aus der{kennr} und der {vertriebsfirma_nr} zusammen.
+                {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 00A502-00.
+                {vertriebsfirma_nr} ist die Nummer der Vertriebsfirma, referenziert aus dem Endpunkt /adresse. Ziffernfolge aus maximal 22 Ziffern, Bsp: 11281.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    VERTRIEBSFIRMA:
+                      $ref: '#/definitions/VARCHAR2'
+                    VERTRIEBSFIRMA_NR:
+                      $ref: '#/definitions/NUMBER'
+      parameters:
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: vertriebsfirma_nr
+          in: query
+          type: string
+          description: Implicit parameter
+  /mittel_wirkbereich/:
+    get:
+      description: |-
+        Liefert eine Liste von Zuordnungen von Mitteln zu Wirkbereichen. Die konkreten Anwendungen sind abgebildet in Endpunkt /awg. Das Feld &quot;wirkungsbereich&quot; nutzt die Kodeliste 21, die Ã¼ber den Endpunkt /kode dekodiert werden kann.
+                                  Optional kann auf ein Mittel {kennr} oder einen  Wirkungsbereich {wirkungsbereich} gefiltert werden.
+                                  Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+                Der eindeutige Identifizierer setzt sich aus der {kennr} und dem {wirkungsbreich} zusammen.
+                {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 006335-00.
+                {wirkungsbereich} ist der Kode fÃ¼r den Wirkungsbereich eines Mittels. Die Dekodierung lÃ¤uft Ã¼ber den Endpunkt /kode. Zeichenfolge aus 20 Zeichen, Bsp: F.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    WIRKUNGSBEREICH:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: wirkungsbereich
+          in: query
+          type: string
+          description: Implicit parameter
+  /parallelimport_abgelaufen/:
+    get:
+      description: |-
+        Liefert eine Liste der abgelaufenen Parallelimporte (Mittel aus anderen LÃ¤ndern die identisch sind zu in Deutschland zugelassenen Mitteln) zu ihren Referenzmitteln.
+                                  Optional kann auf ein Referenzmittel {pi_referenz_kennr} oder einen Importeur {importeur_nr) gefiltert werden.
+                                  Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+                Der eindeutige Identifizierer setzt sich aus allen Attributen des Endpunktes zusammen.
+                {pi_referenz_kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 006768-00.
+                {importeur_nr} ist die Nummer des Importeurs, referenziert wird die adresse_nr des Endpunktes /adresse. Zeichenfolge aus 20 Zeichen, Bsp: 12158.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    BESCHEID_DATUM:
+                      $ref: '#/definitions/DATE'
+                    BESCHEINIGUNG:
+                      $ref: '#/definitions/CHAR'
+                    GUELTIG:
+                      $ref: '#/definitions/DATE'
+                    IMPORTEUR:
+                      $ref: '#/definitions/VARCHAR2'
+                    IMPORTEUR_NR:
+                      $ref: '#/definitions/NUMBER'
+                    IMPORTEUR_TXT:
+                      $ref: '#/definitions/VARCHAR2'
+                    MITTELNAME:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    PI_BESCHEIDNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    PI_KENNZIFFER:
+                      $ref: '#/definitions/VARCHAR2'
+                    PI_MITTELNAME:
+                      $ref: '#/definitions/VARCHAR2'
+                    PI_PSMNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    PI_REFERENZ_KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    PI_STATUS:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: importeur_nr
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: pi_referenz_kennr
+          in: query
+          type: string
+          description: Implicit parameter
+  /parallelimport_gueltig/:
+    get:
+      description: |-
+        Liefert eine Liste der gÃ¼ltigen Parallelimporte (Mittel aus anderen LÃ¤ndern die identisch sind zu in Deutschland zugelassenen Mitteln) zu ihren Referenzmitteln.
+                                  Optional kann auf ein Referenzmittel {pi_referenz_kennr} oder einen Importeur {importeur_nr) gefiltert werden.
+                                  Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+                Der eindeutige Identifizierer setzt sich aus allen Attributen des Endpunktes zusammen.
+                {pi_referenz_kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 006767-00.
+                {importeur_nr} ist die Nummer des Importeurs, referenziert wird die adresse_nr des Endpunktes /adresse. Zeichenfolge aus 20 Zeichen, Bsp: 12158.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    BESCHEID_DATUM:
+                      $ref: '#/definitions/DATE'
+                    BESCHEINIGUNG:
+                      $ref: '#/definitions/CHAR'
+                    GUELTIG:
+                      $ref: '#/definitions/DATE'
+                    IMPORTEUR:
+                      $ref: '#/definitions/VARCHAR2'
+                    IMPORTEUR_NR:
+                      $ref: '#/definitions/NUMBER'
+                    IMPORTEUR_TXT:
+                      $ref: '#/definitions/VARCHAR2'
+                    MITTELNAME:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    PI_BESCHEIDNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    PI_KENNZIFFER:
+                      $ref: '#/definitions/VARCHAR2'
+                    PI_MITTELNAME:
+                      $ref: '#/definitions/VARCHAR2'
+                    PI_PSMNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    PI_REFERENZ_KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    PI_STATUS:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: importeur_nr
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: pi_referenz_kennr
+          in: query
+          type: string
+          description: Implicit parameter
+  /schadorg_gruppe/:
+    get:
+      description: |-
+        Liefert eine Liste der Schadorganismen und der korrespondierenden Schadorganismengruppe. Der Enpunkt ist eine ReprÃ¤sentation einer Baumstruktur. schadorg_gruppe ist dabei ein Parent, dem das Child schadorg zugeordnet ist. Eine Schagorganismusgruppe kann mehrere Schadorganismen als Children besitzen, ein Schadorganismus kann mehrere Parents haben. Da der Baum mehrere Stufen hat, stehen einige Schadorganismen als Child (schadorg) UND als Parent (schadorg_gruppe) in unterschiedlichen Zeilen.
+                                  Optional kann auf einen Schadorganismus {schadorg} oder eine Schadorganismusgruppe {schadorg_gruppe} gefiltert werden.
+                                  Bei einer Ã¼bergebenen {schadorg} enthÃ¤lt die RÃ¼ckgabe nur die direkten Parents, also Schadorganismusgruppen zum korrepondierenden Schadorganismus.
+                                  Bei einer Ã¼bergebenen {schadorg_gruppe} enthÃ¤lt die RÃ¼ckgabe nur die direkten Children, also Schadorganismen zu der korrepondierenden Schadorganismusgruppe.
+                                  Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+                Der eindeutige Identifizierer bestimmt sich aus dem {schadorg}, und der {schadorg_gruppe}.
+                {schadorg} ist der Kode eines Schadorganismus. (Child). Zeichenkette aus maximal 20 Zeichen, Bsp: BRORM.
+                {schadorg_gruppe} ist der Kode der Schdorganismusgruppe des zugeordneten Schadorganismus. (Parent). Zeichenkette aus maximal 20 Zeichen, Bsp: TTTMM.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    SCHADORG:
+                      $ref: '#/definitions/VARCHAR2'
+                    SCHADORG_GRUPPE:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: schadorg
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: schadorg_gruppe
+          in: query
+          type: string
+          description: Implicit parameter
+  /staerkung/:
+    get:
+      description: |-
+        Liefert eine Liste von zugelassenen StÃ¤rkungsmitteln.
+                                  Optional kann auf die Kennummer des StÃ¤rkungsmittels {kennr} und/oder den Anstragsteller {antragsteller_nr} gefiltert werden.
+                                  Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+                {kennr} ist der eindeutige Identifizierer, die Kennummer einer StÃ¤rkung, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 025125-00.
+                {antragsteller_nr} ist die Nummer des Antragstellers, referenziert wird die adresse_nr des Endpunktes /adresse. Zeichenfolge aus 20 Zeichen, Bsp: 10612.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    ANTRAGSTELLER:
+                      $ref: '#/definitions/VARCHAR2'
+                    ANTRAGSTELLER_NR:
+                      $ref: '#/definitions/NUMBER'
+                    GENEHMIGUNG_AM:
+                      $ref: '#/definitions/DATE'
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    MITTELNAME:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: antragsteller_nr
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+  /staerkung_vertrieb/:
+    get:
+      description: |-
+        Liefert eine Zuordnung von StÃ¤rungsmitteln auf die Vertriebsfirmen der StÃ¤rkungsmittel.
+                                  Optional kann auf die Kennummer des StÃ¤rkungsmittels {kennr} und/oder die Vertriebsfirma {vertriebsfirma_nr} gefiltert werden.
+                                  Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            {kennr] ist der eindeutige Identifizierer, die Kennummer einer StÃ¤rkung, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 007713-00.
+            {vertriebsfirma_nr} ist die Nummer der Vertriebsfirma, referenziert wird die adresse_nr des Endpunktes /adresse. Zeichenfolge aus 20 Zeichen, Bsp: 12791.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    VERTRIEBSFIRMA:
+                      $ref: '#/definitions/VARCHAR2'
+                    VERTRIEBSFIRMA_NR:
+                      $ref: '#/definitions/NUMBER'
+      parameters:
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: vertriebsfirma_nr
+          in: query
+          type: string
+          description: Implicit parameter
+  /stand/:
+    get:
+      description: |-
+        Liefert das Release-Datum fÃ¼r den aktuellen Datenbestand. Das heiÃŸt, das Datum an dem die Daten das letzte Mal aktualisiert wurden.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    DATUM:
+                      $ref: '#/definitions/DATE'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters: []
+  /wirkstoff/:
+    get:
+      description: |-
+        Liefert eine Liste von zugelassenen Wirkstoffen.
+                                    Optional kann auf einen Wirkstoff anhand der korrespondierenden Wirknummer {wirknr} gefiltert werden.
+                                    Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            {wirknr} ist der eindeutige Identifizierer des Wirkstoffes. Zeichenkette aus maximal 4 Zeichen, Bsp: 1122.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    GENEHMIGT:
+                      $ref: '#/definitions/CHAR'
+                    KATEGORIE:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    WIRKNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    WIRKSTOFFNAME:
+                      $ref: '#/definitions/VARCHAR2'
+                    WIRKSTOFFNAME_EN:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: wirknr
+          in: query
+          type: string
+          description: Implicit parameter
+  /wirkstoff_gehalt/:
+    get:
+      description: |-
+        Liefert eine Zuordnung der Mittel und des korrespondierenden Wirkstoffgehalts.
+                                    Optional kann auf die Nummer eines Wirkstoffes {wirknr} und/oder eines Mittels {kennr} gefiltert werden.
+                                    Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer setzt sich zusammen aus der {wirknr}, der {kennr} und der wirkvar.
+            {wirknr} ist die Nummer des Wirkstoffes, referenziert aus dem Endpunkt /wirkstoff. Zeichenkette aus maximal 4 Zeichen, Bsp: 0875.
+            {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 024994-00.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    GEHALT_BIO:
+                      $ref: '#/definitions/NUMBER'
+                    GEHALT_BIO_EINHEIT:
+                      $ref: '#/definitions/VARCHAR2'
+                    GEHALT_EINHEIT:
+                      $ref: '#/definitions/VARCHAR2'
+                    GEHALT_REIN:
+                      $ref: '#/definitions/NUMBER'
+                    GEHALT_REIN_GRUNDSTRUKTUR:
+                      $ref: '#/definitions/NUMBER'
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    WIRKNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    WIRKVAR:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: wirknr
+          in: query
+          type: string
+          description: Implicit parameter
+  /zusatzstoff/:
+    get:
+      description: |-
+        Liefert eine Liste der Zusatzstoffe zu Mitteln.
+                                    Optional kann auf die Nummer des Zusatzstoffes {:kennr} oder die Nummer eines Antragstellers {antragsteller_nr} gefiltert werden.
+                                    Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            {kennr} ist der eindeutige Identifizierer, die Kennummer des Zusatzstoffes. Zeichenfolge aus 9 Zeichen, Bsp: 008339-00.
+            {antragsteller_nr} ist die Nummer des Antragsstellers, referenziert wird die adresse_nr des Endpunktes /adresse. Ziffernfolge aus maximal 22 Ziffern, Bsp: 12051.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    ANTRAGSTELLER:
+                      $ref: '#/definitions/VARCHAR2'
+                    ANTRAGSTELLER_NR:
+                      $ref: '#/definitions/NUMBER'
+                    GENEHMIGUNGSENDE:
+                      $ref: '#/definitions/DATE'
+                    GENEHMIGUNG_AM:
+                      $ref: '#/definitions/DATE'
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    MITTELNAME:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+      parameters:
+        - name: antragsteller_nr
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+  /zusatzstoff_vertrieb/:
+    get:
+      description: |-
+        Liefert eine Zuordnung von Zusatzstoffen auf die Vertriebsfirmen der Zusatzstoffe.
+                                    Optional kann auf die Kennummer des Zusatzstoffes {kennr} und/oder die Vertriebsfirma {vertriebsfirma_nr} gefiltert werden.
+                                    Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+
+            Der eindeutige Identifizierer setzt sich zusammen aus allen Attributen des Endpunkts.
+            {kennr} ist die Kennummer des Zusatzstoffes, referenziert aus dem Endpunkt /zusatzstoff. Zeichenkette aus 9 Zeichen, Bsp: 005697-00.
+            {vertriebsfirma_nr} ist die Nummer der Vertriebsfirma, referenziert wird die adresse_nr des Endpunktes /adresse. Ziffernfolge aus maximal 22 Ziffern, Bsp: 10799.
+
+        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: The queried record.
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    KENNR:
+                      $ref: '#/definitions/VARCHAR2'
+                    M_ROW$$:
+                      $ref: '#/definitions/VARCHAR2'
+                    VERTRIEBSFIRMA:
+                      $ref: '#/definitions/VARCHAR2'
+                    VERTRIEBSFIRMA_NR:
+                      $ref: '#/definitions/NUMBER'
+      parameters:
+        - name: kennr
+          in: query
+          type: string
+          description: Implicit parameter
+        - name: vertriebsfirma_nr
+          in: query
+          type: string
+          description: Implicit parameter
+definitions:
+  CHAR:
+    type: string
+  DATE:
+    type: string
+    format: date-time
+    pattern: ^\d{4}-[01]\d-[0123]\dT[012]\d:[0-5]\d:[0-5]\d(.\d+)?(Z|([-+][012]\d:[0-5]\d))$
+  NUMBER:
+    type: number
+  VARCHAR2:
+    type: string
