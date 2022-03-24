@@ -71,7 +71,7 @@ paths:
         
         Supplies the registration submissions and requestors for currently valid (registered) crop protection products (endpoint /mittel)
         Optionally you can filter for request ID {antragnr}, the requestor {antragsteller_nr} and/or the product ID.
-        The paramters are optional; if no parameters are supplied, the response contains all entries.
+        The parameters are optional; if no parameters are supplied, the response contains all entries.
         
         The unique identifier is compiled from request ID {antragnr} and product ID {kennnr}.
         
@@ -119,14 +119,14 @@ paths:
   /auflage_redu/:
     get:
       description: |-
-        Liefert eine Liste der Auflagen mit reduzierten AbstÃ¤nden bei verwendeten GerÃ¤ten verschiedener Abdriftminderungsklassen.
-                              Optional kann nach einer Auflagennummer {auflagenr} gefiltert werden.
-                              Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+        Supplies a list of constraints with reduced distances for used appliances varying drift reduction classes (Abdriftminderungsklassen).
+        Optionally, you can filter for a constraint ID  {auflagenr}.
+        The parameter is optional; if no parameters are supplied, the response contains all entries.
 
-            Der eindeutige Identifizierer wird gebildet aus allen Attributen dieses Endpunkts.
-            {auflagenr} ist die Nummer einer Auflage, referenziert aus dem /auflagen Endpunkt. Ziffernfolge, Bsp: 49804321.
+        The unique ID is compiled from all attributes of this endpoint
+           {auflagenr} is the constraint ID, referencing the /auflagen endpoint. Integer, e.g. 49804321.
 
-        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+        If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
         - application/json
       responses:
