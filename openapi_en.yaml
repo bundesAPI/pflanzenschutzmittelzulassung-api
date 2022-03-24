@@ -156,15 +156,16 @@ paths:
   /auflagen/:
     get:
       description: |-
-        Liefert die Liste aller gesetzlichen Auflagen zu Mitteln und Anwendungen.
-                              Optional kann nach Auflagennummer {auflagenr}, der Ebene {ebene} und/oder eines Auflagenkodes {auflage} gefiltert werden.
-                              Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+        Supplies the list all regulatory (legal) constraints for products and applications.
+           Optionally, you can filter for a constraint ID {auflagenr}, the layer {ebene} and/or a constraint code {auflage}.
+           The parameters are optional; if no parameters are supplied, the response contains all entries.
 
-            {auflagenr} ist der eindeutige Identifizierer einer Auflage. Ziffernfolge, Bsp: 49747804.
-            {auflage} ist der Kode einer Auflage. Der entsprechende Kode Text kann im /kode Endpunkt angefragt werden. Zeichenkette aus maximal 20 Zeichen, Bsp: WMA.
-            {ebene} ist entweder die Kennnummer eines Mittels (kennr im /mittel Endpunkt, 9 Zeichen) oder der Identifizierer einer Anwendung (awg_id im /awg Endpunkt, 16 Zeichen). Zeichenkette aus maximal 16 Zeichen, Bsp: 024366-00 oder 005190-00/00-004.
+            {auflagenr} is the constraint ID. Integer, e.g. 49747804.
+            {auflage} is the constraint code. The associated code can queried from the /kode endpoint. String with up to 20 letters, e.g. WMA.
+            
+            {ebene} is either the product code (kennr in the /mittel endpoint, 9 letters) or the application ID (awg_id in the /awg endpoint, 16 letters). String with up to 16 letters/numbers, e.g.: 024366-00 oder 005190-00/00-004.
 
-        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+        If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
         - application/json
       responses:
