@@ -302,14 +302,15 @@ paths:
   /awg_aufwand/:
     get:
       description: |-
-        Liefert eine Zuordnung von Anwendungen ({awg_id}) auf vorgeschriebene AufwÃ¤nde/Mengen von Pflanzenschutzmittel und Wasser bei dieser Anwendung.
-                              Optional kann auf einzelnde Anwendungen per {awg_id} gefiltert werden.
-                              Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+        Supplies a list of applications for registered application amounts of crop protection products and water for this application.
+        Optionally, you can filter for a single application {awg_id}.
+        
+        The parameter is optional; if no parameter is supplied, the response contains all entries.
 
-            Der eindeutige Identifizierer bestimmt sich aus der awg_id, der aufwandbedingung und der sortier_nr.
-            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 024785-63/00-002.
+        The unique identifier is compiled from the application ID awg_id, the application conditions aufwandbedingung and the sort number.
+        {awg_id} is the application ID, referencing from the /awg endpoint. String with 16 letters, e.g. 024785-63/00-002.
 
-        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+        If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
         - application/json
       responses:
@@ -349,14 +350,16 @@ paths:
   /awg_bem/:
     get:
       description: |-
-        Liefert eine Liste von Bemerkungen/ErlÃ¤uterungen zu Anwendungen. (&quot;Auflage&quot; hat in diesem Endpunkt KEINE Verbindung zum Endpunkt /auflage!)
-                              Optional kann nach einzelnen Anwendungen ({awg_id}) gefiltert werden.
-                              Der Paramter ist optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+        Supplies a list of comments/descriptions for applications. (&quot;Auflage&quot; has no connection to /auflage!)
+        Optionally, you can filter for a single application ID {awg_id}.
+        
+        The parameter is optional; if no parameter is supplied, the response contains all entries.
+    
+        The uniqute identifier is compiled from the application ID awg_id and the constraint comment auflage_bem.
+        
+        {awg_id} is the application ID, referencing the /awg endpoint. String of 16 letters/numbers, e.g. 034210-64/00-007.
 
-            Der eindeutige Identifizierer bestimmt sich aus der awg_id und der auflage_bem.
-            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 034210-64/00-007.
-
-        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+        If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
         - application/json
       responses:
