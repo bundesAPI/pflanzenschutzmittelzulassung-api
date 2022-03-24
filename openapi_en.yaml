@@ -215,14 +215,14 @@ paths:
   /awg/:
     get:
       description: |-
-        Liefert eine Liste aller zugelassenen Anwendungen. Eine Anwendung beinhaltet ein angewendetes Mittel, eine Kultur, dessen Wachstumsstadium und einen Schadorganismus. Kultur und Schadorganismus kÃ¶nnen Ã¼ber die Endpunkte /awg_kultur und /awg_schadorg abgerufen werden.
-                              Optional kann die ID der Anwendung {awg_id} und/oder die Kennnummer eines Mittels {kennr} Ã¼bergeben werden, um die Ergebnisse zu filtern.
-                              Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+        Supplies a list all registered applications. An application contains an applied product, a crop, its growth stage and a pest (target organism). Crop and pest can be queried from the endpoints /awg_kultur and /awg_schadorg.
+        Optionally you can filter for an application ID {awg_id} and/or a product ID {kennr}.
+        The parameters are optional; if no parameters are supplied, the response contains all entries.
 
-            {awg_id} ist der eindeutige Identifizierer einer Anwendung. Zeichenfolge aus 16 Zeichen, Bsp: 007472-60/01-012.
-            {kennr} ist die Kennummer des Mittels auf das sich die Anwendung bezieht, referenziert aus dem /mittel Endpunkt. Zeichenfolge aus 9 Zeichen, Bsp: 007472-60.
+            {awg_id} is the unique application ID. String with up to 16 letters/numbers, e.g. 007472-60/01-012.
+            {kennr} is the product ID which the application contains, referenced from the /mittel endpoint. String with 9 letters/numbers, e.g. 007472-60.
 
-        Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, kÃ¶nnen gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt &quot;*JSON Queries*&quot; in der oberen allgemeinen API Beschreibung
+        If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
         - application/json
       responses:
