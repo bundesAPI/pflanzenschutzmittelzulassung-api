@@ -634,6 +634,7 @@ Weitere offizielle Informationen zur API finden sich u.a. hier: https://psm-api.
  Wenn auf andere Parameter gefiltert oder Teilabfragen gestellt werden sollen, können gesonderte Filtermethoden verwendet werden. Siehe dazu Abschnitt "*JSON Queries*" in der oberen allgemeinen API Beschreibung
 
 
+## Beispiel
 
 ```bash
 result=$(curl -m 60 https://psm-api.bvl.bund.de/ords/psm/api-v1/adresse)
