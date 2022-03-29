@@ -467,13 +467,13 @@ paths:
   /awg_partner_aufwand/:
     get:
       description: |-
-        Liefert die Zuordnung von Anwendungen zu einem Partnermittel inklusive dem maximalen Aufwand.
-                                    Optional kann nach einer Anwendung {awg_id} gefiltert werden.
-                                    The parameter is optional; if no parameter is supplied, the response contains all entries.
+        Supplies the relation from applications to a partner product incl. maximum application amounts.
+        Optionally, you can filter by an application via {awg_id}.
+        The parameter is optional; if no parameters are supplied, the response contains all entries.
 
-
-            Der eindeutige Identifizierer bestimmt sich aus der awg_id, der aufwandbedingung und der partner_kennr.
-            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 024366-00/02-005.
+        The unique identifier is compiled from the application ID awg_id, the application condition aufwandbedingung and the partner code partner_kennnr.
+      
+        {awg_id} is the application's identifier, referencing from the /awg endpoint. String with 16 characters, e.g. 024366-00/02-005.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -509,12 +509,14 @@ paths:
   /awg_schadorg/:
     get:
       description: |-
-        Liefert eine Zuordnung von Anwendungen zu Schadorganismen. Wenn das Feld &quot;ausgenommen&quot; &quot;J&quot; beinhaltet, bildet der in &quot;schadorg&quot; angegebene Schadorganismus eine Ausnahme und ist nicht in der Anwendung enthalten.
-                                    Optional kann nach einzelnen Anwendungen ({awg_id}) gefiltert werden.
-                                    The parameter is optional; if no parameter is supplied, the response contains all entries.
+        Supplies the relation from application to target organisms. If the field &quot;ausgenommen&quot; (excluded) contains &quot;J&quot; supplied in field &quot;schadorg&quot; is treated as an exclusion and will not be contained in the result.
+        
+        Optionally, you can filter by an application via the application ID {awg_id}).
 
-            Der eindeutige Identifizierer bestimmt sich aus der awg_id und dem schadorg.
-            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 043099-63/00-007.
+        The parameter is optional; if no parameter is supplied, the response contains all entries.
+        # TODO 
+        Der eindeutige Identifizierer bestimmt sich aus der awg_id und dem schadorg.
+        {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 043099-63/00-007.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
