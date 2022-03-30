@@ -514,9 +514,9 @@ paths:
         Optionally, you can filter by an application via the application ID {awg_id}).
 
         The parameter is optional; if no parameter is supplied, the response contains all entries.
-        # TODO 
-        Der eindeutige Identifizierer bestimmt sich aus der awg_id und dem schadorg.
-        {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 043099-63/00-007.
+        
+        The unique identifier is compiled from the application ID awg_id and the target organism schadorg.
+        {awg_id} is the application ID, referencing the endpoint /awg. String with 16 characters, e.g. 043099-63/00-007.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -550,12 +550,14 @@ paths:
   /awg_verwendungszweck/:
     get:
       description: |-
-        Liefert die Zuordnung der Anwendungen zu Verwendungszwecken des assoziierten Mittels. Welcher Verwendng die behandelte Kultur also zugefÃ¼hrt werden darf. Kodiert Ã¼ber Kodeliste 31, einzusehen Ã¼ber den Endpunkt /kode.
-                                    Optional kann auf eine Anwendung {awg_id} gefiltert werden.
-                                    Der Paramter ist optional; werden keine Parameter Ã¼bergeben enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+        Supplies the relation from applications to designated uses of the associated product, meaning which designated use the treated crop is allowed.
+        The code is encoded in code list 31, decoded via endpoint /kode.
 
-            Der eindeutige Identifizierer bestimmt sich aus allen Attributen des Endpunkts.
-            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 024436-63/00-069.
+        Optionally, you can filter for an application via {awg_id}.
+        The parameter is optional; if no parameter is supplied, the response contains all entries.
+
+        The unique identifier is compiled from all attributes of the endpoint.
+        {awg_id} is application ID, referencing the endpoint /awg. String with 16 characters, e.g. 024436-63/00-069.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
