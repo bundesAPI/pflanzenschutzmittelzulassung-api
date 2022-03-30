@@ -587,7 +587,11 @@ paths:
   /awg_wartezeit/:
     get:
       description: |-
-        Liefert die Zuordnung von Anwendungen zu Wartezeiten in Tagen fÃ¼r eine bestimmte Kultur, bis die Anwendung erneut durchgefÃ¼hrt werden kann. Ausgenommene Kulturen sind Ã¼ber den Endpunkt /awg_wartezeit_ausg_kultur abzurufen. Genutzt wird fÃ¼r die Bemerkungen Kodeliste 89, dekodierbar Ã¼ber den Endpunkt /kode.
+        Supplies the relation from applications to the required waiting period for a specific crop, until the application can be repeated.
+        Excluded crops can be queried via the endpoint /awg_wartezeit_ausg_kultur. 
+        # TODO
+        
+        Genutzt wird fÃ¼r die Bemerkungen Kodeliste 89, dekodierbar Ã¼ber den Endpunkt /kode.
                                     Optional kann nach der Wartezeit ID {awg_wartezeit_nr}, der Anwendungs ID {awg_id} oder der Kultur {kultur} gefiltert werden.
                                     The parameters are optional; if no parameters are supplied, the response contains all entries.
 
