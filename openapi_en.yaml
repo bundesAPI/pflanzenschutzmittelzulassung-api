@@ -908,12 +908,14 @@ paths:
   /hinweis/:
     get:
       description: |-
+        Supplies a relation of layers (products and applications) to risk and safety statements. 
+        # TODO
         Liefert eine Zuordnung von Ebenen (Mitteln und Anwendungen) zu Hinweisen. Die Hinweise verwenden die Kodeliste 74 und kÃ¶nnen dekodiert werden Ã¼ber den Endpunkt /kode.
-                                    Optional kann nach einer Ebene {ebene} (einem Mittel/einer Anwendung) gefiltert werden.
-                                    Der Paramter ist optional; werden keine Parameter Ã¼bergeben enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
+        Optional kann nach einer Ebene {ebene} (einem Mittel/einer Anwendung) gefiltert werden.
+        Der Paramter ist optional; werden keine Parameter Ã¼bergeben enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
 
-            Der eindeutige Identifizierer bestimmt sich aus der {ebene} und dem hinweis.
-            {ebene} ist entweder die Kennnummer eines Mittels (kennr im /mittel Endpunkt, 9 Zeichen) oder der Identifizierer einer Anwendung (awg_id im /awg Endpunkt, 16 Zeichen). Zeichenkette aus maximal 16 Zeichen, Bsp: 027821-61.
+        Der eindeutige Identifizierer bestimmt sich aus der {ebene} und dem hinweis.
+        {ebene} ist entweder die Kennnummer eines Mittels (kennr im /mittel Endpunkt, 9 Zeichen) oder der Identifizierer einer Anwendung (awg_id im /awg Endpunkt, 16 Zeichen). Zeichenkette aus maximal 16 Zeichen, Bsp: 027821-61.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
