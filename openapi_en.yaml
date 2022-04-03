@@ -219,8 +219,8 @@ paths:
         Optionally you can filter for an application ID {awg_id} and/or a product ID {kennr}.
         The parameters are optional; if no parameters are supplied, the response contains all entries.
 
-            {awg_id} is the unique application ID. String with up to 16 characters, e.g. 007472-60/01-012.
-            {kennr} is the product ID which the application contains, referenced from the /mittel endpoint. String with 9 characters, e.g. 007472-60.
+        {awg_id} is the unique application ID. String with up to 16 characters, e.g. 007472-60/01-012.
+        {kennr} is the product ID which the application contains, referenced from the /mittel endpoint. String with 9 characters, e.g. 007472-60.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -728,12 +728,11 @@ paths:
   /awg_zulassung/:
     get:
       description: |-
-        # TODO
-        Liefert die Zuordnung von Anwendungen zu ihrem Zulassungsende.
-                                    Optional kann nach deiner Anwendung {awg_id} gefiltert werden.
-                                    The parameter is optional; if no parameter is supplied, the response contains all entries.
+        Supplies the relation between an application to its registration expiry .
+        Optionally, you can filter by the application ID {awg_id}.
+        The parameter is optional; if no parameter is supplied, the response contains all entries.
 
-            {awg_id} ist der eindeutige Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 026865-00/00-002.
+        {awg_id} is the unique application ID. String with up to 16 characters, e.g. 007472-60/01-012.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -763,13 +762,13 @@ paths:
   /ghs_gefahrenhinweise/:
     get:
       description: |-
-        Liefert eine Zuordnung von Mitteln zu ihren Gefahrenhinweisen. Die Gefahrenhinweise verwenden die Kodeliste 70 und kÃ¶nnen dekodiert werden Ã¼ber den Endpunkt /kode.
-                                    Optional kann auf ein Mittel {kennr} gefiltert werden.
-                                    Die Hinweise entspringen dem &quot;Global harmonisierten System zur Einstufung und Kennzeichnung von Chemikalien&quot;, kurz GHS.
-                                    The parameter is optional; if no parameter is supplied, the response contains all entries.
+        Supplies a relation between products and its safety instructions. The safety instructions are encoded in code list 70 and can be decoded via the endpoint /kode.
+        Optionally you can filter via a product code {kennr}.
+        The instructions originate from the &quot;Globally Harmonized System of Classification, Labelling and Packaging of Chemicals&quot; (short: GHS).
+        The parameter is optional; if no parameter is supplied, the response contains all entries.
 
-            Der eindeutige Identifizierer bestimmt sich aus allen Attributen des Endpunkts.
-            {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenfolge aus 9 Zeichen, Bsp: 024780-67.
+        The unique ID is compiled from all attributes of this endpoint
+        {kennr} is the product code, referenced in the product endpoint /mittel. String of 9 characters, e.g. 024780-67.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -799,12 +798,13 @@ paths:
   /ghs_gefahrensymbole/:
     get:
       description: |-
+        # TODO
         Liefert eine Zuordnung von Mitteln zu ihren Gefahrensymbolen. Die Gefahrensymbole verwenden die Kodeliste 40 und kÃ¶nnen dekodiert werden Ã¼ber den Endpunkt /kode.
                                     Optional kann auf ein Mittel {kennr} gefiltert werden.
                                     Die Symbole entspringen dem &quot;Global harmonisierten System zur Einstufung und Kennzeichnung von Chemikalien&quot;, kurz GHS.
                                     The parameter is optional; if no parameter is supplied, the response contains all entries.
 
-            Der eindeutige Identifizierer bestimmt sich aus allen Attributen des Endpunkts.
+            The unique ID is compiled from all attributes of this endpoint
             {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenfolge aus 9 Zeichen, Bsp: 026557-00.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
@@ -840,7 +840,7 @@ paths:
                                     Die Hinweise entspringen dem &quot;Global harmonisierten System zur Einstufung und Kennzeichnung von Chemikalien&quot;, kurz GHS.
                                     The parameter is optional; if no parameter is supplied, the response contains all entries.
 
-            Der eindeutige Identifizierer bestimmt sich aus allen Attributen des Endpunkts.
+            The unique ID is compiled from all attributes of this endpoint
             {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenfolge aus 9 Zeichen, Bsp: 024350-61.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
@@ -876,7 +876,7 @@ paths:
                                     Die WÃ¶rter entspringen dem &quot;Global harmonisierten System zur Einstufung und Kennzeichnung von Chemikalien&quot;, kurz GHS.
                                     The parameter is optional; if no parameter is supplied, the response contains all entries.
 
-            Der eindeutige Identifizierer bestimmt sich aus allen Attributen des Endpunkts.
+            The unique ID is compiled from all attributes of this endpoint
             {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenfolge aus 9 Zeichen, Bsp: 008263-00.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
