@@ -762,7 +762,7 @@ paths:
   /ghs_gefahrenhinweise/:
     get:
       description: |-
-        Supplies a relation between products and its safety instructions. The safety instructions are encoded in code list 70 and can be decoded via the endpoint /kode.
+        Supplies a relation between products and its hazard statements. The hazard statements are encoded in code list 70 and can be decoded via the endpoint /kode.
         Optionally you can filter via a product code {kennr}.
         The instructions originate from the &quot;Globally Harmonized System of Classification, Labelling and Packaging of Chemicals&quot; (short: GHS).
         The parameter is optional; if no parameter is supplied, the response contains all entries.
@@ -798,14 +798,15 @@ paths:
   /ghs_gefahrensymbole/:
     get:
       description: |-
-        # TODO
-        Liefert eine Zuordnung von Mitteln zu ihren Gefahrensymbolen. Die Gefahrensymbole verwenden die Kodeliste 40 und kÃ¶nnen dekodiert werden Ã¼ber den Endpunkt /kode.
-                                    Optional kann auf ein Mittel {kennr} gefiltert werden.
-                                    Die Symbole entspringen dem &quot;Global harmonisierten System zur Einstufung und Kennzeichnung von Chemikalien&quot;, kurz GHS.
-                                    The parameter is optional; if no parameter is supplied, the response contains all entries.
+        Supplies a relation of products to its GHS hazard pictograms (symbols). The symboles are encoded in code list 40 and can be decoded via endpoint /kode.
+         
+        Optionally, you can filter via product code {kennnr}
 
-            The unique ID is compiled from all attributes of this endpoint
-            {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenfolge aus 9 Zeichen, Bsp: 026557-00.
+        The symbols originate from the &quot;Globally Harmonized System of Classification, Labelling and Packaging of Chemicals&quot; (short: GHS).
+        The parameter is optional; if no parameter is supplied, the response contains all entries.
+
+        The unique ID is compiled from all attributes of this endpoint
+        {kennr} is the product code, referenced in the product endpoint /mittel. String of 9 characters, e.g. 026557-00.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -835,13 +836,13 @@ paths:
   /ghs_sicherheitshinweise/:
     get:
       description: |-
-        Liefert eine Zuordnung von Mitteln zu ihren Sicherheitshinweisen. Die Sicherheitshinweise verwenden die Kodeliste 71 und kÃ¶nnen dekodiert werden Ã¼ber den Endpunkt /kode.
-                                    Optional kann auf ein Mittel {kennr} gefiltert werden.
-                                    Die Hinweise entspringen dem &quot;Global harmonisierten System zur Einstufung und Kennzeichnung von Chemikalien&quot;, kurz GHS.
-                                    The parameter is optional; if no parameter is supplied, the response contains all entries.
+        Supplies a relation between products to its precautionary statements. The precautionary statements are encoded in code list 71 and can be decodede via the endpoint /kode.
+        Optionally, you can filter via the product code {kennnr}.
+        The precautionary statements originate from the &quot;Globally Harmonized System of Classification, Labelling and Packaging of Chemicals&quot; (short: GHS).
+        The parameter is optional; if no parameter is supplied, the response contains all entries.
 
-            The unique ID is compiled from all attributes of this endpoint
-            {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenfolge aus 9 Zeichen, Bsp: 024350-61.
+        The unique ID is compiled from all attributes of this endpoint
+        {kennr} is the product code, referenced in the product endpoint /mittel. String of 9 characters, e.g. 024350-61.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -871,13 +872,13 @@ paths:
   /ghs_signalwoerter/:
     get:
       description: |-
-        Liefert eine Zuordnung von Mitteln zu ihren SignalwÃ¶rtern. Die SignalwÃ¶rter verwenden die Kodeliste 76 und kÃ¶nnen dekodiert werden Ã¼ber den Endpunkt /kode.
-                                    Optional kann auf ein Mittel {kennr} gefiltert werden.
-                                    Die WÃ¶rter entspringen dem &quot;Global harmonisierten System zur Einstufung und Kennzeichnung von Chemikalien&quot;, kurz GHS.
-                                    The parameter is optional; if no parameter is supplied, the response contains all entries.
+        Supplies a relation between products to its signal words. The signal words are encoded in code list 76 and can be decoded via endpint /kode.
+        Optionally, you can filter via the product code {kennnr}.
+        The signal words originate from the &quot;Globally Harmonized System of Classification, Labelling and Packaging of Chemicals&quot; (short: GHS).
+        The parameter is optional; if no parameter is supplied, the response contains all entries.
 
-            The unique ID is compiled from all attributes of this endpoint
-            {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenfolge aus 9 Zeichen, Bsp: 008263-00.
+        The unique ID is compiled from all attributes of this endpoint
+        {kennr} is the product code, referenced in the product endpoint /mittel. String of 9 characters, e.g. 008263-00.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
