@@ -589,15 +589,15 @@ paths:
       description: |-
         Supplies the relation from applications to the required waiting period for a specific crop, until the application can be repeated.
         Excluded crops can be queried via the endpoint /awg_wartezeit_ausg_kultur. 
-        # TODO
         
-        Genutzt wird fÃ¼r die Bemerkungen Kodeliste 89, dekodierbar Ã¼ber den Endpunkt /kode.
-                                    Optional kann nach der Wartezeit ID {awg_wartezeit_nr}, der Anwendungs ID {awg_id} oder der Kultur {kultur} gefiltert werden.
-                                    The parameters are optional; if no parameters are supplied, the response contains all entries.
+        For comments, the code list 89 are used, which can be queried from the endpoint /kode.
+        Optionally, you can filter by the waiting period ID {awg_wartezeit_nr}, the application ID {awg_id} or the crop {kultur}.
 
-            {awg_wartezeit_nr} ist der eindeutige Identifizierer der Zuordnung einer Anwendung zu einer Wartezeit. Ziffernfolge aus maximal 38 Ziffern, Bsp: 151592.
-            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 033274-64/02-001.
-            {kultur} ist der Kode der behandelten Kultur, referenziert aus dem Endpunkt /kultur_gruppe. Zeichenfolge aus maximal 20 Zeichen, Bsp: FRAAN.
+        The parameters are optional; if no parameters are supplied, the response contains all entries.
+
+        {awg_wartezeit_nr} is the unique ID for a relation between an application and its waiting period. Integer up to 38 numbers, e.g. 151592.
+        {awg_id} is the application ID, encoded in the application endpoint /awg. String with 16 characters, e.g. 033274-64/02-001.
+        {kultur} is the treated crop's code, referenced in the crop group endpoint /kultur_gruppe. String with up to 20 characters, e.g. FRAAN.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -647,13 +647,14 @@ paths:
   /awg_wartezeit_ausg_kultur/:
     get:
       description: |-
-        Liefert die Zuordnung von Anwendungswartezeiten auf Kulturen, die fÃ¼r diese Wartezeit ausgenommen sind. Die Wartezeit fÃ¼r die Ã¼brigen Kulturen kann im Endpunkt /awg_wartezeit abgerufen werden.
-                                    Optional kann nach der Wartezeit ID {awg_wartezeit_nr} oder der Kultur {kultur} gefiltert werden.
-                                    The parameters are optional; if no parameters are supplied, the response contains all entries.
+        Supplies a list of excluded crops for application waiting periods. The waiting period for all other crops can be queried from application waiting period endpoint /awg_wartezeit abgerufen werden.
 
-            Der eindeutige Identifizierer bestimmt sich aus sÃ¤mtlichen Attributen des Endpunkts.
-            {awg_wartezeit_nr} ist der Identifizierer der Zuordnung einer Anwendung zu einer Wartezeit aus dem Endpunkt /awg_wartezeit. Ziffernfolge aus maximal 38 Ziffern, Bsp: 129281.
-            {kultur} ist der Kode der behandelten Kultur, referenziert aus dem Endpunkt /kultur_gruppe. Zeichenfolge aus maximal 20 Zeichen, Bsp: VIOWH.
+        Optionally, you can filter by waiting period ID {awg_wartezeit_nr} or the crop {kultur}.
+        The parameters are optional; if no parameters are supplied, the response contains all entries.
+
+        The unique ID is compiled from all attributes of this endpoint.
+        {awg_wartezeit_nr} is the identifier for a relation between an application to a waiting period, encoded in endpoint /awg_wartezeit. Integer with up to 38 numbers, e.g. 129281.
+        {kultur} is the crop's code, referencing the crop group endpoint /kultur_gruppe. String with up to 20 characters, e.g. VIOWH.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -687,12 +688,13 @@ paths:
   /awg_zeitpunkt/:
     get:
       description: |-
-        Liefert die Zuordnung von Anwendungen zu Zeitpunkten. Es kann mehrere Zeitpunkte pro Anwendung geben, die Ã¼ber das Feld &quot;operand_zu_vorher&quot; aneinandergefÃ¼gt werden in der Reihenfolge nach &quot;sortier_nr&quot;. Die Zeitpunkte sind Ã¼ber Kodeliste 30 kodiert, die Ã¼ber den Endpunkt /kode dekodiert werden kÃ¶nnen.
-                                    Optional kann auf eine Anwendung {awg_id} gefiltert werden.
-                                    The parameter is optional; if no parameter is supplied, the response contains all entries.
+        Supplies the relation from application to timings. There can be multiple timings per application, which are combined via the field &quot;operand_zu_vorher&quot; (operator before) and sorted via the field &quot;sortier_nr&quot; (order number). The timings are encoded via code list 30, which can be queried via the endpoint /kode.
+        Optionally, you can filter via an application ID {awg_id}.
+        The parameter is optional; if no parameter is supplied, the response contains all entries.
 
-            Der eindeutige Identifizierer bestimmt sich aus der awg_id, und dem zeitpunkt.
-            {awg_id} ist der Identifizierer einer Anwendung, referenziert aus dem Endpunkt /awg. Zeichenfolge aus 16 Zeichen, Bsp: 024560-64/04-025.
+        The unique identifier is compiled from the application_id awg_id and the timing.
+      
+        {awg_id} is the application ID, referencing the endpoint /awg. String with 16 characters, e.g. 024560-64/04-025.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -726,6 +728,7 @@ paths:
   /awg_zulassung/:
     get:
       description: |-
+        # TODO
         Liefert die Zuordnung von Anwendungen zu ihrem Zulassungsende.
                                     Optional kann nach deiner Anwendung {awg_id} gefiltert werden.
                                     The parameter is optional; if no parameter is supplied, the response contains all entries.
