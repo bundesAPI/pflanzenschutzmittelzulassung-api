@@ -157,13 +157,13 @@ paths:
     get:
       description: |-
         Supplies the list all regulatory (legal) constraints for products and applications.
-           Optionally, you can filter for a constraint ID {auflagenr}, the layer {ebene} and/or a constraint code {auflage}.
-           The parameters are optional; if no parameters are supplied, the response contains all entries.
+        Optionally, you can filter for a constraint ID {auflagenr}, the layer {ebene} and/or a constraint code {auflage}.
+        The parameters are optional; if no parameters are supplied, the response contains all entries.
 
-            {auflagenr} is the constraint ID. Integer, e.g. 49747804.
-            {auflage} is the constraint code. The associated code can queried from the /kode endpoint. String with up to 20 letters, e.g. WMA.
-            
-            {ebene} is either the product code (kennr in the /mittel endpoint, 9 letters) or the application ID (awg_id in the /awg endpoint, 16 letters). String with up to 16 characters, e.g.: 024366-00 oder 005190-00/00-004.
+        {auflagenr} is the constraint ID. Integer, e.g. 49747804.
+        {auflage} is the constraint code. The associated code can queried from the /kode endpoint. String with up to 20 letters, e.g. WMA.
+        
+        {ebene} is either the product code (kennr in the /mittel endpoint, 9 letters) or the application ID (awg_id in the /awg endpoint, 16 letters). String with up to 16 characters, e.g.: 024366-00 oder 005190-00/00-004.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -909,13 +909,15 @@ paths:
     get:
       description: |-
         Supplies a relation of layers (products and applications) to risk and safety statements. 
-        # TODO
-        Liefert eine Zuordnung von Ebenen (Mitteln und Anwendungen) zu Hinweisen. Die Hinweise verwenden die Kodeliste 74 und kÃ¶nnen dekodiert werden Ã¼ber den Endpunkt /kode.
-        Optional kann nach einer Ebene {ebene} (einem Mittel/einer Anwendung) gefiltert werden.
-        Der Paramter ist optional; werden keine Parameter Ã¼bergeben enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
 
-        Der eindeutige Identifizierer bestimmt sich aus der {ebene} und dem hinweis.
-        {ebene} ist entweder die Kennnummer eines Mittels (kennr im /mittel Endpunkt, 9 Zeichen) oder der Identifizierer einer Anwendung (awg_id im /awg Endpunkt, 16 Zeichen). Zeichenkette aus maximal 16 Zeichen, Bsp: 027821-61.
+        The statements are encoded in code list 74 and can decoded via the endpoint /kode.
+        Optionally, you can filter via a layer {ebene} (a product/an application).
+        
+        The parameter is optional; if no parameter is supplied, the response contains all entries.
+
+        The unique ID is compiled from the layer {ebene} and the statement.
+        {ebene} is either the product code (kennnr from product endpoint /mittel, 9 characters) or the application ID (awg_id from the application endpoint /awg, 16 characters)
+        String with maximum 16 characters, e.g. 027821-61.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -945,14 +947,16 @@ paths:
   /kode/:
     get:
       description: |-
-        Liefert die Zuordnung von Kodes, Kodelisten und Sprache auf den Kodetext. Verwendet zur Dekodierung verschiedener Kodes aus anderen Tabellen.
-                                    Optional kann auf einen Kode, die dazugehÃ¶rige Kodeliste und/oder eine Sprache gefiltert werden.
-                                    The parameters are optional; if no parameters are supplied, the response contains all entries.
+        Supplies the relation from codes, code lists and languages to the code text. This correlates different codes from other tables to decode.
 
-            Der eindeutige Identifizierer bestimmt sich aus dem {kode}, der {kodeliste} und der {sprache}.
-            {kode} ist ein Kode, der in anderen Tabellen als Kodierung fÃ¼r Werte verwendet wird. Zeichenkette aus maximal 20 Zeichen, Bsp: ASPOF.
-            {kodeliste} ist die Nummer der Liste, der der ensprechende Kode entnommen ist. Die Bedeutung der Liste kann dem Endpoint /kodeliste entnommen werden. Ziffernfolge aus maximal 3 Ziffern, Bsp: 948.
-            {sprache} ist die Sprache in der der Kodetext geliefert werden soll. Aktuell bereitgestellt werden DE, GB und teilweise VA (Latein). Zeichenkette aus maximal 20 Zeichen, Bsp: DE.
+        Optionally, you can filter by code, the related code list and/or a language.
+        The parameters are optional; if no parameters are supplied, the response contains all entries.
+
+        The unique identifier is compiled from the code {kode}, the code list {kodeliste} and the language {sprache}.
+        {kode} is a code, which is listed in other tables as a code for values. String with up to 20 characters, e.g. ASPOF.
+        {kodeliste} is the code list number, from which the code is taken. The list's meaning can be retrieved from the code list endpoint /kodelist. Integer with up to three numbers, e.g. 948
+        
+        {sprache} is the requested language for the code text. Currently available are DE (German), GB (British English) and partially VA (Latein). String with up to 2 characters, e.g. DE.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -994,11 +998,11 @@ paths:
   /kodeliste/:
     get:
       description: |-
-        Liefert eine Auflistung der Kodelisten inklusive dem Listennamen, also der testlichen Beschreibung wofÃ¼r die Liste steht.
-                                    Optional kann nut auf eine Kodeliste {kodeliste} gefiltert werden.
-                                    The parameters are optional; if no parameters are supplied, the response contains all entries.
+        Supplies a list of code lists incl. the list name, describing what this list is about.
+        Optionally, you can filter by a code list {kodeliste}.
+        The parameters are optional; if no parameters are supplied, the response contains all entries.
 
-            {kodeliste} ist der eindeutige Identifizierer der Liste. Ziffernfolge aus maximal 3 Ziffern, Bsp: 3.
+        {kodeliste} is the unique identifier of the list. String with up to 3 numbers, e.g. 3.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -1027,13 +1031,13 @@ paths:
     get:
       description: |-
         Liefert eine Zuordnung von Kodelistennummer auf die Tabelle und das Feld in dem diese Kodeliste verwendet wird.
-                                    Optional kann nach Kodelistennummer {kodeliste} und/oder Tabellennamen {tabelle} und/oder Spaltennamen {feldname} gefiltert werden.
-                                    The parameters are optional; if no parameters are supplied, the response contains all entries.
+        Optional kann nach Kodelistennummer {kodeliste} und/oder Tabellennamen {tabelle} und/oder Spaltennamen {feldname} gefiltert werden.
+        The parameters are optional; if no parameters are supplied, the response contains all entries.
 
-            Der eindeutige Identifizierer bestimmt sich aus der {tabelle}, der {kodeliste} und dem {feldname}.
-            {tabelle} ist der Name einer Tabelle, in der eine Kodeliste verwendet wird. Zeichenkette aus maximal 30 Zeichen, Bsp: ADRESSE.
-            {kodeliste} ist die Nummer der Liste, die in der Spalte verwendet wird. Ziffernfolge aus maximal 3 Ziffern, Bsp: 3.
-            {feldname} ist der Name der Spalte, in der eine Kodeliste verwendet wird. Zeichenkette aus maximal 30 Zeichen, Bsp: LAND.
+        The unique identifier is compiled from der {tabelle}, der {kodeliste} und dem {feldname}.
+        {tabelle} ist der Name einer Tabelle, in der eine Kodeliste verwendet wird. Zeichenkette aus maximal 30 Zeichen, Bsp: ADRESSE.
+        {kodeliste} ist die Nummer der Liste, die in der Spalte verwendet wird. Ziffernfolge aus maximal 3 Ziffern, Bsp: 3.
+        {feldname} ist der Name der Spalte, in der eine Kodeliste verwendet wird. Zeichenkette aus maximal 30 Zeichen, Bsp: LAND.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -1072,14 +1076,14 @@ paths:
     get:
       description: |-
         Liefert eine Liste der Kulturen und der korrespondierenden Kulturgruppe. Der Enpunkt ist eine ReprÃ¤sentation einer Baumstruktur. kultur_gruppe ist dabei ein Parent, dem das Child kultur zugeordnet ist. Eine Kulturgruppe kann mehrere Kulturen als Children besitzen, eine Kultur kann mehrere Parents haben. Da der Baum mehrere Stufen hat, stehen einige Kulturen als Child (kultur) UND als Parent (kultur_gruppe) in unterschiedlichen Zeilen.
-                                    Optional kann auf eine Kultur {kultur} oder eine Kulturgruppe {kultur_gruppe} gefiltert werden.
-                                    Bei einer Ã¼bergebenen {kultur} enthÃ¤lt die RÃ¼ckgabe nur die direkten Parents, also Kulturgruppen zu der korrepondierenden Kultur.
-                                    Bei einer Ã¼bergebenen {kultur_gruppe} enthÃ¤lt die RÃ¼ckgabe nur die direkten Children, also Kulturen zu der korrepondierenden Kulturgruppe.
-                                    The parameters are optional; if no parameters are supplied, the response contains all entries.
+        Optional kann auf eine Kultur {kultur} oder eine Kulturgruppe {kultur_gruppe} gefiltert werden.
+        Bei einer Ã¼bergebenen {kultur} enthÃ¤lt die RÃ¼ckgabe nur die direkten Parents, also Kulturgruppen zu der korrepondierenden Kultur.
+        Bei einer Ã¼bergebenen {kultur_gruppe} enthÃ¤lt die RÃ¼ckgabe nur die direkten Children, also Kulturen zu der korrepondierenden Kulturgruppe.
+        The parameters are optional; if no parameters are supplied, the response contains all entries.
 
-            Der eindeutige Identifizierer bestimmt sich aus der {kultur}, und der {kultur_gruppe}.
-            {kultur} ist der Kode einer Kultur (Child). Zeichenkette aus maximal 20 Zeichen, Bsp: CAFPA.
-            {kulturgruppe} ist der Kode der Kulturgruppe der zugeordneten Kultur (Parent). Zeichenkette aus maximal 20 Zeichen, Bsp: NNNZT.
+        The unique identifier is compiled from der {kultur}, und der {kultur_gruppe}.
+        {kultur} ist der Kode einer Kultur (Child). Zeichenkette aus maximal 20 Zeichen, Bsp: CAFPA.
+        {kulturgruppe} ist der Kode der Kulturgruppe der zugeordneten Kultur (Parent). Zeichenkette aus maximal 20 Zeichen, Bsp: NNNZT.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -1114,10 +1118,10 @@ paths:
     get:
       description: |-
         Liefert eine Liste aller zugelassenen Pflanzeschutzmittel.
-                                  Optional kann auf eine Zulassungsnummer/Kennummer {kennr} gefiltert werden.
-                                  The parameter is optional; if no parameter is supplied, the response contains all entries.
+        Optional kann auf eine Zulassungsnummer/Kennummer {kennr} gefiltert werden.
+        The parameter is optional; if no parameter is supplied, the response contains all entries.
 
-                {kennr} ist der eindeutige Identifizierer, die Kennummer/Zulassungsnummer eines Mittels. Zeichenkette aus 9 Zeichen, Bsp: 024213-73.
+        {kennr} ist der eindeutige Identifizierer, die Kennummer/Zulassungsnummer eines Mittels. Zeichenkette aus 9 Zeichen, Bsp: 024213-73.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -1154,10 +1158,10 @@ paths:
     get:
       description: |-
         Liefert eine Liste der abgelaufenen Pflanzenschutzmittel, inklusive Aufbrauchfrist. Weitere Informationen sind nur unter den Endpunkten /wirkstoff und /wirkstoff_gehalt enthalten. Andere Referenzen wurden entfernt.
-                                  Optional kann auf eine Kennummer {kennr} gefiltert werden.
-                                  The parameter is optional; if no parameter is supplied, the response contains all entries.
+        Optional kann auf eine Kennummer {kennr} gefiltert werden.
+        The parameter is optional; if no parameter is supplied, the response contains all entries.
 
-                {kennr} ist der eindeutige Identifizierer, die Kennummer eines abgelaufenen Mittels. Zeichenkette aus 9 Zeichen, Bsp: 050023-61.
+        {kennr} ist der eindeutige Identifizierer, die Kennummer eines abgelaufenen Mittels. Zeichenkette aus 9 Zeichen, Bsp: 050023-61.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -1198,11 +1202,11 @@ paths:
     get:
       description: |-
         Liefert eine Liste der Packungsinformationen fÃ¼r Mittel.
-                                  Optional kann auf die Kennummer eines Mittels {kennr} gefiltert werden.
-                                  The parameter is optional; if no parameter is supplied, the response contains all entries.
+        Optional kann auf die Kennummer eines Mittels {kennr} gefiltert werden.
+        The parameter is optional; if no parameter is supplied, the response contains all entries.
 
-                Der eindeutige Identifizierer setzt sich aus allen Attributen des Endpunkts zusammen.
-                {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 033274-64.
+        Der eindeutige Identifizierer setzt sich aus allen Attributen des Endpunkts zusammen.
+        {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 033274-64.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -1488,7 +1492,7 @@ paths:
                                   Bei einer Ã¼bergebenen {schadorg_gruppe} enthÃ¤lt die RÃ¼ckgabe nur die direkten Children, also Schadorganismen zu der korrepondierenden Schadorganismusgruppe.
                                   The parameters are optional; if no parameters are supplied, the response contains all entries.
 
-                Der eindeutige Identifizierer bestimmt sich aus dem {schadorg}, und der {schadorg_gruppe}.
+                The unique identifier is compiled from dem {schadorg}, und der {schadorg_gruppe}.
                 {schadorg} ist der Kode eines Schadorganismus. (Child). Zeichenkette aus maximal 20 Zeichen, Bsp: BRORM.
                 {schadorg_gruppe} ist der Kode der Schdorganismusgruppe des zugeordneten Schadorganismus. (Parent). Zeichenkette aus maximal 20 Zeichen, Bsp: TTTMM.
 
