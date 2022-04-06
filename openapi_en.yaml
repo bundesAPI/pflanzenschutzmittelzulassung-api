@@ -1030,14 +1030,14 @@ paths:
   /kodeliste_feldname/:
     get:
       description: |-
-        Liefert eine Zuordnung von Kodelistennummer auf die Tabelle und das Feld in dem diese Kodeliste verwendet wird.
-        Optional kann nach Kodelistennummer {kodeliste} und/oder Tabellennamen {tabelle} und/oder Spaltennamen {feldname} gefiltert werden.
+        Supplies a relation of code list numbers to the table and the field in which the code list is used.
+        Optionally, you can filter via code list numbers {kodeliste}, the table name {tabelle} and/or the field name {feldname}.
         The parameters are optional; if no parameters are supplied, the response contains all entries.
 
-        The unique identifier is compiled from der {tabelle}, der {kodeliste} und dem {feldname}.
-        {tabelle} ist der Name einer Tabelle, in der eine Kodeliste verwendet wird. Zeichenkette aus maximal 30 Zeichen, Bsp: ADRESSE.
-        {kodeliste} ist die Nummer der Liste, die in der Spalte verwendet wird. Ziffernfolge aus maximal 3 Ziffern, Bsp: 3.
-        {feldname} ist der Name der Spalte, in der eine Kodeliste verwendet wird. Zeichenkette aus maximal 30 Zeichen, Bsp: LAND.
+        The unique identifier is compiled from the table name {tabelle}, the code list {kodeliste} and the field name {feldname}.
+        {tabelle} is the table name, in which the code list is used. String with maximum 30 characters, e.g. ADRESSE.
+        {kodeliste} is the list number which is used in that field. Integers with maximum 3 numbers, e.g. 3.
+        {feldname} is the field name, in which a code list is used. String with maximal 30 characters, e.g. LAND.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -1075,7 +1075,9 @@ paths:
   /kultur_gruppe/:
     get:
       description: |-
-        Liefert eine Liste der Kulturen und der korrespondierenden Kulturgruppe. Der Enpunkt ist eine ReprÃ¤sentation einer Baumstruktur. kultur_gruppe ist dabei ein Parent, dem das Child kultur zugeordnet ist. Eine Kulturgruppe kann mehrere Kulturen als Children besitzen, eine Kultur kann mehrere Parents haben. Da der Baum mehrere Stufen hat, stehen einige Kulturen als Child (kultur) UND als Parent (kultur_gruppe) in unterschiedlichen Zeilen.
+        Supplies a list of crops and their corresponding crop group.
+        # TODO
+        Der Enpunkt ist eine ReprÃ¤sentation einer Baumstruktur. kultur_gruppe ist dabei ein Parent, dem das Child kultur zugeordnet ist. Eine Kulturgruppe kann mehrere Kulturen als Children besitzen, eine Kultur kann mehrere Parents haben. Da der Baum mehrere Stufen hat, stehen einige Kulturen als Child (kultur) UND als Parent (kultur_gruppe) in unterschiedlichen Zeilen.
         Optional kann auf eine Kultur {kultur} oder eine Kulturgruppe {kultur_gruppe} gefiltert werden.
         Bei einer Ã¼bergebenen {kultur} enthÃ¤lt die RÃ¼ckgabe nur die direkten Parents, also Kulturgruppen zu der korrepondierenden Kultur.
         Bei einer Ã¼bergebenen {kultur_gruppe} enthÃ¤lt die RÃ¼ckgabe nur die direkten Children, also Kulturen zu der korrepondierenden Kulturgruppe.
