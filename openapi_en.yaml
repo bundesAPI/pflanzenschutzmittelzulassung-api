@@ -1076,12 +1076,18 @@ paths:
     get:
       description: |-
         Supplies a list of crops and their corresponding crop group.
+        The endpoint represents a tree-like structure. Crop group {kultur_gruppe} is a parent to which a child is associated. A crop group can have multiple crops as children, a crop can have multiple parents. As the tree has multiple levels, some crops appear as both child (kultur) and as parent (kultur_gruppe) in different cells.
+
+        Optionally, you can filter by a crop {kultur} or a crop group {kultur_gruppe}.
         # TODO
+<<<<<<< HEAD
         This endpoint is a representation of a tree-like structure. Crop group {kultur_gruppe} is a parent, which the child crop ({kultur}) is assigned to.
 
         A crop group can have multiple crops as children, a crop can have multiple parents. As the tree has multiple levels, some crops are in different rows as children and as parent.
         Optionally, you can filter for a crop ({kultur}) or a crop group ({kultur_gruppe}).
         
+=======
+>>>>>>> 4c987454627c501ca7e4fde1d8571b3818df897d
         Bei einer Ã¼bergebenen {kultur} enthÃ¤lt die RÃ¼ckgabe nur die direkten Parents, also Kulturgruppen zu der korrepondierenden Kultur.
         Bei einer Ã¼bergebenen {kultur_gruppe} enthÃ¤lt die RÃ¼ckgabe nur die direkten Children, also Kulturen zu der korrepondierenden Kulturgruppe.
         The parameters are optional; if no parameters are supplied, the response contains all entries.
