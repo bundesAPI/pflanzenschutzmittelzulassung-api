@@ -1296,12 +1296,13 @@ paths:
   /mittel_vertrieb/:
     get:
       description: |-
-        Liefert die Zuordnung von Mitteln zu Vetriebsfirmen dieser Mittel.
-                                  Optional kann auf ein Mittel {kennr} oder eine Vertriebsfirma {vertriebsfirma_nr} gefiltert werden.
+        Supplies a relation of products to suppliers for this products.
+        Optionally, you can filter for a product ID ({kennnr}) or a supplier ID ({vertriebsfirma_nr}).
 
-                Der eindeutige Identifizierer setzt sich aus der{kennr} und der {vertriebsfirma_nr} zusammen.
-                {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 00A502-00.
-                {vertriebsfirma_nr} ist die Nummer der Vertriebsfirma, referenziert aus dem Endpunkt /adresse. Ziffernfolge aus maximal 22 Ziffern, Bsp: 11281.
+        The unique ID is compiled from the product ID ({kennr}) and the supplier ID ({vertriebsfirma_nr}).
+
+        {kennr} is the product ID, referencing the product endpoint /mittel. String with 9 characters, e.g. 00A502-00.
+        {vertriebsfirma_nr} is the supplier ID, referencing the address endpoint /adresse. Number with up to 22 numbers, e.g. 11281.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -1338,12 +1339,12 @@ paths:
     get:
       description: |-
         Liefert eine Liste von Zuordnungen von Mitteln zu Wirkbereichen. Die konkreten Anwendungen sind abgebildet in Endpunkt /awg. Das Feld &quot;wirkungsbereich&quot; nutzt die Kodeliste 21, die Ã¼ber den Endpunkt /kode dekodiert werden kann.
-                                  Optional kann auf ein Mittel {kennr} oder einen  Wirkungsbereich {wirkungsbereich} gefiltert werden.
-                                  The parameters are optional; if no parameters are supplied, the response contains all entries.
+        Optional kann auf ein Mittel {kennr} oder einen  Wirkungsbereich {wirkungsbereich} gefiltert werden.
+        The parameters are optional; if no parameters are supplied, the response contains all entries.
 
-                Der eindeutige Identifizierer setzt sich aus der {kennr} und dem {wirkungsbreich} zusammen.
-                {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 006335-00.
-                {wirkungsbereich} ist der Kode fÃ¼r den Wirkungsbereich eines Mittels. Die Dekodierung lÃ¤uft Ã¼ber den Endpunkt /kode. Zeichenfolge aus 20 Zeichen, Bsp: F.
+        Der eindeutige Identifizierer setzt sich aus der {kennr} und dem {wirkungsbreich} zusammen.
+        {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 006335-00.
+        {wirkungsbereich} ist der Kode fÃ¼r den Wirkungsbereich eines Mittels. Die Dekodierung lÃ¤uft Ã¼ber den Endpunkt /kode. Zeichenfolge aus 20 Zeichen, Bsp: F.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
