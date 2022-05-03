@@ -1125,11 +1125,12 @@ paths:
   /mittel/:
     get:
       description: |-
-        Liefert eine Liste aller zugelassenen Pflanzeschutzmittel.
-        Optional kann auf eine Zulassungsnummer/Kennummer {kennr} gefiltert werden.
+        Supplies a list of all approved crop protection products.
+        Optionally, you can filter for a product approval ID ({kennnr}).
+        
         The parameter is optional; if no parameter is supplied, the response contains all entries.
 
-        {kennr} ist der eindeutige Identifizierer, die Kennummer/Zulassungsnummer eines Mittels. Zeichenkette aus 9 Zeichen, Bsp: 024213-73.
+        {kennr} is the unique ID for a product approval. String with 9 characters, e.g. 024213-73.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -1165,11 +1166,15 @@ paths:
   /mittel_abgelaufen/:
     get:
       description: |-
-        Liefert eine Liste der abgelaufenen Pflanzenschutzmittel, inklusive Aufbrauchfrist. Weitere Informationen sind nur unter den Endpunkten /wirkstoff und /wirkstoff_gehalt enthalten. Andere Referenzen wurden entfernt.
-        Optional kann auf eine Kennummer {kennr} gefiltert werden.
+        Supplies a list of expired crop protection products, incl. use-by date
+        
+        Additional information are only available via the endpoints for active ingredient (/wirkstoff) and active ingredient rate (/wirkstoff_gehalt).
+        Other references are not available anymore.
+
+        Optionally, you can filter for a product ID ({kennr}).
         The parameter is optional; if no parameter is supplied, the response contains all entries.
 
-        {kennr} ist der eindeutige Identifizierer, die Kennummer eines abgelaufenen Mittels. Zeichenkette aus 9 Zeichen, Bsp: 050023-61.
+        {kennr} is the product ID of the expired product. String with 9 characters, e.g. 050023-61.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -1209,12 +1214,12 @@ paths:
   /mittel_abpackung/:
     get:
       description: |-
-        Liefert eine Liste der Packungsinformationen fÃ¼r Mittel.
-        Optional kann auf die Kennummer eines Mittels {kennr} gefiltert werden.
+        Supplies a list of lable information for products.
+        Optionally, you can filter for a product ID ({kennr}).
         The parameter is optional; if no parameter is supplied, the response contains all entries.
-
-        Der eindeutige Identifizierer setzt sich aus allen Attributen des Endpunkts zusammen.
-        {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 033274-64.
+        The unique identifier is compiled from all attributes of this endpoint.
+        
+        {kennr} is the product ID, referencing the product endpoint /mittel. String with 9 characters, e.g. 033274-64.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -1254,12 +1259,14 @@ paths:
   /mittel_gefahren_symbol/:
     get:
       description: |-
-        Liefert eine Zuordnung von Mitteln zu Gefahrensymbolen.
-                                  Optional kann auf eine Mittel Kennummer {kennr} gefiltert werden.
-                                  The parameters are optional; if no parameters are supplied, the response contains all entries.
+        Supplies a list of relations from products to GHS hazard pictograms.
+        
+        Optionally, you can filter for a product ID ({kennr}).
+        The parameters are optional; if no parameters are supplied, the response contains all entries.
 
-                Der eindeutige Identifizierer setzt sich aus der {kennr} und dem gefahren_symbol zusammen.
-                {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 006978-00.
+        The unique ID is compiled from the product ID ({kennr}) and the hazard pictogram ({gefahren_symbol}).
+
+        {kennr} is the product ID, referencing the product endpoint /mittel. String with 9 characters, e.g. 006978-00.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
