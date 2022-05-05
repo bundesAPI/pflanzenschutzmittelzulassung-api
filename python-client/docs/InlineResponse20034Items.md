@@ -4,7 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**datum** | [**DATE**](DATE.md) |  | [optional] 
+**antragsteller** | **str** |  | [optional] 
+**antragsteller_nr** | **float** |  | [optional] 
+**genehmigung_am** | [**DATE**](DATE.md) |  | [optional] 
+**kennr** | **str** |  | [optional] 
+**mittelname** | **str** |  | [optional] 
 **m_row** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

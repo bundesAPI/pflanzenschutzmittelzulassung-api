@@ -2293,7 +2293,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **schadorg_gruppe_get**
-> InlineResponse20032 schadorg_gruppe_get()
+> InlineResponse20033 schadorg_gruppe_get()
 
 
 
@@ -2306,7 +2306,7 @@ Liefert eine Liste der Schadorganismen und der korrespondierenden Schadorganisme
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20032 import InlineResponse20032
+from deutschland.pflanzenschutzmittelzulassung.model.inline_response20033 import InlineResponse20033
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2341,7 +2341,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20032**](InlineResponse20032.md)
+[**InlineResponse20033**](InlineResponse20033.md)
 
 ### Authorization
 
@@ -2362,7 +2362,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **staerkung_get**
-> InlineResponse20033 staerkung_get()
+> InlineResponse20034 staerkung_get()
 
 
 
@@ -2375,7 +2375,7 @@ Liefert eine Liste von zugelassenen StÃ¤rkungsmitteln.                        
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20033 import InlineResponse20033
+from deutschland.pflanzenschutzmittelzulassung.model.inline_response20034 import InlineResponse20034
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2410,7 +2410,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20033**](InlineResponse20033.md)
+[**InlineResponse20034**](InlineResponse20034.md)
 
 ### Authorization
 
@@ -2500,7 +2500,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **stand_get**
-> InlineResponse20034 stand_get()
+> InlineResponse20036 stand_get()
 
 
 
@@ -2513,7 +2513,7 @@ Liefert das Release-Datum fÃ¼r den aktuellen Datenbestand. Das heiÃŸt, das D
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20034 import InlineResponse20034
+from deutschland.pflanzenschutzmittelzulassung.model.inline_response20036 import InlineResponse20036
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2541,7 +2541,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20034**](InlineResponse20034.md)
+[**InlineResponse20036**](InlineResponse20036.md)
 
 ### Authorization
 
@@ -2562,7 +2562,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **wirkstoff_gehalt_get**
-> InlineResponse20036 wirkstoff_gehalt_get()
+> InlineResponse20038 wirkstoff_gehalt_get()
 
 
 
@@ -2575,7 +2575,7 @@ Liefert eine Zuordnung der Mittel und des korrespondierenden Wirkstoffgehalts.  
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20036 import InlineResponse20036
+from deutschland.pflanzenschutzmittelzulassung.model.inline_response20038 import InlineResponse20038
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2610,7 +2610,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20036**](InlineResponse20036.md)
+[**InlineResponse20038**](InlineResponse20038.md)
 
 ### Authorization
 
@@ -2631,7 +2631,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **wirkstoff_get**
-> InlineResponse20035 wirkstoff_get()
+> InlineResponse20037 wirkstoff_get()
 
 
 
@@ -2644,7 +2644,7 @@ Liefert eine Liste von zugelassenen Wirkstoffen.                             Opt
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20035 import InlineResponse20035
+from deutschland.pflanzenschutzmittelzulassung.model.inline_response20037 import InlineResponse20037
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2677,7 +2677,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20035**](InlineResponse20035.md)
+[**InlineResponse20037**](InlineResponse20037.md)
 
 ### Authorization
 
@@ -2698,7 +2698,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **zusatzstoff_get**
-> InlineResponse20037 zusatzstoff_get()
+> InlineResponse20039 zusatzstoff_get()
 
 
 
@@ -2711,7 +2711,7 @@ Liefert eine Liste der Zusatzstoffe zu Mitteln.                             Opti
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20037 import InlineResponse20037
+from deutschland.pflanzenschutzmittelzulassung.model.inline_response20039 import InlineResponse20039
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2746,7 +2746,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20037**](InlineResponse20037.md)
+[**InlineResponse20039**](InlineResponse20039.md)
 
 ### Authorization
 

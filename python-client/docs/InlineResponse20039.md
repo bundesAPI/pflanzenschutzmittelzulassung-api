@@ -1,10 +1,10 @@
-# InlineResponse20035
+# InlineResponse20039
 
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**[InlineResponse20035Items]**](InlineResponse20035Items.md) |  | [optional] 
+**items** | [**[InlineResponse20039Items]**](InlineResponse20039Items.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

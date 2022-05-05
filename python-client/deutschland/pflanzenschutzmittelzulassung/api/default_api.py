@@ -110,23 +110,23 @@ from deutschland.pflanzenschutzmittelzulassung.model.inline_response20030 import
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response20031 import (
     InlineResponse20031,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20032 import (
-    InlineResponse20032,
-)
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response20033 import (
     InlineResponse20033,
 )
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response20034 import (
     InlineResponse20034,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20035 import (
-    InlineResponse20035,
-)
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response20036 import (
     InlineResponse20036,
 )
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response20037 import (
     InlineResponse20037,
+)
+from deutschland.pflanzenschutzmittelzulassung.model.inline_response20038 import (
+    InlineResponse20038,
+)
+from deutschland.pflanzenschutzmittelzulassung.model.inline_response20039 import (
+    InlineResponse20039,
 )
 from deutschland.pflanzenschutzmittelzulassung.model_utils import (  # noqa: F401
     check_allowed_values,
@@ -1474,7 +1474,7 @@ class DefaultApi(object):
         )
         self.schadorg_gruppe_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20032,),
+                "response_type": (InlineResponse20033,),
                 "auth": [],
                 "endpoint_path": "/schadorg_gruppe/",
                 "operation_id": "schadorg_gruppe_get",
@@ -1516,7 +1516,7 @@ class DefaultApi(object):
         )
         self.staerkung_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20033,),
+                "response_type": (InlineResponse20034,),
                 "auth": [],
                 "endpoint_path": "/staerkung/",
                 "operation_id": "staerkung_get",
@@ -1600,7 +1600,7 @@ class DefaultApi(object):
         )
         self.stand_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20034,),
+                "response_type": (InlineResponse20036,),
                 "auth": [],
                 "endpoint_path": "/stand/",
                 "operation_id": "stand_get",
@@ -1630,7 +1630,7 @@ class DefaultApi(object):
         )
         self.wirkstoff_gehalt_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20036,),
+                "response_type": (InlineResponse20038,),
                 "auth": [],
                 "endpoint_path": "/wirkstoff_gehalt/",
                 "operation_id": "wirkstoff_gehalt_get",
@@ -1672,7 +1672,7 @@ class DefaultApi(object):
         )
         self.wirkstoff_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20035,),
+                "response_type": (InlineResponse20037,),
                 "auth": [],
                 "endpoint_path": "/wirkstoff/",
                 "operation_id": "wirkstoff_get",
@@ -1710,7 +1710,7 @@ class DefaultApi(object):
         )
         self.zusatzstoff_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20037,),
+                "response_type": (InlineResponse20039,),
                 "auth": [],
                 "endpoint_path": "/zusatzstoff/",
                 "operation_id": "zusatzstoff_get",
@@ -3869,7 +3869,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20032
+            InlineResponse20033
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3931,7 +3931,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20033
+            InlineResponse20034
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4053,7 +4053,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20034
+            InlineResponse20036
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4115,7 +4115,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20036
+            InlineResponse20038
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4176,7 +4176,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20035
+            InlineResponse20037
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4238,7 +4238,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20037
+            InlineResponse20039
                 If the method is called asynchronously, returns the request
                 thread.
         """

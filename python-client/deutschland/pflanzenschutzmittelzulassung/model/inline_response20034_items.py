@@ -97,7 +97,11 @@ class InlineResponse20034Items(ModelNormal):
         """
         lazy_import()
         return {
-            "datum": (DATE,),  # noqa: E501
+            "antragsteller": (str,),  # noqa: E501
+            "antragsteller_nr": (float,),  # noqa: E501
+            "genehmigung_am": (DATE,),  # noqa: E501
+            "kennr": (str,),  # noqa: E501
+            "mittelname": (str,),  # noqa: E501
             "m_row": (str,),  # noqa: E501
         }
 
@@ -106,7 +110,11 @@ class InlineResponse20034Items(ModelNormal):
         return None
 
     attribute_map = {
-        "datum": "DATUM",  # noqa: E501
+        "antragsteller": "ANTRAGSTELLER",  # noqa: E501
+        "antragsteller_nr": "ANTRAGSTELLER_NR",  # noqa: E501
+        "genehmigung_am": "GENEHMIGUNG_AM",  # noqa: E501
+        "kennr": "KENNR",  # noqa: E501
+        "mittelname": "MITTELNAME",  # noqa: E501
         "m_row": "M_ROW$$",  # noqa: E501
     }
 
@@ -150,7 +158,11 @@ class InlineResponse20034Items(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            datum (DATE): [optional]  # noqa: E501
+            antragsteller (str): [optional]  # noqa: E501
+            antragsteller_nr (float): [optional]  # noqa: E501
+            genehmigung_am (DATE): [optional]  # noqa: E501
+            kennr (str): [optional]  # noqa: E501
+            mittelname (str): [optional]  # noqa: E501
             m_row (str): [optional]  # noqa: E501
         """
 
@@ -242,7 +254,11 @@ class InlineResponse20034Items(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            datum (DATE): [optional]  # noqa: E501
+            antragsteller (str): [optional]  # noqa: E501
+            antragsteller_nr (float): [optional]  # noqa: E501
+            genehmigung_am (DATE): [optional]  # noqa: E501
+            kennr (str): [optional]  # noqa: E501
+            mittelname (str): [optional]  # noqa: E501
             m_row (str): [optional]  # noqa: E501
         """
 
