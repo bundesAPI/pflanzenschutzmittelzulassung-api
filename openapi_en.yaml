@@ -1338,13 +1338,16 @@ paths:
   /mittel_wirkbereich/:
     get:
       description: |-
-        Liefert eine Liste von Zuordnungen von Mitteln zu Wirkbereichen. Die konkreten Anwendungen sind abgebildet in Endpunkt /awg. Das Feld &quot;wirkungsbereich&quot; nutzt die Kodeliste 21, die Ã¼ber den Endpunkt /kode dekodiert werden kann.
-        Optional kann auf ein Mittel {kennr} oder einen  Wirkungsbereich {wirkungsbereich} gefiltert werden.
+        Supplies a list of relations from products to indications (Wirkungsbereiche, use areas). The concrete applications are available from the endpoint /awg. 
+        The Field &quot;wirkungsbereich&quot; (indication) is encoded with code list 21, which can be decoded via the endpoint /kode.
+        
+        Optionally, you can filter via product ({kennnr}) or an indication ({wirkungsbereich}).
         The parameters are optional; if no parameters are supplied, the response contains all entries.
 
-        Der eindeutige Identifizierer setzt sich aus der {kennr} und dem {wirkungsbreich} zusammen.
-        {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 006335-00.
-        {wirkungsbereich} ist der Kode fÃ¼r den Wirkungsbereich eines Mittels. Die Dekodierung lÃ¤uft Ã¼ber den Endpunkt /kode. Zeichenfolge aus 20 Zeichen, Bsp: F.
+        The unique identifier is compiled from the product ID ({kennr}) and the indication ({wirkungsbreich}).
+
+        {kennr} is the product ID, referencing from the /mittel endpoint. String of exact 9 letters, e.g. 006335-00.
+        {wirkungsbereich} is the indication code for the indication of a product. It can be decoded via endpoint /kode. String with 20 characters, e.g. F for fungicide.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
@@ -1700,7 +1703,7 @@ paths:
 
             Der eindeutige Identifizierer setzt sich zusammen aus der {wirknr}, der {kennr} und der wirkvar.
             {wirknr} ist die Nummer des Wirkstoffes, referenziert aus dem Endpunkt /wirkstoff. Zeichenkette aus maximal 4 Zeichen, Bsp: 0875.
-            {kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 024994-00.
+            {kennr} is the product ID, referencing from the /mittel endpoint. String of exact 9 letters, e.g. 024994-00.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
