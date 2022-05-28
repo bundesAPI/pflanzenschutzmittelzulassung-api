@@ -972,8 +972,8 @@ paths:
   /kodeliste/:
     get:
       description: |-
-        Liefert eine Auflistung der Kodelisten inklusive dem Listennamen, also der testlichen Beschreibung wofÃ¼r die Liste steht.
-                                    Optional kann nut auf eine Kodeliste {kodeliste} gefiltert werden.
+        Liefert eine Auflistung der Kodelisten inklusive dem Listennamen, also der textlichen Beschreibung wofÃ¼r die Liste steht.
+                                    Optional kann nur auf eine Kodeliste {kodeliste} gefiltert werden.
                                     Die Paramter sind optional; werden keine Parameter Ã¼bergeben, enthÃ¤lt die RÃ¼ckgabe alle EintrÃ¤ge.
 
             {kodeliste} ist der eindeutige Identifizierer der Liste. Ziffernfolge aus maximal 3 Ziffern, Bsp: 3.
