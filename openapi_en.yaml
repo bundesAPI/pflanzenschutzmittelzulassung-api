@@ -1381,13 +1381,14 @@ paths:
   /parallelimport_abgelaufen/:
     get:
       description: |-
-        Liefert eine Liste der abgelaufenen Parallelimporte (Mittel aus anderen LÃ¤ndern die identisch sind zu in Deutschland zugelassenen Mitteln) zu ihren Referenzmitteln.
-                                  Optional kann auf ein Referenzmittel {pi_referenz_kennr} oder einen Importeur {importeur_nr) gefiltert werden.
-                                  The parameters are optional; if no parameters are supplied, the response contains all entries.
+        Supplies a list of expired parallel imports in relation to their reference product. Parallel imports are products from different countries which are identical to those approved in Germany.
+        Optionally, you can filter via a reference product {pi_referenz_kennr} or an importer {importeur_nr}.
+        The parameters are optional; if no parameters are supplied, the response contains all entries.
 
-                Der eindeutige Identifizierer setzt sich aus allen Attributen des Endpunktes zusammen.
-                {pi_referenz_kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 006768-00.
-                {importeur_nr} ist die Nummer des Importeurs, referenziert wird die adresse_nr des Endpunktes /adresse. Zeichenfolge aus 20 Zeichen, Bsp: 12158.
+        The unique identifier is compiled from all attributes of the endpoint.
+
+        {pi_referenz_kennr} ist die Kennummer eines Mittels, referenziert aus dem Endpunkt /mittel. Zeichenkette aus 9 Zeichen, Bsp: 006768-00.
+        {importeur_nr} ist die Nummer des Importeurs, referenziert wird die adresse_nr des Endpunktes /adresse. Zeichenfolge aus 20 Zeichen, Bsp: 12158.
 
         If queried with different parameters or subqueries are issued, special filter methods can be used. See section &quot;JSON Queries&quot; in the general API description.
       produces:
