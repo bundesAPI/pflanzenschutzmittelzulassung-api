@@ -12,14 +12,11 @@
 import sys
 import unittest
 
-from deutschland.pflanzenschutzmittelzulassung.model.date import DATE
-
-from deutschland import pflanzenschutzmittelzulassung
-
-globals()["DATE"] = DATE
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response20037_items import (
     InlineResponse20037Items,
 )
+
+from deutschland import pflanzenschutzmittelzulassung
 
 
 class TestInlineResponse20037Items(unittest.TestCase):

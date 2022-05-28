@@ -76,12 +76,12 @@ from deutschland.pflanzenschutzmittelzulassung.model.inline_response20029 import
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response2003 import InlineResponse2003
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response20030 import InlineResponse20030
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response20031 import InlineResponse20031
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20032 import InlineResponse20032
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response20033 import InlineResponse20033
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response20034 import InlineResponse20034
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20035 import InlineResponse20035
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response20036 import InlineResponse20036
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response20037 import InlineResponse20037
+from deutschland.pflanzenschutzmittelzulassung.model.inline_response20038 import InlineResponse20038
+from deutschland.pflanzenschutzmittelzulassung.model.inline_response20039 import InlineResponse20039
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response2004 import InlineResponse2004
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response2005 import InlineResponse2005
 from deutschland.pflanzenschutzmittelzulassung.model.inline_response2006 import InlineResponse2006
@@ -211,18 +211,18 @@ Class | Method | HTTP request | Description
  - [InlineResponse20030Items](docs/InlineResponse20030Items.md)
  - [InlineResponse20031](docs/InlineResponse20031.md)
  - [InlineResponse20031Items](docs/InlineResponse20031Items.md)
- - [InlineResponse20032](docs/InlineResponse20032.md)
- - [InlineResponse20032Items](docs/InlineResponse20032Items.md)
  - [InlineResponse20033](docs/InlineResponse20033.md)
  - [InlineResponse20033Items](docs/InlineResponse20033Items.md)
  - [InlineResponse20034](docs/InlineResponse20034.md)
  - [InlineResponse20034Items](docs/InlineResponse20034Items.md)
- - [InlineResponse20035](docs/InlineResponse20035.md)
- - [InlineResponse20035Items](docs/InlineResponse20035Items.md)
  - [InlineResponse20036](docs/InlineResponse20036.md)
  - [InlineResponse20036Items](docs/InlineResponse20036Items.md)
  - [InlineResponse20037](docs/InlineResponse20037.md)
  - [InlineResponse20037Items](docs/InlineResponse20037Items.md)
+ - [InlineResponse20038](docs/InlineResponse20038.md)
+ - [InlineResponse20038Items](docs/InlineResponse20038Items.md)
+ - [InlineResponse20039](docs/InlineResponse20039.md)
+ - [InlineResponse20039Items](docs/InlineResponse20039Items.md)
  - [InlineResponse2003Items](docs/InlineResponse2003Items.md)
  - [InlineResponse2004](docs/InlineResponse2004.md)
  - [InlineResponse2004Items](docs/InlineResponse2004Items.md)

@@ -12,20 +12,18 @@
 import sys
 import unittest
 
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20032_items import (
-    InlineResponse20032Items,
-)
+from deutschland.pflanzenschutzmittelzulassung.model.date import DATE
 
 from deutschland import pflanzenschutzmittelzulassung
 
-globals()["InlineResponse20032Items"] = InlineResponse20032Items
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20032 import (
-    InlineResponse20032,
+globals()["DATE"] = DATE
+from deutschland.pflanzenschutzmittelzulassung.model.inline_response20039_items import (
+    InlineResponse20039Items,
 )
 
 
-class TestInlineResponse20032(unittest.TestCase):
-    """InlineResponse20032 unit test stubs"""
+class TestInlineResponse20039Items(unittest.TestCase):
+    """InlineResponse20039Items unit test stubs"""
 
     def setUp(self):
         pass
@@ -33,10 +31,10 @@ class TestInlineResponse20032(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testInlineResponse20032(self):
-        """Test InlineResponse20032"""
+    def testInlineResponse20039Items(self):
+        """Test InlineResponse20039Items"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = InlineResponse20032()  # noqa: E501
+        # model = InlineResponse20039Items()  # noqa: E501
         pass
 
 
