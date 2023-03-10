@@ -50,44 +50,44 @@ import time
 from deutschland import pflanzenschutzmittelzulassung
 from pprint import pprint
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response200 import InlineResponse200
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2001 import InlineResponse2001
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20010 import InlineResponse20010
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20011 import InlineResponse20011
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20012 import InlineResponse20012
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20013 import InlineResponse20013
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20014 import InlineResponse20014
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20015 import InlineResponse20015
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20016 import InlineResponse20016
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20017 import InlineResponse20017
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20018 import InlineResponse20018
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20019 import InlineResponse20019
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2002 import InlineResponse2002
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20020 import InlineResponse20020
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20021 import InlineResponse20021
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20022 import InlineResponse20022
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20023 import InlineResponse20023
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20024 import InlineResponse20024
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20025 import InlineResponse20025
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20026 import InlineResponse20026
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20027 import InlineResponse20027
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20028 import InlineResponse20028
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20029 import InlineResponse20029
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2003 import InlineResponse2003
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20030 import InlineResponse20030
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20031 import InlineResponse20031
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20033 import InlineResponse20033
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20034 import InlineResponse20034
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20036 import InlineResponse20036
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20037 import InlineResponse20037
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20038 import InlineResponse20038
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20039 import InlineResponse20039
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2004 import InlineResponse2004
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2005 import InlineResponse2005
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2006 import InlineResponse2006
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2007 import InlineResponse2007
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2008 import InlineResponse2008
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2009 import InlineResponse2009
+from deutschland.pflanzenschutzmittelzulassung.model.adresse_get200_response import AdresseGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.antrag_get200_response import AntragGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.auflage_redu_get200_response import AuflageReduGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.auflagen_get200_response import AuflagenGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.awg_aufwand_get200_response import AwgAufwandGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.awg_bem_get200_response import AwgBemGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.awg_get200_response import AwgGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.awg_kultur_get200_response import AwgKulturGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.awg_partner_aufwand_get200_response import AwgPartnerAufwandGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.awg_partner_get200_response import AwgPartnerGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.awg_schadorg_get200_response import AwgSchadorgGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.awg_verwendungszweck_get200_response import AwgVerwendungszweckGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.awg_wartezeit_ausg_kultur_get200_response import AwgWartezeitAusgKulturGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.awg_wartezeit_get200_response import AwgWartezeitGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.awg_zeitpunkt_get200_response import AwgZeitpunktGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.awg_zulassung_get200_response import AwgZulassungGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.ghs_gefahrenhinweise_get200_response import GhsGefahrenhinweiseGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.ghs_gefahrensymbole_get200_response import GhsGefahrensymboleGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.ghs_sicherheitshinweise_get200_response import GhsSicherheitshinweiseGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.ghs_signalwoerter_get200_response import GhsSignalwoerterGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.hinweis_get200_response import HinweisGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.kode_get200_response import KodeGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.kodeliste_feldname_get200_response import KodelisteFeldnameGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.kodeliste_get200_response import KodelisteGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.kultur_gruppe_get200_response import KulturGruppeGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_abgelaufen_get200_response import MittelAbgelaufenGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_abpackung_get200_response import MittelAbpackungGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_gefahren_symbol_get200_response import MittelGefahrenSymbolGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_get200_response import MittelGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_vertrieb_get200_response import MittelVertriebGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_wirkbereich_get200_response import MittelWirkbereichGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.parallelimport_abgelaufen_get200_response import ParallelimportAbgelaufenGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.schadorg_gruppe_get200_response import SchadorgGruppeGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.staerkung_get200_response import StaerkungGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.stand_get200_response import StandGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.wirkstoff_gehalt_get200_response import WirkstoffGehaltGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.wirkstoff_get200_response import WirkstoffGet200Response
+from deutschland.pflanzenschutzmittelzulassung.model.zusatzstoff_get200_response import ZusatzstoffGet200Response
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pflanzenschutzmittelzulassung.Configuration(
@@ -160,83 +160,83 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AdresseGet200Response](docs/AdresseGet200Response.md)
+ - [AdresseGet200ResponseItemsInner](docs/AdresseGet200ResponseItemsInner.md)
+ - [AntragGet200Response](docs/AntragGet200Response.md)
+ - [AntragGet200ResponseItemsInner](docs/AntragGet200ResponseItemsInner.md)
+ - [AuflageReduGet200Response](docs/AuflageReduGet200Response.md)
+ - [AuflageReduGet200ResponseItemsInner](docs/AuflageReduGet200ResponseItemsInner.md)
+ - [AuflagenGet200Response](docs/AuflagenGet200Response.md)
+ - [AuflagenGet200ResponseItemsInner](docs/AuflagenGet200ResponseItemsInner.md)
+ - [AwgAufwandGet200Response](docs/AwgAufwandGet200Response.md)
+ - [AwgAufwandGet200ResponseItemsInner](docs/AwgAufwandGet200ResponseItemsInner.md)
+ - [AwgBemGet200Response](docs/AwgBemGet200Response.md)
+ - [AwgBemGet200ResponseItemsInner](docs/AwgBemGet200ResponseItemsInner.md)
+ - [AwgGet200Response](docs/AwgGet200Response.md)
+ - [AwgGet200ResponseItemsInner](docs/AwgGet200ResponseItemsInner.md)
+ - [AwgKulturGet200Response](docs/AwgKulturGet200Response.md)
+ - [AwgKulturGet200ResponseItemsInner](docs/AwgKulturGet200ResponseItemsInner.md)
+ - [AwgPartnerAufwandGet200Response](docs/AwgPartnerAufwandGet200Response.md)
+ - [AwgPartnerAufwandGet200ResponseItemsInner](docs/AwgPartnerAufwandGet200ResponseItemsInner.md)
+ - [AwgPartnerGet200Response](docs/AwgPartnerGet200Response.md)
+ - [AwgPartnerGet200ResponseItemsInner](docs/AwgPartnerGet200ResponseItemsInner.md)
+ - [AwgSchadorgGet200Response](docs/AwgSchadorgGet200Response.md)
+ - [AwgSchadorgGet200ResponseItemsInner](docs/AwgSchadorgGet200ResponseItemsInner.md)
+ - [AwgVerwendungszweckGet200Response](docs/AwgVerwendungszweckGet200Response.md)
+ - [AwgVerwendungszweckGet200ResponseItemsInner](docs/AwgVerwendungszweckGet200ResponseItemsInner.md)
+ - [AwgWartezeitAusgKulturGet200Response](docs/AwgWartezeitAusgKulturGet200Response.md)
+ - [AwgWartezeitAusgKulturGet200ResponseItemsInner](docs/AwgWartezeitAusgKulturGet200ResponseItemsInner.md)
+ - [AwgWartezeitGet200Response](docs/AwgWartezeitGet200Response.md)
+ - [AwgWartezeitGet200ResponseItemsInner](docs/AwgWartezeitGet200ResponseItemsInner.md)
+ - [AwgZeitpunktGet200Response](docs/AwgZeitpunktGet200Response.md)
+ - [AwgZeitpunktGet200ResponseItemsInner](docs/AwgZeitpunktGet200ResponseItemsInner.md)
+ - [AwgZulassungGet200Response](docs/AwgZulassungGet200Response.md)
+ - [AwgZulassungGet200ResponseItemsInner](docs/AwgZulassungGet200ResponseItemsInner.md)
  - [DATE](docs/DATE.md)
- - [InlineResponse200](docs/InlineResponse200.md)
- - [InlineResponse2001](docs/InlineResponse2001.md)
- - [InlineResponse20010](docs/InlineResponse20010.md)
- - [InlineResponse20010Items](docs/InlineResponse20010Items.md)
- - [InlineResponse20011](docs/InlineResponse20011.md)
- - [InlineResponse20011Items](docs/InlineResponse20011Items.md)
- - [InlineResponse20012](docs/InlineResponse20012.md)
- - [InlineResponse20012Items](docs/InlineResponse20012Items.md)
- - [InlineResponse20013](docs/InlineResponse20013.md)
- - [InlineResponse20013Items](docs/InlineResponse20013Items.md)
- - [InlineResponse20014](docs/InlineResponse20014.md)
- - [InlineResponse20014Items](docs/InlineResponse20014Items.md)
- - [InlineResponse20015](docs/InlineResponse20015.md)
- - [InlineResponse20015Items](docs/InlineResponse20015Items.md)
- - [InlineResponse20016](docs/InlineResponse20016.md)
- - [InlineResponse20016Items](docs/InlineResponse20016Items.md)
- - [InlineResponse20017](docs/InlineResponse20017.md)
- - [InlineResponse20017Items](docs/InlineResponse20017Items.md)
- - [InlineResponse20018](docs/InlineResponse20018.md)
- - [InlineResponse20018Items](docs/InlineResponse20018Items.md)
- - [InlineResponse20019](docs/InlineResponse20019.md)
- - [InlineResponse20019Items](docs/InlineResponse20019Items.md)
- - [InlineResponse2001Items](docs/InlineResponse2001Items.md)
- - [InlineResponse2002](docs/InlineResponse2002.md)
- - [InlineResponse20020](docs/InlineResponse20020.md)
- - [InlineResponse20020Items](docs/InlineResponse20020Items.md)
- - [InlineResponse20021](docs/InlineResponse20021.md)
- - [InlineResponse20021Items](docs/InlineResponse20021Items.md)
- - [InlineResponse20022](docs/InlineResponse20022.md)
- - [InlineResponse20022Items](docs/InlineResponse20022Items.md)
- - [InlineResponse20023](docs/InlineResponse20023.md)
- - [InlineResponse20023Items](docs/InlineResponse20023Items.md)
- - [InlineResponse20024](docs/InlineResponse20024.md)
- - [InlineResponse20024Items](docs/InlineResponse20024Items.md)
- - [InlineResponse20025](docs/InlineResponse20025.md)
- - [InlineResponse20025Items](docs/InlineResponse20025Items.md)
- - [InlineResponse20026](docs/InlineResponse20026.md)
- - [InlineResponse20026Items](docs/InlineResponse20026Items.md)
- - [InlineResponse20027](docs/InlineResponse20027.md)
- - [InlineResponse20027Items](docs/InlineResponse20027Items.md)
- - [InlineResponse20028](docs/InlineResponse20028.md)
- - [InlineResponse20028Items](docs/InlineResponse20028Items.md)
- - [InlineResponse20029](docs/InlineResponse20029.md)
- - [InlineResponse20029Items](docs/InlineResponse20029Items.md)
- - [InlineResponse2002Items](docs/InlineResponse2002Items.md)
- - [InlineResponse2003](docs/InlineResponse2003.md)
- - [InlineResponse20030](docs/InlineResponse20030.md)
- - [InlineResponse20030Items](docs/InlineResponse20030Items.md)
- - [InlineResponse20031](docs/InlineResponse20031.md)
- - [InlineResponse20031Items](docs/InlineResponse20031Items.md)
- - [InlineResponse20033](docs/InlineResponse20033.md)
- - [InlineResponse20033Items](docs/InlineResponse20033Items.md)
- - [InlineResponse20034](docs/InlineResponse20034.md)
- - [InlineResponse20034Items](docs/InlineResponse20034Items.md)
- - [InlineResponse20036](docs/InlineResponse20036.md)
- - [InlineResponse20036Items](docs/InlineResponse20036Items.md)
- - [InlineResponse20037](docs/InlineResponse20037.md)
- - [InlineResponse20037Items](docs/InlineResponse20037Items.md)
- - [InlineResponse20038](docs/InlineResponse20038.md)
- - [InlineResponse20038Items](docs/InlineResponse20038Items.md)
- - [InlineResponse20039](docs/InlineResponse20039.md)
- - [InlineResponse20039Items](docs/InlineResponse20039Items.md)
- - [InlineResponse2003Items](docs/InlineResponse2003Items.md)
- - [InlineResponse2004](docs/InlineResponse2004.md)
- - [InlineResponse2004Items](docs/InlineResponse2004Items.md)
- - [InlineResponse2005](docs/InlineResponse2005.md)
- - [InlineResponse2005Items](docs/InlineResponse2005Items.md)
- - [InlineResponse2006](docs/InlineResponse2006.md)
- - [InlineResponse2006Items](docs/InlineResponse2006Items.md)
- - [InlineResponse2007](docs/InlineResponse2007.md)
- - [InlineResponse2007Items](docs/InlineResponse2007Items.md)
- - [InlineResponse2008](docs/InlineResponse2008.md)
- - [InlineResponse2008Items](docs/InlineResponse2008Items.md)
- - [InlineResponse2009](docs/InlineResponse2009.md)
- - [InlineResponse2009Items](docs/InlineResponse2009Items.md)
- - [InlineResponse200Items](docs/InlineResponse200Items.md)
+ - [GhsGefahrenhinweiseGet200Response](docs/GhsGefahrenhinweiseGet200Response.md)
+ - [GhsGefahrenhinweiseGet200ResponseItemsInner](docs/GhsGefahrenhinweiseGet200ResponseItemsInner.md)
+ - [GhsGefahrensymboleGet200Response](docs/GhsGefahrensymboleGet200Response.md)
+ - [GhsGefahrensymboleGet200ResponseItemsInner](docs/GhsGefahrensymboleGet200ResponseItemsInner.md)
+ - [GhsSicherheitshinweiseGet200Response](docs/GhsSicherheitshinweiseGet200Response.md)
+ - [GhsSicherheitshinweiseGet200ResponseItemsInner](docs/GhsSicherheitshinweiseGet200ResponseItemsInner.md)
+ - [GhsSignalwoerterGet200Response](docs/GhsSignalwoerterGet200Response.md)
+ - [GhsSignalwoerterGet200ResponseItemsInner](docs/GhsSignalwoerterGet200ResponseItemsInner.md)
+ - [HinweisGet200Response](docs/HinweisGet200Response.md)
+ - [HinweisGet200ResponseItemsInner](docs/HinweisGet200ResponseItemsInner.md)
+ - [KodeGet200Response](docs/KodeGet200Response.md)
+ - [KodeGet200ResponseItemsInner](docs/KodeGet200ResponseItemsInner.md)
+ - [KodelisteFeldnameGet200Response](docs/KodelisteFeldnameGet200Response.md)
+ - [KodelisteFeldnameGet200ResponseItemsInner](docs/KodelisteFeldnameGet200ResponseItemsInner.md)
+ - [KodelisteGet200Response](docs/KodelisteGet200Response.md)
+ - [KodelisteGet200ResponseItemsInner](docs/KodelisteGet200ResponseItemsInner.md)
+ - [KulturGruppeGet200Response](docs/KulturGruppeGet200Response.md)
+ - [KulturGruppeGet200ResponseItemsInner](docs/KulturGruppeGet200ResponseItemsInner.md)
+ - [MittelAbgelaufenGet200Response](docs/MittelAbgelaufenGet200Response.md)
+ - [MittelAbgelaufenGet200ResponseItemsInner](docs/MittelAbgelaufenGet200ResponseItemsInner.md)
+ - [MittelAbpackungGet200Response](docs/MittelAbpackungGet200Response.md)
+ - [MittelAbpackungGet200ResponseItemsInner](docs/MittelAbpackungGet200ResponseItemsInner.md)
+ - [MittelGefahrenSymbolGet200Response](docs/MittelGefahrenSymbolGet200Response.md)
+ - [MittelGefahrenSymbolGet200ResponseItemsInner](docs/MittelGefahrenSymbolGet200ResponseItemsInner.md)
+ - [MittelGet200Response](docs/MittelGet200Response.md)
+ - [MittelGet200ResponseItemsInner](docs/MittelGet200ResponseItemsInner.md)
+ - [MittelVertriebGet200Response](docs/MittelVertriebGet200Response.md)
+ - [MittelVertriebGet200ResponseItemsInner](docs/MittelVertriebGet200ResponseItemsInner.md)
+ - [MittelWirkbereichGet200Response](docs/MittelWirkbereichGet200Response.md)
+ - [MittelWirkbereichGet200ResponseItemsInner](docs/MittelWirkbereichGet200ResponseItemsInner.md)
+ - [ParallelimportAbgelaufenGet200Response](docs/ParallelimportAbgelaufenGet200Response.md)
+ - [ParallelimportAbgelaufenGet200ResponseItemsInner](docs/ParallelimportAbgelaufenGet200ResponseItemsInner.md)
+ - [SchadorgGruppeGet200Response](docs/SchadorgGruppeGet200Response.md)
+ - [SchadorgGruppeGet200ResponseItemsInner](docs/SchadorgGruppeGet200ResponseItemsInner.md)
+ - [StaerkungGet200Response](docs/StaerkungGet200Response.md)
+ - [StaerkungGet200ResponseItemsInner](docs/StaerkungGet200ResponseItemsInner.md)
+ - [StandGet200Response](docs/StandGet200Response.md)
+ - [StandGet200ResponseItemsInner](docs/StandGet200ResponseItemsInner.md)
+ - [WirkstoffGehaltGet200Response](docs/WirkstoffGehaltGet200Response.md)
+ - [WirkstoffGehaltGet200ResponseItemsInner](docs/WirkstoffGehaltGet200ResponseItemsInner.md)
+ - [WirkstoffGet200Response](docs/WirkstoffGet200Response.md)
+ - [WirkstoffGet200ResponseItemsInner](docs/WirkstoffGet200ResponseItemsInner.md)
+ - [ZusatzstoffGet200Response](docs/ZusatzstoffGet200Response.md)
+ - [ZusatzstoffGet200ResponseItemsInner](docs/ZusatzstoffGet200ResponseItemsInner.md)
 
 
 ## Documentation For Authorization

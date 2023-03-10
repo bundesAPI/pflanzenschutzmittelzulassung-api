@@ -196,7 +196,7 @@ class OpenApiModel(object):
         if self.get("_spec_property_naming", False):
             new_inst = cls._new_from_openapi_data()
         else:
-            new_inst = cls.__new__(cls)
+            new_inst = cls.__new__(cls, **self.__dict__)
 
         for k, v in self.__dict__.items():
             setattr(new_inst, k, deepcopy(v, memo))
@@ -1823,7 +1823,6 @@ def get_allof_instances(self, model_args, constant_args):
     """
     composed_instances = []
     for allof_class in self._composed_schemas["allOf"]:
-
         try:
             if constant_args.get("_spec_property_naming"):
                 allof_instance = allof_class._from_openapi_data(
@@ -2079,7 +2078,9 @@ def validate_get_composed_info(constant_args, model_args, self):
     var_name_to_model_instances = {}
     for prop_name in model_args:
         if prop_name not in discarded_args:
-            var_name_to_model_instances[prop_name] = [self] + composed_instances
+            var_name_to_model_instances[prop_name] = [self] + list(
+                filter(lambda x: prop_name in x.openapi_types, composed_instances)
+            )
 
     return [
         composed_instances,

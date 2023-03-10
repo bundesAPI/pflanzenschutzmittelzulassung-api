@@ -48,7 +48,7 @@ Method | HTTP request | Description
 
 
 # **adresse_get**
-> InlineResponse200 adresse_get()
+> AdresseGet200Response adresse_get()
 
 
 
@@ -61,7 +61,7 @@ Liefert eine Liste aller Adressen und Namen von Vertriebsfirmen/Antragstellern/I
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response200 import InlineResponse200
+from deutschland.pflanzenschutzmittelzulassung.model.adresse_get200_response import AdresseGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**AdresseGet200Response**](AdresseGet200Response.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **antrag_get**
-> InlineResponse2001 antrag_get()
+> AntragGet200Response antrag_get()
 
 
 
@@ -128,7 +128,7 @@ Liefert die ZulassungsantrÃ¤ge und Antragsteller zu aktuell gÃ¼ltigen Pflanz
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2001 import InlineResponse2001
+from deutschland.pflanzenschutzmittelzulassung.model.antrag_get200_response import AntragGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**AntragGet200Response**](AntragGet200Response.md)
 
 ### Authorization
 
@@ -186,7 +186,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **auflage_redu_get**
-> InlineResponse2002 auflage_redu_get()
+> AuflageReduGet200Response auflage_redu_get()
 
 
 
@@ -199,7 +199,7 @@ Liefert eine Liste der Auflagen mit reduzierten AbstÃ¤nden bei verwendeten Ger
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2002 import InlineResponse2002
+from deutschland.pflanzenschutzmittelzulassung.model.auflage_redu_get200_response import AuflageReduGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**AuflageReduGet200Response**](AuflageReduGet200Response.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **auflagen_get**
-> InlineResponse2003 auflagen_get()
+> AuflagenGet200Response auflagen_get()
 
 
 
@@ -266,7 +266,7 @@ Liefert die Liste aller gesetzlichen Auflagen zu Mitteln und Anwendungen.       
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2003 import InlineResponse2003
+from deutschland.pflanzenschutzmittelzulassung.model.auflagen_get200_response import AuflagenGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**AuflagenGet200Response**](AuflagenGet200Response.md)
 
 ### Authorization
 
@@ -324,7 +324,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **awg_aufwand_get**
-> InlineResponse2005 awg_aufwand_get()
+> AwgAufwandGet200Response awg_aufwand_get()
 
 
 
@@ -337,7 +337,7 @@ Liefert eine Zuordnung von Anwendungen ({awg_id}) auf vorgeschriebene AufwÃ¤nd
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2005 import InlineResponse2005
+from deutschland.pflanzenschutzmittelzulassung.model.awg_aufwand_get200_response import AwgAufwandGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -370,7 +370,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**AwgAufwandGet200Response**](AwgAufwandGet200Response.md)
 
 ### Authorization
 
@@ -391,7 +391,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **awg_bem_get**
-> InlineResponse2006 awg_bem_get()
+> AwgBemGet200Response awg_bem_get()
 
 
 
@@ -404,7 +404,7 @@ Liefert eine Liste von Bemerkungen/ErlÃ¤uterungen zu Anwendungen. (&quot;Aufla
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2006 import InlineResponse2006
+from deutschland.pflanzenschutzmittelzulassung.model.awg_bem_get200_response import AwgBemGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**AwgBemGet200Response**](AwgBemGet200Response.md)
 
 ### Authorization
 
@@ -458,7 +458,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **awg_get**
-> InlineResponse2004 awg_get()
+> AwgGet200Response awg_get()
 
 
 
@@ -471,7 +471,7 @@ Liefert eine Liste aller zugelassenen Anwendungen. Eine Anwendung beinhaltet ein
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2004 import InlineResponse2004
+from deutschland.pflanzenschutzmittelzulassung.model.awg_get200_response import AwgGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**AwgGet200Response**](AwgGet200Response.md)
 
 ### Authorization
 
@@ -527,7 +527,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **awg_kultur_get**
-> InlineResponse2007 awg_kultur_get()
+> AwgKulturGet200Response awg_kultur_get()
 
 
 
@@ -540,7 +540,7 @@ Liefert eine Zuordnung von Anwendungen zu Kulturen. Wenn das Feld &quot;ausgenom
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2007 import InlineResponse2007
+from deutschland.pflanzenschutzmittelzulassung.model.awg_kultur_get200_response import AwgKulturGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -573,7 +573,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**AwgKulturGet200Response**](AwgKulturGet200Response.md)
 
 ### Authorization
 
@@ -594,7 +594,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **awg_partner_aufwand_get**
-> InlineResponse2009 awg_partner_aufwand_get()
+> AwgPartnerAufwandGet200Response awg_partner_aufwand_get()
 
 
 
@@ -607,7 +607,7 @@ Liefert die Zuordnung von Anwendungen zu einem Partnermittel inklusive dem maxim
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2009 import InlineResponse2009
+from deutschland.pflanzenschutzmittelzulassung.model.awg_partner_aufwand_get200_response import AwgPartnerAufwandGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -640,7 +640,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**AwgPartnerAufwandGet200Response**](AwgPartnerAufwandGet200Response.md)
 
 ### Authorization
 
@@ -661,7 +661,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **awg_partner_get**
-> InlineResponse2008 awg_partner_get()
+> AwgPartnerGet200Response awg_partner_get()
 
 
 
@@ -674,7 +674,7 @@ Liefert die Zuordnung von Anwendungen zu Partnermitteln, die gemeinsam verwendet
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2008 import InlineResponse2008
+from deutschland.pflanzenschutzmittelzulassung.model.awg_partner_get200_response import AwgPartnerGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -707,7 +707,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**AwgPartnerGet200Response**](AwgPartnerGet200Response.md)
 
 ### Authorization
 
@@ -728,7 +728,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **awg_schadorg_get**
-> InlineResponse20010 awg_schadorg_get()
+> AwgSchadorgGet200Response awg_schadorg_get()
 
 
 
@@ -741,7 +741,7 @@ Liefert eine Zuordnung von Anwendungen zu Schadorganismen. Wenn das Feld &quot;a
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20010 import InlineResponse20010
+from deutschland.pflanzenschutzmittelzulassung.model.awg_schadorg_get200_response import AwgSchadorgGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -774,7 +774,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**AwgSchadorgGet200Response**](AwgSchadorgGet200Response.md)
 
 ### Authorization
 
@@ -795,7 +795,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **awg_verwendungszweck_get**
-> InlineResponse20011 awg_verwendungszweck_get()
+> AwgVerwendungszweckGet200Response awg_verwendungszweck_get()
 
 
 
@@ -808,7 +808,7 @@ Liefert die Zuordnung der Anwendungen zu Verwendungszwecken des assoziierten Mit
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20011 import InlineResponse20011
+from deutschland.pflanzenschutzmittelzulassung.model.awg_verwendungszweck_get200_response import AwgVerwendungszweckGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -841,7 +841,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**AwgVerwendungszweckGet200Response**](AwgVerwendungszweckGet200Response.md)
 
 ### Authorization
 
@@ -862,7 +862,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **awg_wartezeit_ausg_kultur_get**
-> InlineResponse20013 awg_wartezeit_ausg_kultur_get()
+> AwgWartezeitAusgKulturGet200Response awg_wartezeit_ausg_kultur_get()
 
 
 
@@ -875,7 +875,7 @@ Liefert die Zuordnung von Anwendungswartezeiten auf Kulturen, die fÃ¼r diese W
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20013 import InlineResponse20013
+from deutschland.pflanzenschutzmittelzulassung.model.awg_wartezeit_ausg_kultur_get200_response import AwgWartezeitAusgKulturGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -910,7 +910,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**AwgWartezeitAusgKulturGet200Response**](AwgWartezeitAusgKulturGet200Response.md)
 
 ### Authorization
 
@@ -931,7 +931,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **awg_wartezeit_get**
-> InlineResponse20012 awg_wartezeit_get()
+> AwgWartezeitGet200Response awg_wartezeit_get()
 
 
 
@@ -944,7 +944,7 @@ Liefert die Zuordnung von Anwendungen zu Wartezeiten in Tagen fÃ¼r eine bestim
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20012 import InlineResponse20012
+from deutschland.pflanzenschutzmittelzulassung.model.awg_wartezeit_get200_response import AwgWartezeitGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -981,7 +981,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**AwgWartezeitGet200Response**](AwgWartezeitGet200Response.md)
 
 ### Authorization
 
@@ -1002,7 +1002,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **awg_zeitpunkt_get**
-> InlineResponse20014 awg_zeitpunkt_get()
+> AwgZeitpunktGet200Response awg_zeitpunkt_get()
 
 
 
@@ -1015,7 +1015,7 @@ Liefert die Zuordnung von Anwendungen zu Zeitpunkten. Es kann mehrere Zeitpunkte
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20014 import InlineResponse20014
+from deutschland.pflanzenschutzmittelzulassung.model.awg_zeitpunkt_get200_response import AwgZeitpunktGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -1048,7 +1048,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**AwgZeitpunktGet200Response**](AwgZeitpunktGet200Response.md)
 
 ### Authorization
 
@@ -1069,7 +1069,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **awg_zulassung_get**
-> InlineResponse20015 awg_zulassung_get()
+> AwgZulassungGet200Response awg_zulassung_get()
 
 
 
@@ -1082,7 +1082,7 @@ Liefert die Zuordnung von Anwendungen zu ihrem Zulassungsende.                  
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20015 import InlineResponse20015
+from deutschland.pflanzenschutzmittelzulassung.model.awg_zulassung_get200_response import AwgZulassungGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -1115,7 +1115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**AwgZulassungGet200Response**](AwgZulassungGet200Response.md)
 
 ### Authorization
 
@@ -1136,7 +1136,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ghs_gefahrenhinweise_get**
-> InlineResponse20016 ghs_gefahrenhinweise_get()
+> GhsGefahrenhinweiseGet200Response ghs_gefahrenhinweise_get()
 
 
 
@@ -1149,7 +1149,7 @@ Liefert eine Zuordnung von Mitteln zu ihren Gefahrenhinweisen. Die Gefahrenhinwe
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20016 import InlineResponse20016
+from deutschland.pflanzenschutzmittelzulassung.model.ghs_gefahrenhinweise_get200_response import GhsGefahrenhinweiseGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -1182,7 +1182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**GhsGefahrenhinweiseGet200Response**](GhsGefahrenhinweiseGet200Response.md)
 
 ### Authorization
 
@@ -1203,7 +1203,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ghs_gefahrensymbole_get**
-> InlineResponse20017 ghs_gefahrensymbole_get()
+> GhsGefahrensymboleGet200Response ghs_gefahrensymbole_get()
 
 
 
@@ -1216,7 +1216,7 @@ Liefert eine Zuordnung von Mitteln zu ihren Gefahrensymbolen. Die Gefahrensymbol
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20017 import InlineResponse20017
+from deutschland.pflanzenschutzmittelzulassung.model.ghs_gefahrensymbole_get200_response import GhsGefahrensymboleGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -1249,7 +1249,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**GhsGefahrensymboleGet200Response**](GhsGefahrensymboleGet200Response.md)
 
 ### Authorization
 
@@ -1270,7 +1270,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ghs_sicherheitshinweise_get**
-> InlineResponse20018 ghs_sicherheitshinweise_get()
+> GhsSicherheitshinweiseGet200Response ghs_sicherheitshinweise_get()
 
 
 
@@ -1283,7 +1283,7 @@ Liefert eine Zuordnung von Mitteln zu ihren Sicherheitshinweisen. Die Sicherheit
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20018 import InlineResponse20018
+from deutschland.pflanzenschutzmittelzulassung.model.ghs_sicherheitshinweise_get200_response import GhsSicherheitshinweiseGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -1316,7 +1316,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**GhsSicherheitshinweiseGet200Response**](GhsSicherheitshinweiseGet200Response.md)
 
 ### Authorization
 
@@ -1337,7 +1337,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ghs_signalwoerter_get**
-> InlineResponse20019 ghs_signalwoerter_get()
+> GhsSignalwoerterGet200Response ghs_signalwoerter_get()
 
 
 
@@ -1350,7 +1350,7 @@ Liefert eine Zuordnung von Mitteln zu ihren SignalwÃ¶rtern. Die SignalwÃ¶rte
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20019 import InlineResponse20019
+from deutschland.pflanzenschutzmittelzulassung.model.ghs_signalwoerter_get200_response import GhsSignalwoerterGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -1383,7 +1383,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**GhsSignalwoerterGet200Response**](GhsSignalwoerterGet200Response.md)
 
 ### Authorization
 
@@ -1404,7 +1404,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **hinweis_get**
-> InlineResponse20020 hinweis_get()
+> HinweisGet200Response hinweis_get()
 
 
 
@@ -1417,7 +1417,7 @@ Liefert eine Zuordnung von Ebenen (Mitteln und Anwendungen) zu Hinweisen. Die Hi
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20020 import InlineResponse20020
+from deutschland.pflanzenschutzmittelzulassung.model.hinweis_get200_response import HinweisGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -1450,7 +1450,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**HinweisGet200Response**](HinweisGet200Response.md)
 
 ### Authorization
 
@@ -1471,7 +1471,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **kode_get**
-> InlineResponse20021 kode_get()
+> KodeGet200Response kode_get()
 
 
 
@@ -1484,7 +1484,7 @@ Liefert die Zuordnung von Kodes, Kodelisten und Sprache auf den Kodetext. Verwen
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20021 import InlineResponse20021
+from deutschland.pflanzenschutzmittelzulassung.model.kode_get200_response import KodeGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -1521,7 +1521,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**KodeGet200Response**](KodeGet200Response.md)
 
 ### Authorization
 
@@ -1542,7 +1542,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **kodeliste_feldname_get**
-> InlineResponse20023 kodeliste_feldname_get()
+> KodelisteFeldnameGet200Response kodeliste_feldname_get()
 
 
 
@@ -1555,7 +1555,7 @@ Liefert eine Zuordnung von Kodelistennummer auf die Tabelle und das Feld in dem 
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20023 import InlineResponse20023
+from deutschland.pflanzenschutzmittelzulassung.model.kodeliste_feldname_get200_response import KodelisteFeldnameGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -1592,7 +1592,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**KodelisteFeldnameGet200Response**](KodelisteFeldnameGet200Response.md)
 
 ### Authorization
 
@@ -1613,7 +1613,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **kodeliste_get**
-> InlineResponse20022 kodeliste_get()
+> KodelisteGet200Response kodeliste_get()
 
 
 
@@ -1626,7 +1626,7 @@ Liefert eine Auflistung der Kodelisten inklusive dem Listennamen, also der testl
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20022 import InlineResponse20022
+from deutschland.pflanzenschutzmittelzulassung.model.kodeliste_get200_response import KodelisteGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -1659,7 +1659,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**KodelisteGet200Response**](KodelisteGet200Response.md)
 
 ### Authorization
 
@@ -1680,7 +1680,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **kultur_gruppe_get**
-> InlineResponse20024 kultur_gruppe_get()
+> KulturGruppeGet200Response kultur_gruppe_get()
 
 
 
@@ -1693,7 +1693,7 @@ Liefert eine Liste der Kulturen und der korrespondierenden Kulturgruppe. Der Enp
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20024 import InlineResponse20024
+from deutschland.pflanzenschutzmittelzulassung.model.kultur_gruppe_get200_response import KulturGruppeGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -1728,7 +1728,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**KulturGruppeGet200Response**](KulturGruppeGet200Response.md)
 
 ### Authorization
 
@@ -1749,7 +1749,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **mittel_abgelaufen_get**
-> InlineResponse20026 mittel_abgelaufen_get()
+> MittelAbgelaufenGet200Response mittel_abgelaufen_get()
 
 
 
@@ -1762,7 +1762,7 @@ Liefert eine Liste der abgelaufenen Pflanzenschutzmittel, inklusive Aufbrauchfri
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20026 import InlineResponse20026
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_abgelaufen_get200_response import MittelAbgelaufenGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -1795,7 +1795,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**MittelAbgelaufenGet200Response**](MittelAbgelaufenGet200Response.md)
 
 ### Authorization
 
@@ -1816,7 +1816,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **mittel_abpackung_get**
-> InlineResponse20027 mittel_abpackung_get()
+> MittelAbpackungGet200Response mittel_abpackung_get()
 
 
 
@@ -1829,7 +1829,7 @@ Liefert eine Liste der Packungsinformationen fÃ¼r Mittel.                     
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20027 import InlineResponse20027
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_abpackung_get200_response import MittelAbpackungGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -1862,7 +1862,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**MittelAbpackungGet200Response**](MittelAbpackungGet200Response.md)
 
 ### Authorization
 
@@ -1883,7 +1883,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **mittel_gefahren_symbol_get**
-> InlineResponse20028 mittel_gefahren_symbol_get()
+> MittelGefahrenSymbolGet200Response mittel_gefahren_symbol_get()
 
 
 
@@ -1896,7 +1896,7 @@ Liefert eine Zuordnung von Mitteln zu Gefahrensymbolen.                         
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20028 import InlineResponse20028
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_gefahren_symbol_get200_response import MittelGefahrenSymbolGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -1929,7 +1929,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**MittelGefahrenSymbolGet200Response**](MittelGefahrenSymbolGet200Response.md)
 
 ### Authorization
 
@@ -1950,7 +1950,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **mittel_get**
-> InlineResponse20025 mittel_get()
+> MittelGet200Response mittel_get()
 
 
 
@@ -1963,7 +1963,7 @@ Liefert eine Liste aller zugelassenen Pflanzeschutzmittel.                      
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20025 import InlineResponse20025
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_get200_response import MittelGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -1996,7 +1996,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**MittelGet200Response**](MittelGet200Response.md)
 
 ### Authorization
 
@@ -2017,7 +2017,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **mittel_vertrieb_get**
-> InlineResponse20029 mittel_vertrieb_get()
+> MittelVertriebGet200Response mittel_vertrieb_get()
 
 
 
@@ -2030,7 +2030,7 @@ Liefert die Zuordnung von Mitteln zu Vetriebsfirmen dieser Mittel.              
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20029 import InlineResponse20029
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_vertrieb_get200_response import MittelVertriebGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2065,7 +2065,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20029**](InlineResponse20029.md)
+[**MittelVertriebGet200Response**](MittelVertriebGet200Response.md)
 
 ### Authorization
 
@@ -2086,7 +2086,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **mittel_wirkbereich_get**
-> InlineResponse20030 mittel_wirkbereich_get()
+> MittelWirkbereichGet200Response mittel_wirkbereich_get()
 
 
 
@@ -2099,7 +2099,7 @@ Liefert eine Liste von Zuordnungen von Mitteln zu Wirkbereichen. Die konkreten A
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20030 import InlineResponse20030
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_wirkbereich_get200_response import MittelWirkbereichGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2134,7 +2134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**MittelWirkbereichGet200Response**](MittelWirkbereichGet200Response.md)
 
 ### Authorization
 
@@ -2155,7 +2155,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **parallelimport_abgelaufen_get**
-> InlineResponse20031 parallelimport_abgelaufen_get()
+> ParallelimportAbgelaufenGet200Response parallelimport_abgelaufen_get()
 
 
 
@@ -2168,7 +2168,7 @@ Liefert eine Liste der abgelaufenen Parallelimporte (Mittel aus anderen LÃ¤nde
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20031 import InlineResponse20031
+from deutschland.pflanzenschutzmittelzulassung.model.parallelimport_abgelaufen_get200_response import ParallelimportAbgelaufenGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2203,7 +2203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**ParallelimportAbgelaufenGet200Response**](ParallelimportAbgelaufenGet200Response.md)
 
 ### Authorization
 
@@ -2224,7 +2224,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **parallelimport_gueltig_get**
-> InlineResponse20031 parallelimport_gueltig_get()
+> ParallelimportAbgelaufenGet200Response parallelimport_gueltig_get()
 
 
 
@@ -2237,7 +2237,7 @@ Liefert eine Liste der gÃ¼ltigen Parallelimporte (Mittel aus anderen LÃ¤nder
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20031 import InlineResponse20031
+from deutschland.pflanzenschutzmittelzulassung.model.parallelimport_abgelaufen_get200_response import ParallelimportAbgelaufenGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2272,7 +2272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**ParallelimportAbgelaufenGet200Response**](ParallelimportAbgelaufenGet200Response.md)
 
 ### Authorization
 
@@ -2293,7 +2293,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **schadorg_gruppe_get**
-> InlineResponse20033 schadorg_gruppe_get()
+> SchadorgGruppeGet200Response schadorg_gruppe_get()
 
 
 
@@ -2306,7 +2306,7 @@ Liefert eine Liste der Schadorganismen und der korrespondierenden Schadorganisme
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20033 import InlineResponse20033
+from deutschland.pflanzenschutzmittelzulassung.model.schadorg_gruppe_get200_response import SchadorgGruppeGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2341,7 +2341,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20033**](InlineResponse20033.md)
+[**SchadorgGruppeGet200Response**](SchadorgGruppeGet200Response.md)
 
 ### Authorization
 
@@ -2362,7 +2362,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **staerkung_get**
-> InlineResponse20034 staerkung_get()
+> StaerkungGet200Response staerkung_get()
 
 
 
@@ -2375,7 +2375,7 @@ Liefert eine Liste von zugelassenen StÃ¤rkungsmitteln.                        
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20034 import InlineResponse20034
+from deutschland.pflanzenschutzmittelzulassung.model.staerkung_get200_response import StaerkungGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2410,7 +2410,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20034**](InlineResponse20034.md)
+[**StaerkungGet200Response**](StaerkungGet200Response.md)
 
 ### Authorization
 
@@ -2431,7 +2431,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **staerkung_vertrieb_get**
-> InlineResponse20029 staerkung_vertrieb_get()
+> MittelVertriebGet200Response staerkung_vertrieb_get()
 
 
 
@@ -2444,7 +2444,7 @@ Liefert eine Zuordnung von StÃ¤rungsmitteln auf die Vertriebsfirmen der StÃ¤
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20029 import InlineResponse20029
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_vertrieb_get200_response import MittelVertriebGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2479,7 +2479,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20029**](InlineResponse20029.md)
+[**MittelVertriebGet200Response**](MittelVertriebGet200Response.md)
 
 ### Authorization
 
@@ -2500,7 +2500,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **stand_get**
-> InlineResponse20036 stand_get()
+> StandGet200Response stand_get()
 
 
 
@@ -2513,7 +2513,7 @@ Liefert das Release-Datum fÃ¼r den aktuellen Datenbestand. Das heiÃŸt, das D
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20036 import InlineResponse20036
+from deutschland.pflanzenschutzmittelzulassung.model.stand_get200_response import StandGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2541,7 +2541,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20036**](InlineResponse20036.md)
+[**StandGet200Response**](StandGet200Response.md)
 
 ### Authorization
 
@@ -2562,7 +2562,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **wirkstoff_gehalt_get**
-> InlineResponse20038 wirkstoff_gehalt_get()
+> WirkstoffGehaltGet200Response wirkstoff_gehalt_get()
 
 
 
@@ -2575,7 +2575,7 @@ Liefert eine Zuordnung der Mittel und des korrespondierenden Wirkstoffgehalts.  
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20038 import InlineResponse20038
+from deutschland.pflanzenschutzmittelzulassung.model.wirkstoff_gehalt_get200_response import WirkstoffGehaltGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2610,7 +2610,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20038**](InlineResponse20038.md)
+[**WirkstoffGehaltGet200Response**](WirkstoffGehaltGet200Response.md)
 
 ### Authorization
 
@@ -2631,7 +2631,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **wirkstoff_get**
-> InlineResponse20037 wirkstoff_get()
+> WirkstoffGet200Response wirkstoff_get()
 
 
 
@@ -2644,7 +2644,7 @@ Liefert eine Liste von zugelassenen Wirkstoffen.                             Opt
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20037 import InlineResponse20037
+from deutschland.pflanzenschutzmittelzulassung.model.wirkstoff_get200_response import WirkstoffGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2677,7 +2677,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20037**](InlineResponse20037.md)
+[**WirkstoffGet200Response**](WirkstoffGet200Response.md)
 
 ### Authorization
 
@@ -2698,7 +2698,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **zusatzstoff_get**
-> InlineResponse20039 zusatzstoff_get()
+> ZusatzstoffGet200Response zusatzstoff_get()
 
 
 
@@ -2711,7 +2711,7 @@ Liefert eine Liste der Zusatzstoffe zu Mitteln.                             Opti
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20039 import InlineResponse20039
+from deutschland.pflanzenschutzmittelzulassung.model.zusatzstoff_get200_response import ZusatzstoffGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2746,7 +2746,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20039**](InlineResponse20039.md)
+[**ZusatzstoffGet200Response**](ZusatzstoffGet200Response.md)
 
 ### Authorization
 
@@ -2767,7 +2767,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **zusatzstoff_vertrieb_get**
-> InlineResponse20029 zusatzstoff_vertrieb_get()
+> MittelVertriebGet200Response zusatzstoff_vertrieb_get()
 
 
 
@@ -2780,7 +2780,7 @@ Liefert eine Zuordnung von Zusatzstoffen auf die Vertriebsfirmen der Zusatzstoff
 import time
 from deutschland import pflanzenschutzmittelzulassung
 from deutschland.pflanzenschutzmittelzulassung.api import default_api
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20029 import InlineResponse20029
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_vertrieb_get200_response import MittelVertriebGet200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://psm-api.bvl.bund.de/ords/psm/api-v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -2815,7 +2815,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20029**](InlineResponse20029.md)
+[**MittelVertriebGet200Response**](MittelVertriebGet200Response.md)
 
 ### Authorization
 

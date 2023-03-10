@@ -14,119 +14,119 @@ import sys  # noqa: F401
 
 from deutschland.pflanzenschutzmittelzulassung.api_client import ApiClient
 from deutschland.pflanzenschutzmittelzulassung.api_client import Endpoint as _Endpoint
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response200 import (
-    InlineResponse200,
+from deutschland.pflanzenschutzmittelzulassung.model.adresse_get200_response import (
+    AdresseGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2001 import (
-    InlineResponse2001,
+from deutschland.pflanzenschutzmittelzulassung.model.antrag_get200_response import (
+    AntragGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2002 import (
-    InlineResponse2002,
+from deutschland.pflanzenschutzmittelzulassung.model.auflage_redu_get200_response import (
+    AuflageReduGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2003 import (
-    InlineResponse2003,
+from deutschland.pflanzenschutzmittelzulassung.model.auflagen_get200_response import (
+    AuflagenGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2004 import (
-    InlineResponse2004,
+from deutschland.pflanzenschutzmittelzulassung.model.awg_aufwand_get200_response import (
+    AwgAufwandGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2005 import (
-    InlineResponse2005,
+from deutschland.pflanzenschutzmittelzulassung.model.awg_bem_get200_response import (
+    AwgBemGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2006 import (
-    InlineResponse2006,
+from deutschland.pflanzenschutzmittelzulassung.model.awg_get200_response import (
+    AwgGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2007 import (
-    InlineResponse2007,
+from deutschland.pflanzenschutzmittelzulassung.model.awg_kultur_get200_response import (
+    AwgKulturGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2008 import (
-    InlineResponse2008,
+from deutschland.pflanzenschutzmittelzulassung.model.awg_partner_aufwand_get200_response import (
+    AwgPartnerAufwandGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response2009 import (
-    InlineResponse2009,
+from deutschland.pflanzenschutzmittelzulassung.model.awg_partner_get200_response import (
+    AwgPartnerGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20010 import (
-    InlineResponse20010,
+from deutschland.pflanzenschutzmittelzulassung.model.awg_schadorg_get200_response import (
+    AwgSchadorgGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20011 import (
-    InlineResponse20011,
+from deutschland.pflanzenschutzmittelzulassung.model.awg_verwendungszweck_get200_response import (
+    AwgVerwendungszweckGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20012 import (
-    InlineResponse20012,
+from deutschland.pflanzenschutzmittelzulassung.model.awg_wartezeit_ausg_kultur_get200_response import (
+    AwgWartezeitAusgKulturGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20013 import (
-    InlineResponse20013,
+from deutschland.pflanzenschutzmittelzulassung.model.awg_wartezeit_get200_response import (
+    AwgWartezeitGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20014 import (
-    InlineResponse20014,
+from deutschland.pflanzenschutzmittelzulassung.model.awg_zeitpunkt_get200_response import (
+    AwgZeitpunktGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20015 import (
-    InlineResponse20015,
+from deutschland.pflanzenschutzmittelzulassung.model.awg_zulassung_get200_response import (
+    AwgZulassungGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20016 import (
-    InlineResponse20016,
+from deutschland.pflanzenschutzmittelzulassung.model.ghs_gefahrenhinweise_get200_response import (
+    GhsGefahrenhinweiseGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20017 import (
-    InlineResponse20017,
+from deutschland.pflanzenschutzmittelzulassung.model.ghs_gefahrensymbole_get200_response import (
+    GhsGefahrensymboleGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20018 import (
-    InlineResponse20018,
+from deutschland.pflanzenschutzmittelzulassung.model.ghs_sicherheitshinweise_get200_response import (
+    GhsSicherheitshinweiseGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20019 import (
-    InlineResponse20019,
+from deutschland.pflanzenschutzmittelzulassung.model.ghs_signalwoerter_get200_response import (
+    GhsSignalwoerterGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20020 import (
-    InlineResponse20020,
+from deutschland.pflanzenschutzmittelzulassung.model.hinweis_get200_response import (
+    HinweisGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20021 import (
-    InlineResponse20021,
+from deutschland.pflanzenschutzmittelzulassung.model.kode_get200_response import (
+    KodeGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20022 import (
-    InlineResponse20022,
+from deutschland.pflanzenschutzmittelzulassung.model.kodeliste_feldname_get200_response import (
+    KodelisteFeldnameGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20023 import (
-    InlineResponse20023,
+from deutschland.pflanzenschutzmittelzulassung.model.kodeliste_get200_response import (
+    KodelisteGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20024 import (
-    InlineResponse20024,
+from deutschland.pflanzenschutzmittelzulassung.model.kultur_gruppe_get200_response import (
+    KulturGruppeGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20025 import (
-    InlineResponse20025,
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_abgelaufen_get200_response import (
+    MittelAbgelaufenGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20026 import (
-    InlineResponse20026,
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_abpackung_get200_response import (
+    MittelAbpackungGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20027 import (
-    InlineResponse20027,
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_gefahren_symbol_get200_response import (
+    MittelGefahrenSymbolGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20028 import (
-    InlineResponse20028,
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_get200_response import (
+    MittelGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20029 import (
-    InlineResponse20029,
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_vertrieb_get200_response import (
+    MittelVertriebGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20030 import (
-    InlineResponse20030,
+from deutschland.pflanzenschutzmittelzulassung.model.mittel_wirkbereich_get200_response import (
+    MittelWirkbereichGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20031 import (
-    InlineResponse20031,
+from deutschland.pflanzenschutzmittelzulassung.model.parallelimport_abgelaufen_get200_response import (
+    ParallelimportAbgelaufenGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20033 import (
-    InlineResponse20033,
+from deutschland.pflanzenschutzmittelzulassung.model.schadorg_gruppe_get200_response import (
+    SchadorgGruppeGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20034 import (
-    InlineResponse20034,
+from deutschland.pflanzenschutzmittelzulassung.model.staerkung_get200_response import (
+    StaerkungGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20036 import (
-    InlineResponse20036,
+from deutschland.pflanzenschutzmittelzulassung.model.stand_get200_response import (
+    StandGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20037 import (
-    InlineResponse20037,
+from deutschland.pflanzenschutzmittelzulassung.model.wirkstoff_gehalt_get200_response import (
+    WirkstoffGehaltGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20038 import (
-    InlineResponse20038,
+from deutschland.pflanzenschutzmittelzulassung.model.wirkstoff_get200_response import (
+    WirkstoffGet200Response,
 )
-from deutschland.pflanzenschutzmittelzulassung.model.inline_response20039 import (
-    InlineResponse20039,
+from deutschland.pflanzenschutzmittelzulassung.model.zusatzstoff_get200_response import (
+    ZusatzstoffGet200Response,
 )
 from deutschland.pflanzenschutzmittelzulassung.model_utils import (  # noqa: F401
     check_allowed_values,
@@ -152,7 +152,7 @@ class DefaultApi(object):
         self.api_client = api_client
         self.adresse_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse200,),
+                "response_type": (AdresseGet200Response,),
                 "auth": [],
                 "endpoint_path": "/adresse/",
                 "operation_id": "adresse_get",
@@ -190,7 +190,7 @@ class DefaultApi(object):
         )
         self.antrag_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse2001,),
+                "response_type": (AntragGet200Response,),
                 "auth": [],
                 "endpoint_path": "/antrag/",
                 "operation_id": "antrag_get",
@@ -236,7 +236,7 @@ class DefaultApi(object):
         )
         self.auflage_redu_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse2002,),
+                "response_type": (AuflageReduGet200Response,),
                 "auth": [],
                 "endpoint_path": "/auflage_redu/",
                 "operation_id": "auflage_redu_get",
@@ -274,7 +274,7 @@ class DefaultApi(object):
         )
         self.auflagen_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse2003,),
+                "response_type": (AuflagenGet200Response,),
                 "auth": [],
                 "endpoint_path": "/auflagen/",
                 "operation_id": "auflagen_get",
@@ -320,7 +320,7 @@ class DefaultApi(object):
         )
         self.awg_aufwand_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse2005,),
+                "response_type": (AwgAufwandGet200Response,),
                 "auth": [],
                 "endpoint_path": "/awg_aufwand/",
                 "operation_id": "awg_aufwand_get",
@@ -358,7 +358,7 @@ class DefaultApi(object):
         )
         self.awg_bem_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse2006,),
+                "response_type": (AwgBemGet200Response,),
                 "auth": [],
                 "endpoint_path": "/awg_bem/",
                 "operation_id": "awg_bem_get",
@@ -396,7 +396,7 @@ class DefaultApi(object):
         )
         self.awg_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse2004,),
+                "response_type": (AwgGet200Response,),
                 "auth": [],
                 "endpoint_path": "/awg/",
                 "operation_id": "awg_get",
@@ -438,7 +438,7 @@ class DefaultApi(object):
         )
         self.awg_kultur_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse2007,),
+                "response_type": (AwgKulturGet200Response,),
                 "auth": [],
                 "endpoint_path": "/awg_kultur/",
                 "operation_id": "awg_kultur_get",
@@ -476,7 +476,7 @@ class DefaultApi(object):
         )
         self.awg_partner_aufwand_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse2009,),
+                "response_type": (AwgPartnerAufwandGet200Response,),
                 "auth": [],
                 "endpoint_path": "/awg_partner_aufwand/",
                 "operation_id": "awg_partner_aufwand_get",
@@ -514,7 +514,7 @@ class DefaultApi(object):
         )
         self.awg_partner_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse2008,),
+                "response_type": (AwgPartnerGet200Response,),
                 "auth": [],
                 "endpoint_path": "/awg_partner/",
                 "operation_id": "awg_partner_get",
@@ -552,7 +552,7 @@ class DefaultApi(object):
         )
         self.awg_schadorg_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20010,),
+                "response_type": (AwgSchadorgGet200Response,),
                 "auth": [],
                 "endpoint_path": "/awg_schadorg/",
                 "operation_id": "awg_schadorg_get",
@@ -590,7 +590,7 @@ class DefaultApi(object):
         )
         self.awg_verwendungszweck_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20011,),
+                "response_type": (AwgVerwendungszweckGet200Response,),
                 "auth": [],
                 "endpoint_path": "/awg_verwendungszweck/",
                 "operation_id": "awg_verwendungszweck_get",
@@ -628,7 +628,7 @@ class DefaultApi(object):
         )
         self.awg_wartezeit_ausg_kultur_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20013,),
+                "response_type": (AwgWartezeitAusgKulturGet200Response,),
                 "auth": [],
                 "endpoint_path": "/awg_wartezeit_ausg_kultur/",
                 "operation_id": "awg_wartezeit_ausg_kultur_get",
@@ -670,7 +670,7 @@ class DefaultApi(object):
         )
         self.awg_wartezeit_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20012,),
+                "response_type": (AwgWartezeitGet200Response,),
                 "auth": [],
                 "endpoint_path": "/awg_wartezeit/",
                 "operation_id": "awg_wartezeit_get",
@@ -716,7 +716,7 @@ class DefaultApi(object):
         )
         self.awg_zeitpunkt_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20014,),
+                "response_type": (AwgZeitpunktGet200Response,),
                 "auth": [],
                 "endpoint_path": "/awg_zeitpunkt/",
                 "operation_id": "awg_zeitpunkt_get",
@@ -754,7 +754,7 @@ class DefaultApi(object):
         )
         self.awg_zulassung_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20015,),
+                "response_type": (AwgZulassungGet200Response,),
                 "auth": [],
                 "endpoint_path": "/awg_zulassung/",
                 "operation_id": "awg_zulassung_get",
@@ -792,7 +792,7 @@ class DefaultApi(object):
         )
         self.ghs_gefahrenhinweise_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20016,),
+                "response_type": (GhsGefahrenhinweiseGet200Response,),
                 "auth": [],
                 "endpoint_path": "/ghs_gefahrenhinweise/",
                 "operation_id": "ghs_gefahrenhinweise_get",
@@ -830,7 +830,7 @@ class DefaultApi(object):
         )
         self.ghs_gefahrensymbole_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20017,),
+                "response_type": (GhsGefahrensymboleGet200Response,),
                 "auth": [],
                 "endpoint_path": "/ghs_gefahrensymbole/",
                 "operation_id": "ghs_gefahrensymbole_get",
@@ -868,7 +868,7 @@ class DefaultApi(object):
         )
         self.ghs_sicherheitshinweise_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20018,),
+                "response_type": (GhsSicherheitshinweiseGet200Response,),
                 "auth": [],
                 "endpoint_path": "/ghs_sicherheitshinweise/",
                 "operation_id": "ghs_sicherheitshinweise_get",
@@ -906,7 +906,7 @@ class DefaultApi(object):
         )
         self.ghs_signalwoerter_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20019,),
+                "response_type": (GhsSignalwoerterGet200Response,),
                 "auth": [],
                 "endpoint_path": "/ghs_signalwoerter/",
                 "operation_id": "ghs_signalwoerter_get",
@@ -944,7 +944,7 @@ class DefaultApi(object):
         )
         self.hinweis_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20020,),
+                "response_type": (HinweisGet200Response,),
                 "auth": [],
                 "endpoint_path": "/hinweis/",
                 "operation_id": "hinweis_get",
@@ -982,7 +982,7 @@ class DefaultApi(object):
         )
         self.kode_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20021,),
+                "response_type": (KodeGet200Response,),
                 "auth": [],
                 "endpoint_path": "/kode/",
                 "operation_id": "kode_get",
@@ -1028,7 +1028,7 @@ class DefaultApi(object):
         )
         self.kodeliste_feldname_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20023,),
+                "response_type": (KodelisteFeldnameGet200Response,),
                 "auth": [],
                 "endpoint_path": "/kodeliste_feldname/",
                 "operation_id": "kodeliste_feldname_get",
@@ -1074,7 +1074,7 @@ class DefaultApi(object):
         )
         self.kodeliste_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20022,),
+                "response_type": (KodelisteGet200Response,),
                 "auth": [],
                 "endpoint_path": "/kodeliste/",
                 "operation_id": "kodeliste_get",
@@ -1112,7 +1112,7 @@ class DefaultApi(object):
         )
         self.kultur_gruppe_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20024,),
+                "response_type": (KulturGruppeGet200Response,),
                 "auth": [],
                 "endpoint_path": "/kultur_gruppe/",
                 "operation_id": "kultur_gruppe_get",
@@ -1154,7 +1154,7 @@ class DefaultApi(object):
         )
         self.mittel_abgelaufen_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20026,),
+                "response_type": (MittelAbgelaufenGet200Response,),
                 "auth": [],
                 "endpoint_path": "/mittel_abgelaufen/",
                 "operation_id": "mittel_abgelaufen_get",
@@ -1192,7 +1192,7 @@ class DefaultApi(object):
         )
         self.mittel_abpackung_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20027,),
+                "response_type": (MittelAbpackungGet200Response,),
                 "auth": [],
                 "endpoint_path": "/mittel_abpackung/",
                 "operation_id": "mittel_abpackung_get",
@@ -1230,7 +1230,7 @@ class DefaultApi(object):
         )
         self.mittel_gefahren_symbol_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20028,),
+                "response_type": (MittelGefahrenSymbolGet200Response,),
                 "auth": [],
                 "endpoint_path": "/mittel_gefahren_symbol/",
                 "operation_id": "mittel_gefahren_symbol_get",
@@ -1268,7 +1268,7 @@ class DefaultApi(object):
         )
         self.mittel_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20025,),
+                "response_type": (MittelGet200Response,),
                 "auth": [],
                 "endpoint_path": "/mittel/",
                 "operation_id": "mittel_get",
@@ -1306,7 +1306,7 @@ class DefaultApi(object):
         )
         self.mittel_vertrieb_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20029,),
+                "response_type": (MittelVertriebGet200Response,),
                 "auth": [],
                 "endpoint_path": "/mittel_vertrieb/",
                 "operation_id": "mittel_vertrieb_get",
@@ -1348,7 +1348,7 @@ class DefaultApi(object):
         )
         self.mittel_wirkbereich_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20030,),
+                "response_type": (MittelWirkbereichGet200Response,),
                 "auth": [],
                 "endpoint_path": "/mittel_wirkbereich/",
                 "operation_id": "mittel_wirkbereich_get",
@@ -1390,7 +1390,7 @@ class DefaultApi(object):
         )
         self.parallelimport_abgelaufen_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20031,),
+                "response_type": (ParallelimportAbgelaufenGet200Response,),
                 "auth": [],
                 "endpoint_path": "/parallelimport_abgelaufen/",
                 "operation_id": "parallelimport_abgelaufen_get",
@@ -1432,7 +1432,7 @@ class DefaultApi(object):
         )
         self.parallelimport_gueltig_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20031,),
+                "response_type": (ParallelimportAbgelaufenGet200Response,),
                 "auth": [],
                 "endpoint_path": "/parallelimport_gueltig/",
                 "operation_id": "parallelimport_gueltig_get",
@@ -1474,7 +1474,7 @@ class DefaultApi(object):
         )
         self.schadorg_gruppe_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20033,),
+                "response_type": (SchadorgGruppeGet200Response,),
                 "auth": [],
                 "endpoint_path": "/schadorg_gruppe/",
                 "operation_id": "schadorg_gruppe_get",
@@ -1516,7 +1516,7 @@ class DefaultApi(object):
         )
         self.staerkung_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20034,),
+                "response_type": (StaerkungGet200Response,),
                 "auth": [],
                 "endpoint_path": "/staerkung/",
                 "operation_id": "staerkung_get",
@@ -1558,7 +1558,7 @@ class DefaultApi(object):
         )
         self.staerkung_vertrieb_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20029,),
+                "response_type": (MittelVertriebGet200Response,),
                 "auth": [],
                 "endpoint_path": "/staerkung_vertrieb/",
                 "operation_id": "staerkung_vertrieb_get",
@@ -1600,7 +1600,7 @@ class DefaultApi(object):
         )
         self.stand_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20036,),
+                "response_type": (StandGet200Response,),
                 "auth": [],
                 "endpoint_path": "/stand/",
                 "operation_id": "stand_get",
@@ -1630,7 +1630,7 @@ class DefaultApi(object):
         )
         self.wirkstoff_gehalt_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20038,),
+                "response_type": (WirkstoffGehaltGet200Response,),
                 "auth": [],
                 "endpoint_path": "/wirkstoff_gehalt/",
                 "operation_id": "wirkstoff_gehalt_get",
@@ -1672,7 +1672,7 @@ class DefaultApi(object):
         )
         self.wirkstoff_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20037,),
+                "response_type": (WirkstoffGet200Response,),
                 "auth": [],
                 "endpoint_path": "/wirkstoff/",
                 "operation_id": "wirkstoff_get",
@@ -1710,7 +1710,7 @@ class DefaultApi(object):
         )
         self.zusatzstoff_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20039,),
+                "response_type": (ZusatzstoffGet200Response,),
                 "auth": [],
                 "endpoint_path": "/zusatzstoff/",
                 "operation_id": "zusatzstoff_get",
@@ -1752,7 +1752,7 @@ class DefaultApi(object):
         )
         self.zusatzstoff_vertrieb_get_endpoint = _Endpoint(
             settings={
-                "response_type": (InlineResponse20029,),
+                "response_type": (MittelVertriebGet200Response,),
                 "auth": [],
                 "endpoint_path": "/zusatzstoff_vertrieb/",
                 "operation_id": "zusatzstoff_vertrieb_get",
@@ -1838,7 +1838,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse200
+            AdresseGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1901,7 +1901,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2001
+            AntragGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1962,7 +1962,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2002
+            AuflageReduGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2025,7 +2025,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2003
+            AuflagenGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2086,7 +2086,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2005
+            AwgAufwandGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2147,7 +2147,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2006
+            AwgBemGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2209,7 +2209,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2004
+            AwgGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2270,7 +2270,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2007
+            AwgKulturGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2331,7 +2331,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2009
+            AwgPartnerAufwandGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2392,7 +2392,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse2008
+            AwgPartnerGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2453,7 +2453,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20010
+            AwgSchadorgGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2514,7 +2514,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20011
+            AwgVerwendungszweckGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2576,7 +2576,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20013
+            AwgWartezeitAusgKulturGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2639,7 +2639,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20012
+            AwgWartezeitGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2700,7 +2700,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20014
+            AwgZeitpunktGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2761,7 +2761,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20015
+            AwgZulassungGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2822,7 +2822,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20016
+            GhsGefahrenhinweiseGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2883,7 +2883,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20017
+            GhsGefahrensymboleGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2944,7 +2944,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20018
+            GhsSicherheitshinweiseGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3005,7 +3005,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20019
+            GhsSignalwoerterGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3066,7 +3066,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20020
+            HinweisGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3129,7 +3129,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20021
+            KodeGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3192,7 +3192,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20023
+            KodelisteFeldnameGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3253,7 +3253,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20022
+            KodelisteGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3315,7 +3315,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20024
+            KulturGruppeGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3376,7 +3376,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20026
+            MittelAbgelaufenGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3437,7 +3437,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20027
+            MittelAbpackungGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3498,7 +3498,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20028
+            MittelGefahrenSymbolGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3559,7 +3559,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20025
+            MittelGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3621,7 +3621,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20029
+            MittelVertriebGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3683,7 +3683,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20030
+            MittelWirkbereichGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3745,7 +3745,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20031
+            ParallelimportAbgelaufenGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3807,7 +3807,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20031
+            ParallelimportAbgelaufenGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3869,7 +3869,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20033
+            SchadorgGruppeGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3931,7 +3931,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20034
+            StaerkungGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3993,7 +3993,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20029
+            MittelVertriebGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4053,7 +4053,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20036
+            StandGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4115,7 +4115,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20038
+            WirkstoffGehaltGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4176,7 +4176,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20037
+            WirkstoffGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4238,7 +4238,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20039
+            ZusatzstoffGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4300,7 +4300,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            InlineResponse20029
+            MittelVertriebGet200Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
